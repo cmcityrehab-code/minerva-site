@@ -578,7 +578,8 @@ function choisirMetier(m,defiler){
   document.querySelectorAll('[data-choix]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.choix===m)));
   courante=-1;afficherEtat(0);
   document.querySelectorAll('.porte').forEach(a=>a.dataset.metier===m?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current'));
-  if(defiler){const z=document.getElementById('parcours');z.scrollIntoView();z.focus({preventScroll:true})}
+  // On passe d'abord par la phrase d'accroche, le parcours vient ensuite au défilement.
+  if(defiler){document.querySelector('.manifeste').scrollIntoView();document.getElementById('parcours').focus({preventScroll:true})}
 }
 document.querySelectorAll('.porte').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault();choisirMetier(a.dataset.metier,true)}));
 document.querySelectorAll('[data-choix]').forEach(b=>b.addEventListener('click',()=>choisirMetier(b.dataset.choix,false)));
@@ -643,7 +644,7 @@ function tracerFil(f){
 }
 function animerPage(){
   const h=innerHeight;
-  const r=document.getElementById('manifeste').getBoundingClientRect(),pm=calme?1:borne((h*.85-r.top)/(r.height+h*.45));
+  const r=document.getElementById('manifeste').getBoundingClientRect(),pm=calme?1:borne((h*.85-r.top)/(r.height+h*.25));
   mots.forEach((w,i)=>{w.style.opacity=i/mots.length<pm?1:.18});
   fils.forEach(f=>{if(!f.bas)return;const t=f.el.getBoundingClientRect().top,p=calme?1:borne((h*.55-t-f.haut)/(f.bas-f.haut));f.trace.style.strokeDashoffset=1-p});
   if(pin.offsetHeight){const q=pin.getBoundingClientRect(),n=Math.min(MOMENTS.length-1,Math.floor(borne((68-q.top)/(q.height-(h-68)))*MOMENTS.length));if(n!==momentCourant){momentCourant=n;montrerMoment(n)}}
