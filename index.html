@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
   <title>Minerva · Logopédie et kinésithérapie, le cabinet en ordre</title>
 <meta name="description" content="Minerva tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. En logopédie, Aria suit le dossier mutuelle avec les patients et leurs proches.">
-<link rel="stylesheet" href="site.css?v=17">
+<link rel="stylesheet" href="site.css?v=18">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
 document.documentElement.dataset.metier=(m=>m==="logo"||m==="kine"?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
@@ -31,6 +31,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
     <a class="marque" href="#accueil"><img src="images/minerva-tuile.svg" alt="" width="34" height="34">Minerva</a>
     <nav aria-label="Navigation du site">
       <a href="#parcours">Le parcours</a>
+      <a href="#seances">Les séances</a>
       <a href="#comptabilite">Comptabilité</a>
       <a href="#aria" class="seul-logo">Aria</a>
       <a href="#tarifs">Tarifs</a>
@@ -132,6 +133,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
           <p>L'accord vaut 1 à 2 ans selon la pathologie : la facturation est en ordre, la rééducation suit son cours.</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Vous pointez, Minerva prépare le reste</li>
+            <li><svg><use href="#i-coche"/></svg>Une note à chaque séance, écrite ou dictée · <a href="#seances">En savoir plus</a></li>
           </ul>
           <figure><img src="images/emma-trajet.jpg" alt="Trajet de soins d'Emma Lambert dans Minerva" width="1180" height="760" loading="lazy"></figure>
           <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : les rendez-vous, dans Aria.</p>
@@ -200,6 +202,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
           <p>Le bon code vous est proposé à chaque séance, compteurs à jour. Vous savez toujours où en est votre patient.</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Vous pointez d'un geste, entre deux patients</li>
+            <li><svg><use href="#i-coche"/></svg>Une note à chaque séance, écrite ou dictée · <a href="#seances">En savoir plus</a></li>
             <li><svg><use href="#i-coche"/></svg>Pathologies courantes comme lourdes</li>
           </ul>
           <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Dans le dossier : le compteur de séances est à jour.</p>
@@ -273,6 +276,33 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
         </div>
       </div>
     </aside>
+  </div>
+</section>
+
+<section class="seances" id="seances">
+  <div class="wrap">
+    <div>
+      <h2>Chaque séance, notée en un instant.</h2>
+      <p class="sous">À la fin de la séance, votre note est prête. Et vous savez toujours avec quoi vous avez travaillé.</p>
+      <dl>
+        <div><dt>Une note par séance</dt><dd>Ce que vous avez travaillé, ce que vous avez observé, ce qui est prévu ensuite.</dd></div>
+        <div><dt>Dictez, c'est écrit</dt><dd>Parlez à la fin de la séance : votre voix devient le compte-rendu écrit.</dd></div>
+        <div><dt>La liste de votre matériel</dt><dd>Jeux, livres, outils : tout ce que vous avez au cabinet, au même endroit.</dd></div>
+        <div><dt>Le suivi par patient</dt><dd>Cochez ce que vous avez utilisé. La fois suivante, vous voyez ce qui a déjà servi et vous préparez la séance plus vite.</dd></div>
+      </dl>
+    </div>
+    <div>
+      <figure class="note-ecran seul-logo" aria-label="Exemple de note de séance dans Minerva">
+        <figcaption><b>Note de séance</b><span>Emma Lambert · jeudi 16 h 30</span></figcaption>
+        <div class="note-texte"><p>Emma produit le /ch/ en début de mot. Bonne attention pendant toute la séance. On continue avec les mots plus longs.</p><span class="dicter"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Dicter</span></div>
+        <div class="note-materiel"><b>Matériel utilisé</b><label class="pris"><span class="case" aria-hidden="true"></span>Loto des sons<small>4 fois · 22/10</small></label><label class="pris"><span class="case" aria-hidden="true"></span>Imagier des verbes<small>1re fois</small></label><label class=""><span class="case" aria-hidden="true"></span>Jeu de l'oie des syllabes<small>2 fois · 08/10</small></label></div>
+      </figure>
+      <figure class="note-ecran seul-kine" aria-label="Exemple de note de séance dans Minerva">
+        <figcaption><b>Note de séance</b><span>Thomas Claes · jeudi 16 h 30</span></figcaption>
+        <div class="note-texte"><p>Bonne stabilité sur l'appui droit. Douleur en baisse. On augmente la charge à la prochaine séance.</p><span class="dicter"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Dicter</span></div>
+        <div class="note-materiel"><b>Matériel utilisé</b><label class="pris"><span class="case" aria-hidden="true"></span>Plateau d'équilibre<small>4 fois · 22/10</small></label><label class="pris"><span class="case" aria-hidden="true"></span>Bandes élastiques<small>1re fois</small></label><label class=""><span class="case" aria-hidden="true"></span>Ballon de rééducation<small>2 fois · 08/10</small></label></div>
+      </figure>
+    </div>
   </div>
 </section>
 
