@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Minerva · Logopédie et kinésithérapie, le cabinet en ordre</title>
+<meta name="description" content="Minerva tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. En logopédie, Aria suit le dossier mutuelle avec les patients et leurs proches.">
+<link rel="stylesheet" href="site.css?v=16">
+<script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
+document.documentElement.dataset.metier=(m=>m==="logo"||m==="kine"?m:"aucun")(new URLSearchParams(location.search).get("metier"));
+// Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
+history.scrollRestoration="manual";if(location.search)history.replaceState(null,"",location.pathname+location.hash);</script>
+<link rel="icon" type="image/svg+xml" href="images/minerva-tuile.svg">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-marque" viewBox="0 0 48 48"><path d="M8 38V11L24 30L40 11V38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="38" r="5" fill="#7FD3DE"/><circle cx="40" cy="38" r="5" fill="#7FD3DE"/></symbol>
+  <symbol id="i-aria" viewBox="0 0 48 48"><path d="M9 38L24 10L39 38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="38" r="5" fill="#7FD3DE"/><circle cx="39" cy="38" r="5" fill="#7FD3DE"/><circle cx="24" cy="30.500" r="4.5" fill="#7FD3DE"/></symbol>
+  <symbol id="i-coche" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8.5 12.5 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-rond" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="currentColor"/></symbol>
+  <symbol id="i-horloge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bulle" viewBox="0 0 24 24"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bas" viewBox="0 0 24 24"><path d="M12 5v14m0 0 6-6m-6 6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+
+<header class="haut">
+  <div class="wrap">
+    <a class="marque" href="#accueil"><img src="images/minerva-tuile.svg" alt="" width="34" height="34">Minerva</a>
+    <nav aria-label="Navigation du site">
+      <a href="#parcours">Le parcours</a>
+      <a href="#comptabilite">Comptabilité</a>
+      <a href="#aria" class="seul-logo">Aria</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#faq">Questions</a>
+      <a class="btn btn-plein" href="#contact">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="ouverture" id="accueil">
+  <div class="wrap">
+    <h1>Votre cabinet, <em>pas à pas</em>.</h1>
+    <p class="sous">Minerva tient l'administratif des cabinets de logopédie et de kinésithérapie, du premier rendez-vous à la comptabilité. Choisissez votre métier : voici votre quotidien.</p>
+    <div class="portes" id="choix">
+      <a class="porte" href="?metier=logo#parcours" data-metier="logo"><b>Je suis logopède</b><span>De l'anamnèse à l'accord de la mutuelle, avec Aria pour les patients et leurs proches.</span><svg aria-hidden="true"><use href="#i-bas"/></svg></a>
+      <a class="porte" href="?metier=kine#parcours" data-metier="kine"><b>Je suis kinésithérapeute</b><span>De la prescription à la facturation, séance après séance.</span><svg aria-hidden="true"><use href="#i-bas"/></svg></a>
+    </div>
+    <p class="mention"><a href="#tarifs">Voir les tarifs</a></p>
+  </div>
+  <div class="wrap ligne-accueil" aria-hidden="true">
+    <svg viewBox="0 0 1132 90" preserveAspectRatio="none"><path pathLength="1" d="M6 74C120 74 150 16 280 20S430 86 560 64 720 8 860 28 1010 80 1126 22"/></svg>
+  </div>
+</section>
+
+<section class="manifeste">
+  <div class="wrap"><p id="manifeste">Le soin, c'est votre métier. Les mutuelles, les quotas, les factures et la comptabilité, c'est le nôtre.</p></div>
+</section>
+
+<section class="parcours" id="parcours" tabindex="-1" aria-label="Le parcours d'un patient">
+  <div class="wrap">
+    <div class="parcours-tete">
+      <h2 class="seul-logo">Un dossier de logopédie dans Minerva, de bout en bout.</h2>
+      <p class="exemple seul-logo">Exemple : Emma, 7 ans. Pour un adulte, aphasie ou dysphagie par exemple, Minerva suit les pièces et les règles de sa pathologie.</p>
+      <h2 class="seul-kine">Un trajet de kinésithérapie dans Minerva, de bout en bout.</h2>
+      <div class="tva" role="group" aria-label="Choisir le métier">
+        <button type="button" data-choix="logo">Logopédie</button>
+        <button type="button" data-choix="kine">Kinésithérapie</button>
+      </div>
+    </div>
+    <div class="etapes seul-logo">
+      <p class="libelle">Minerva, ce que fait le cabinet</p>
+
+      <article class="etape" data-etape="0">
+        <span class="num" aria-hidden="true">1</span>
+        <div>
+          <h2>Le premier rendez-vous</h2>
+          <p>Anamnèse, premières démarches, explications au patient ou à ses parents : tout part de là.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Anamnèse guidée, gardée au dossier</li>
+            <li><svg><use href="#i-coche"/></svg>La démarche reste accessible dans Aria</li>
+          </ul>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : la démarche, dans Aria.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="1">
+        <span class="num" aria-hidden="true">2</span>
+        <div>
+          <h2>Le bilan</h2>
+          <p>Les épreuves, puis la rédaction, directement dans le dossier.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Épreuves adaptées à l'âge et au trouble</li>
+          </ul>
+          <figure><img src="images/emma-dossier.jpg" alt="Dossier d'Emma Lambert dans Minerva" width="1180" height="760" loading="lazy"></figure>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : les démarches avancent déjà.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="2">
+        <span class="num" aria-hidden="true">3</span>
+        <div>
+          <h2>La collecte du dossier</h2>
+          <p>En parallèle, le patient ou ses proches réunissent les pièces utiles selon la pathologie : prescription, test de QI, audiogramme, examen de déglutition.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Les documents arrivent d'eux-mêmes au dossier</li>
+          </ul>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : quelle pièce, chez qui, envoyée en photo.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="3">
+        <span class="num" aria-hidden="true">4</span>
+        <div>
+          <h2>La demande d'accord</h2>
+          <p>Tout est réuni : le formulaire se remplit seul, il ne reste qu'à l'envoyer.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Moins de recopie, moins d'oublis</li>
+          </ul>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : la demande est partie.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="4">
+        <span class="num" aria-hidden="true">5</span>
+        <div>
+          <h2>L'accord et le traitement</h2>
+          <p>L'accord vaut 1 à 2 ans selon la pathologie : la facturation est en ordre, la rééducation suit son cours.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Vous pointez, Minerva prépare le reste</li>
+          </ul>
+          <figure><img src="images/emma-trajet.jpg" alt="Trajet de soins d'Emma Lambert dans Minerva" width="1180" height="760" loading="lazy"></figure>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : les rendez-vous, dans Aria.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="5">
+        <span class="num" aria-hidden="true">6</span>
+        <div>
+          <h2>La facture et l'encaissement</h2>
+          <p>En fin de mois, les factures sont prêtes et partent dans Aria. Mutuelle et patient se suivent séparément.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Vous voyez si la facture est ouverte, puis payée</li>
+            <li><svg><use href="#i-coche"/></svg>Les impayés ne passent plus inaperçus</li>
+          </ul>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : la facture, dans Aria.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="6">
+        <span class="num" aria-hidden="true">7</span>
+        <div>
+          <h2>La comptabilité</h2>
+          <p>Chaque paiement reçu rejoint vos recettes. Vous savez où vous en êtes et ce qu'il faut mettre de côté, sans attendre la fin de l'année.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Vos recettes et vos frais, trimestre par trimestre</li>
+            <li><svg><use href="#i-coche"/></svg>Un tableau prêt pour votre comptable · <a href="#comptabilite">En savoir plus</a></li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+    <div class="etapes seul-kine">
+      <p class="libelle">Minerva, ce que fait le kiné</p>
+
+      <article class="etape" data-etape="0">
+        <span class="num" aria-hidden="true">1</span>
+        <div>
+          <h2>La prescription</h2>
+          <p>Thomas, 52 ans, arrive avec une prescription. Sa carte d'identité passe au lecteur et son trajet s'ouvre.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>La prescription reste attachée au trajet</li>
+            <li><svg><use href="#i-coche"/></svg>La renouveler se fait en un clic</li>
+          </ul>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Dans le dossier : le trajet est ouvert.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="1">
+        <span class="num" aria-hidden="true">2</span>
+        <div>
+          <h2>Assurabilité et accord</h2>
+          <p>Member Data vérifie l'assurabilité du patient, eAgreement gère l'accord, directement depuis le dossier.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Vous voyez tout de suite ce qui manque</li>
+            <li><svg><use href="#i-coche"/></svg>La séance n'attend pas pour autant</li>
+          </ul>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Dans le dossier : tout est prêt à envoyer.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="2">
+        <span class="num" aria-hidden="true">3</span>
+        <div>
+          <h2>Les séances</h2>
+          <p>Le bon code vous est proposé à chaque séance, compteurs à jour. Vous savez toujours où en est votre patient.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Vous pointez d'un geste, entre deux patients</li>
+            <li><svg><use href="#i-coche"/></svg>Pathologies courantes comme lourdes</li>
+          </ul>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Dans le dossier : le compteur de séances est à jour.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="3">
+        <span class="num" aria-hidden="true">4</span>
+        <div>
+          <h2>L'attestation</h2>
+          <p>Au comptant, l'eAttest part depuis le dossier. En tiers payant, la séance rejoint votre prochaine facturation.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Part mutuelle et part patient bien séparées</li>
+            <li><svg><use href="#i-coche"/></svg>Un justificatif pour le patient</li>
+          </ul>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Dans le dossier : la séance est attestée.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="4">
+        <span class="num" aria-hidden="true">5</span>
+        <div>
+          <h2>eFact, eAttest et l'encaissement</h2>
+          <p>Tiers payant avec eFact, paiement au comptant avec eAttest : tout se suit au même endroit, jusqu'à l'encaissement. Une séance rejetée revient d'elle-même à refacturer.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Un rapport clair chaque mois</li>
+            <li><svg><use href="#i-coche"/></svg>Les trajets sans remboursement aussi</li>
+          </ul>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Dans le dossier : chaque paiement est suivi jusqu'au bout.</p>
+        </div>
+      </article>
+
+      <article class="etape" data-etape="5">
+        <span class="num" aria-hidden="true">6</span>
+        <div>
+          <h2>La comptabilité</h2>
+          <p>Chaque paiement reçu rejoint vos recettes. Vous savez où vous en êtes et ce qu'il faut mettre de côté, sans attendre la fin de l'année.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Vos recettes et vos frais, trimestre par trimestre</li>
+            <li><svg><use href="#i-coche"/></svg>Un tableau prêt pour votre comptable · <a href="#comptabilite">En savoir plus</a></li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+
+    <aside class="telephone seul-logo appareil" data-pour="logo" aria-label="Ce que voit le parent dans Aria">
+      <p class="libelle">Aria, ce que voit le parent</p>
+      <div class="cadre">
+        <div class="ecran-haut"><svg><use href="#i-aria"/></svg><div><b>Aria</b><small>Écosystème Minerva</small></div></div>
+        <div class="ecran">
+          <h3>Bonjour Sophie</h3>
+          <p class="bonjour">Voici où en sont les démarches d'Emma.</p>
+          <div class="jauge"><div class="n"><b>Emma Lambert</b><span class="jauge-texte"></span></div><div class="barre"><i class="jauge-barre"></i></div></div>
+          <p class="titre-liste"></p>
+          <div class="pieces"></div>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="telephone seul-kine appareil" data-pour="kine" aria-label="Dossier de démonstration dans Minerva">
+      <p class="libelle">Minerva, le dossier du patient</p>
+      <div class="cadre fiche">
+        <div class="ecran-haut"><svg><use href="#i-marque"/></svg><div><b>Minerva</b><small>Kinésithérapie</small></div></div>
+        <div class="ecran">
+          <h3>Thomas Claes</h3>
+          <p class="bonjour">Pathologie courante · au cabinet</p>
+          <div class="jauge"><div class="n"><b>Séances</b><span class="jauge-texte"></span></div><div class="barre"><i class="jauge-barre"></i></div></div>
+          <p class="titre-liste"></p>
+          <div class="pieces"></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="minerva" id="comptabilite">
+  <div class="wrap">
+    <h2>La comptabilité, dans le même outil.</h2>
+    <p class="sous">Vos recettes s'ajoutent toutes seules, vos frais se rangent au même endroit. D'un coup d'œil, vous voyez ce qui vous reste vraiment.</p>
+    <div class="ecran-compta"><figure class="sans-rail" id="ecran-compta"><img src="images/compta-bilan.jpg" alt="Comptabilité dans Minerva : tableau de l'année par trimestre, recettes, frais, cotisations et impôt" width="1440" height="1000" loading="lazy"></figure></div>
+    <dl>
+      <div><dt>Vos recettes</dt><dd>Chaque paiement reçu, trimestre par trimestre.</dd></div>
+      <div><dt>Vos frais</dt><dd>Vos dépenses du cabinet, classées, relevés bancaires compris.</dd></div>
+      <div><dt>Ce qu'il faut mettre de côté</dt><dd>Une estimation de vos cotisations et de votre impôt, pour éviter les mauvaises surprises.</dd></div>
+      <div><dt>Un tableau pour votre comptable</dt><dd>Votre année résumée, prête à lui transmettre.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="mcn seul-kine" id="mycarenet-kine">
+  <div class="wrap">
+    <div>
+      <h2>Tout MyCareNet, dans le dossier.</h2>
+      <p class="sous">Plus besoin de passer d'un site à l'autre : chaque échange avec la mutuelle part de Minerva.</p>
+    </div>
+    <ul class="services">
+      <li><b>Member Data</b><span class="dispo">Disponible</span></li>
+      <li><b>eAgreement</b><span class="dispo">Disponible</span></li>
+      <li><b>eAttest</b><span class="dispo">Disponible</span></li>
+      <li><b>eFact</b><span class="dispo">Disponible</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="mcn seul-logo" id="mycarenet-logo">
+  <div class="wrap">
+    <div>
+      <h2>Prêt pour la digitalisation de la logopédie.</h2>
+      <p class="sous">Member Data est disponible dès aujourd'hui. La suite sera activée dès que MyCareNet l'ouvrira à la logopédie, et nous suivons de près l'arrivée de la facturation électronique.</p>
+    </div>
+    <ul class="services">
+      <li><b>Member Data</b><span class="dispo">Disponible</span></li>
+      <li><b>eAgreement</b><span class="suite">Dès son ouverture</span></li>
+      <li><b>eAttest</b><span class="suite">Dès son ouverture</span></li>
+      <li><b>eFact</b><span class="suite">Dès son ouverture</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cabinet" id="cabinet">
+  <div class="wrap">
+    <h2>Et tout le reste du cabinet.</h2>
+    <dl>
+      <div><dt>L'agenda</dt><dd>Toute l'équipe, en un coup d'œil.</dd></div>
+      <div><dt>L'équipe</dt><dd>Chacun voit ce qui le concerne.</dd></div>
+      <div><dt>Le suivi</dt><dd>Ce qui est à faire aujourd'hui, en premier.</dd></div>
+      <div><dt>Deux métiers, un toit</dt><dd>Logopédie et kiné dans le même dossier patient.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="aria seul-logo" id="aria">
+  <div class="wrap">
+    <div class="aria-tete">
+      <h2>Aria, le portail du patient et de sa famille.</h2>
+      <p class="sous">Dossier, rendez-vous et factures : le cabinet et la famille suivent tout, chacun sur son écran. Aria s'ajoute à Minerva ou à votre logiciel.</p>
+    </div>
+  </div>
+  <div class="aria-pin" id="aria-pin"><div class="wrap aria-scene">
+    <div class="moments" role="group" aria-label="Les moments du dossier">
+        <button type="button" data-moment="0" aria-pressed="true">Le dossier s'ouvre</button>
+        <button type="button" data-moment="1" aria-pressed="false">Les pièces arrivent</button>
+        <button type="button" data-moment="2" aria-pressed="false">Le bilan est remis</button>
+        <button type="button" data-moment="3" aria-pressed="false">Le dossier est complet</button>
+        <button type="button" data-moment="4" aria-pressed="false">Les rendez-vous suivent</button>
+        <button type="button" data-moment="5" aria-pressed="false">Les factures arrivent</button>
+    </div>
+    <p class="moment-texte" id="moment-texte" aria-live="polite">Le cabinet crée le dossier d'Emma. Sophie voit aussitôt les pièces à réunir, et chez qui les demander.</p>
+    <div class="duo-aria">
+      <figure class="cote-cabinet">
+        <figcaption>Côté cabinet</figcaption>
+        <div class="empile" data-empile><img src="images/aria-cabinet-1.jpg" alt="Dossier d'Emma Lambert dans Aria, côté cabinet : le dossier s'ouvre" width="788" height="600" class="visible"><img src="images/aria-cabinet-2.jpg" alt="Dossier d'Emma Lambert dans Aria, côté cabinet : les pièces arrivent" width="788" height="600" loading="lazy"><img src="images/aria-cabinet-3.jpg" alt="Dossier d'Emma Lambert dans Aria, côté cabinet : le bilan est remis" width="788" height="600" loading="lazy"><img src="images/aria-cabinet-4.jpg" alt="Dossier d'Emma Lambert dans Aria, côté cabinet : le dossier est complet" width="788" height="600" loading="lazy"><img src="images/minerva-agenda.jpg" alt="Agenda de Minerva : les rendez-vous de la semaine" width="1048" height="798" loading="lazy"><img class="entier" src="images/aria-cabinet-6.jpg" alt="Suivi des factures dans Aria, côté cabinet : à payer, payée, vue ou non" width="788" height="600" loading="lazy"></div>
+      </figure>
+      <figure class="cote-tel">
+        <figcaption>Côté parent</figcaption>
+        <div class="cadre photo"><div class="empile" data-empile><img src="images/aria-parent-1.jpg" alt="Espace parent d'Aria sur téléphone : le dossier s'ouvre" width="375" height="770" class="visible"><img src="images/aria-parent-2.jpg" alt="Espace parent d'Aria sur téléphone : les pièces arrivent" width="375" height="770" loading="lazy"><img src="images/aria-parent-3.jpg" alt="Espace parent d'Aria sur téléphone : le bilan est remis" width="375" height="770" loading="lazy"><img src="images/aria-parent-4.jpg" alt="Espace parent d'Aria sur téléphone : le dossier est complet" width="375" height="770" loading="lazy"><img src="images/aria-parent-5.jpg" alt="Espace parent d'Aria : les prochains rendez-vous d'Emma" width="375" height="770" loading="lazy"><img src="images/aria-parent-6.jpg" alt="Espace parent d&#39;Aria sur téléphone : paiement de la facture" width="375" height="770" loading="lazy"></div></div>
+      </figure>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="tarifs" id="tarifs">
+  <div class="wrap">
+    <div class="tete">
+      <div>
+        <h2>Des prix simples.</h2>
+        <p>Tous nos prix sont TTC : pour une profession médicale, la TVA n'est pas récupérable. Sans engagement, résiliable chaque mois.</p>
+      </div>
+    </div>
+
+    <h3 class="gamme-titre">Minerva</h3>
+    <div class="gamme deux">
+      <article class="offre phare">
+        <span class="qui">Logopédie ou kinésithérapie</span>
+        <h3>Par thérapeute</h3>
+        <div class="prix"><b>39,99 € TTC</b><span>/ mois</span></div>
+        <p>Toutes les fonctions. Accès secrétariat et module comptabilité inclus.<span class="seul-kine"> Member Data, eAgreement, eAttest et eFact inclus.</span><span class="seul-logo"> Member Data inclus, le reste de MyCareNet dès son ouverture à la logopédie.</span></p>
+        <a class="btn" href="#contact">Nous contacter</a>
+      </article>
+      <article class="offre phare">
+        <span class="qui">Offre Minerva</span>
+        <h3>Nouveau diplômé</h3>
+        <div class="prix"><b>3 mois gratuits</b></div>
+        <p>Pour le thérapeute diplômé dans l'année où il prend son contrat.</p>
+        <a class="btn" href="#contact">Nous contacter</a>
+      </article>
+    </div>
+
+    <h3 class="gamme-titre seul-logo">Aria</h3>
+    <div class="gamme deux seul-logo">
+      <article class="offre phare"><span class="qui">Découverte</span><h3>Gratuit</h3><div class="prix"><b>0 €</b></div><p>3 dossiers actifs, espace patient complet.</p></article>
+      <article class="offre phare"><span class="qui">Aria</span><h3>Par thérapeute</h3><div class="prix"><b>9,99 € TTC</b><span>/ mois</span></div><p>Dossiers illimités, rappels SMS, import de patients et lien avec votre logiciel.</p></article>
+    </div>
+
+    <div class="sms seul-logo">
+      <span>Crédits SMS, sans expiration</span>
+      <span><b>18,15 € TTC</b> · 100 SMS</span>
+      <span><b>42,35 € TTC</b> · 250 SMS</span>
+      <span><b>78,65 € TTC</b> · 500 SMS</span>
+      <span><b>145,20 € TTC</b> · 1 000 SMS</span>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2>Avant de commencer.</h2>
+    <div>
+      <details>
+        <summary>Minerva est-il relié à MyCareNet ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Oui. En kinésithérapie, Member Data, eAgreement, eAttest et eFact sont disponibles. En logopédie, Member Data est disponible, et le reste sera activé dès que MyCareNet l'ouvrira à la profession.</p></div>
+      </details>
+      <details class="seul-kine">
+        <summary>Aria existe-t-elle pour les kinés ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Non. Aria suit aujourd'hui les dossiers mutuelle de logopédie. En kinésithérapie, Minerva couvre le trajet complet sans elle.</p></div>
+      </details>
+      <details>
+        <summary>Un centre peut-il réunir logopèdes et kinés ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Oui. Un patient commun a un seul dossier, et chaque métier garde ses règles et ses notes cliniques.</p></div>
+      </details>
+      <details>
+        <summary>Que se passe-t-il si un patient n'a pas encore d'accord ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Vous travaillez normalement. La séance attend simplement d'être complétée, et vous la régularisez quand le dossier est prêt.</p></div>
+      </details>
+      <details>
+        <summary>Comment le code INAMI est-il choisi ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Minerva le propose d'après le dossier et la séance, en suivant les règles officielles de votre métier. Quand une règle n'est pas claire ou pas implémentée, Minerva le dit et vous laisse la main plutôt que de deviner.</p></div>
+      </details>
+      <details>
+        <summary>Comment fonctionne le tiers payant ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>La part de la mutuelle et celle du patient sont préparées séparément, et chacune se suit jusqu'au paiement.</p></div>
+      </details>
+      <details class="seul-logo">
+        <summary>Les patients voient-ils leurs rendez-vous ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Oui, quand Aria est reliée à l'agenda de Minerva. Ils voient leurs prochains rendez-vous, sont prévenus d'un changement et reçoivent un rappel avant la séance.</p></div>
+      </details>
+      <details class="seul-logo">
+        <summary>Les factures arrivent-elles dans Aria ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Oui. Vous l'envoyez depuis Minerva et son destinataire la retrouve dans son espace : lui seul la voit, même si deux parents suivent le dossier. Il règle depuis son application bancaire, en scannant un code ou en copiant le compte, le montant et la communication. Le même code figure sur la facture, imprimée ou reçue par e-mail. Vous voyez si elle a été ouverte, puis payée.</p></div>
+      </details>
+      <details class="seul-logo">
+        <summary>Les patients doivent-ils installer une application ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Non. Ils reçoivent une invitation par e-mail et tout se passe dans le navigateur de leur téléphone.</p></div>
+      </details>
+      <details>
+        <summary>Où sont hébergées les données ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>En Belgique ou dans l'Union européenne, dans le respect du RGPD.</p></div>
+      </details>
+      <details class="seul-logo">
+        <summary>Puis-je reprendre mes patients depuis mon logiciel actuel ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Oui, votre liste de patients s'importe, et les prises en charge en cours se reprennent avec ce qui a déjà été consommé.</p></div>
+      </details>
+      <details>
+        <summary>Minerva remplace-t-il mon comptable ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Non, il lui facilite la vie. La comptabilité de Minerva vous donne une estimation et un tableau de l'année ; les montants réels restent établis avec votre comptable, votre caisse et le SPF Finances.</p></div>
+      </details>
+      <details>
+        <summary>Y a-t-il un engagement ou des frais d'installation ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Aucun. L'abonnement se résilie chaque mois, et vos données restent exportables à tout moment.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Parlons de votre cabinet.</h2>
+    <p>Dites-nous ce qui vous prend le plus de temps aujourd'hui. Nous vous montrons ce que Minerva peut changer.</p>
+    <!-- shortcut: le formulaire prépare un e-mail dans la messagerie du visiteur ; à relier à un service d'envoi si le site a un serveur -->
+    <form class="formulaire" id="form-contact">
+      <label>Votre nom<input name="nom" required maxlength="100" autocomplete="name"></label>
+      <label>Votre e-mail<input name="email" type="email" required maxlength="150" autocomplete="email"></label>
+      <label>Votre métier
+        <select name="metier" required>
+          <option value="">Choisir…</option>
+          <option value="Logopède">Logopède</option>
+          <option value="Kinésithérapeute">Kinésithérapeute</option>
+          <option value="Centre">Centre</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </label>
+      <label>Votre cabinet<input name="cabinet" maxlength="120" autocomplete="organization"></label>
+      <label class="large">Votre message<textarea name="message" rows="5" required maxlength="2000"></textarea></label>
+      <div class="large envoi">
+        <button class="btn btn-plein" type="submit">Envoyer le message</button>
+        <span>Ou écrivez-nous à <a href="mailto:info@minerva.be">info@minerva.be</a></span>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Minerva<span class="seul-logo"> · Aria</span> — un espace pour organiser les soins.</span>
+    <span><span class="seul-logo">Emma et Sophie sont des personnages fictifs.</span><span class="seul-kine">Thomas est un personnage fictif.</span> Police Source Sans 3, <a href="fonts/OFL-SourceSans3.md">licence OFL</a>.</span>
+  </div>
+</footer>
+
+<script>
+// L'écran collé à droite suit l'étape visible, pour le métier choisi. Données fictives de démonstration.
+const ETATS={
+  logo:{total:9,etats:[
+    {fait:0,titre:'À faire maintenant',pieces:[
+      {c:'faire',t:'Prescription de bilan',s:'Chez votre médecin, datée avant le bilan',go:'Envoyer en photo'},
+      {c:'faire',t:'Test de QI',s:'Chez un neuropsychologue'}]},
+    {fait:1,titre:'En cours',pieces:[
+      {c:'ok',t:'Prescription de bilan',s:'Reçue, en ordre'},
+      {c:'cours',t:'Bilan logopédique',s:'Le cabinet s\u2019en charge'}]},
+    {fait:4,titre:'À faire maintenant',pieces:[
+      {c:'ok',t:'Test de QI',s:'Reçu, en ordre'},
+      {c:'faire',t:'Audiogramme',s:'Directement chez un ORL',go:'Envoyer en photo'},
+      {c:'faire',t:'Prescription de traitement',s:'Au même rendez-vous, si possible'}]},
+    {fait:7,titre:'En cours',pieces:[
+      {c:'ok',t:'Toutes les pièces sont réunies',s:'Merci, votre dossier est complet'},
+      {c:'cours',t:'Demande à la mutuelle',s:'Envoyée par le cabinet'}]},
+    {fait:9,titre:'Prochain rendez-vous',pieces:[
+      {c:'ok',t:'Accord de la mutuelle',s:'Reçu, tout est en ordre'},
+      {c:'sms',t:'Vendredi à 16 h 30',s:'Séance d\u2019Emma avec Léa, au cabinet'}]},
+    {fait:9,titre:'Factures',pieces:[
+      {c:'faire',t:'Facture d\u2019octobre',s:'Disponible, à régler'},
+      {c:'ok',t:'Facture de septembre',s:'Payée'}]},
+    {fait:9,titre:'Tout est en ordre',pieces:[
+      {c:'ok',t:'Rien à fournir',s:'Le cabinet vous préviendra avant la prolongation'}]}]},
+  kine:{total:18,etats:[
+    {fait:0,titre:'À faire maintenant',pieces:[
+      {c:'ok',t:'Trajet ouvert',s:'Pathologie courante'},
+      {c:'faire',t:'Joindre la prescription',s:'Scan lié à cette prescription',go:'Ajouter le PDF'}]},
+    {fait:0,titre:'En cours',pieces:[
+      {c:'ok',t:'Member Data',s:'Assurabilité vérifiée'},
+      {c:'cours',t:'eAgreement',s:'Prêt à envoyer'}]},
+    {fait:9,titre:'En cours',pieces:[
+      {c:'ok',t:'Séance du jour clôturée',s:'Code proposé puis confirmé'},
+      {c:'cours',t:'Compteurs à jour',s:'9 séances faites sur 18'}]},
+    {fait:10,titre:'À faire maintenant',pieces:[
+      {c:'ok',t:'Séance clôturée',s:'Part mutuelle et part patient séparées'},
+      {c:'faire',t:'eAttest',s:'Paiement au comptant',go:'Envoyer l\u2019eAttest'}]},
+    {fait:18,titre:'En cours',pieces:[
+      {c:'ok',t:'eFact',s:'Tiers payant envoyé à la mutuelle'},
+      {c:'ok',t:'eAttest',s:'Séances au comptant attestées'},
+      {c:'cours',t:'Décompte de la mutuelle',s:'En attente de la réponse'}]},
+    {fait:18,titre:'Cette année',pieces:[
+      {c:'ok',t:'Recettes du trimestre',s:'À jour'},
+      {c:'cours',t:'À mettre de côté',s:'Estimation de l\u2019année'}]}]}
+};
+const ICONE={ok:'i-coche',cours:'i-horloge',faire:'i-rond',sms:'i-bulle'};
+const racine=document.documentElement;
+function afficherEtat(n){
+  const m=racine.dataset.metier;
+  const app=document.querySelector('.appareil[data-pour="'+m+'"]');
+  if(!app)return;
+  const {total,etats}=ETATS[m],e=etats[n];
+  app.querySelector('.jauge-texte').textContent=e.fait+' sur '+total;
+  app.querySelector('.jauge-barre').style.width=(e.fait/total*100)+'%';
+  const aFaire=e.pieces.filter(p=>p.c==='faire').length;
+  app.querySelector('.titre-liste').innerHTML=e.titre+(aFaire?' <span>'+aFaire+'</span>':'');
+  app.querySelector('.pieces').innerHTML=e.pieces.map(p=>
+    '<div class="piece '+p.c+'"><b><svg><use href="#'+ICONE[p.c]+'"/></svg>'+p.t+'</b><span>'+p.s+'</span>'+(p.go?'<div class="go">'+p.go+'</div>':'')+'</div>').join('');
+  document.querySelectorAll('.etapes.seul-'+m+' .etape').forEach((el,i)=>{el.classList.toggle('active',i===n);el.classList.toggle('faite',i<n)});
+}
+let courante=-1;
+const obs=new IntersectionObserver(entrees=>{
+  const visible=entrees.filter(x=>x.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+  if(!visible)return;
+  const n=Number(visible.target.dataset.etape);
+  if(n!==courante){courante=n;afficherEtat(n)}
+},{rootMargin:'-35% 0px -45% 0px',threshold:[0,.25,.5,.75,1]});
+document.querySelectorAll('.etape').forEach(el=>obs.observe(el));
+
+function choisirMetier(m,defiler){
+  racine.dataset.metier=m;
+  
+  document.querySelectorAll('[data-choix]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.choix===m)));
+  courante=-1;afficherEtat(0);
+  document.querySelectorAll('.porte').forEach(a=>a.dataset.metier===m?a.setAttribute('aria-current','true'):a.removeAttribute('aria-current'));
+  if(defiler){const z=document.getElementById('parcours');z.scrollIntoView();z.focus({preventScroll:true})}
+}
+document.querySelectorAll('.porte').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault();choisirMetier(a.dataset.metier,true)}));
+document.querySelectorAll('[data-choix]').forEach(b=>b.addEventListener('click',()=>choisirMetier(b.dataset.choix,false)));
+// Sans métier choisi, « Le parcours » ramène aux deux portes.
+document.querySelector('.haut nav a[href="#parcours"]').addEventListener('click',ev=>{
+  if(racine.dataset.metier==='aucun'){ev.preventDefault();document.getElementById('choix').scrollIntoView({block:'center'})}
+});
+if(racine.dataset.metier!=='aucun'){
+  document.querySelector('.porte[data-metier="'+racine.dataset.metier+'"]').setAttribute('aria-current','true');
+  document.querySelectorAll('[data-choix]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.choix===racine.dataset.metier)));
+  afficherEtat(0);
+  if(location.hash==='#parcours')document.getElementById('parcours').scrollIntoView();
+}
+
+// Aria : le cabinet et le téléphone du parent avancent ensemble, moment par moment.
+const MOMENTS=["Le cabinet crée le dossier d’Emma. Sophie voit aussitôt les pièces à réunir, et chez qui les demander.", "Sophie envoie les documents en photo. Ils apparaissent reçus au cabinet, et elle sait que le bilan est en route.", "Le cabinet avance d’une étape, et la suite s’affiche chez Sophie, avec les bons conseils.", "Tout est en ordre, des deux côtés. Plus personne ne court après un document.", "Chaque rendez-vous de l’agenda de Minerva apparaît chez Sophie, avec un rappel avant la séance.", "La facture part de Minerva et arrive chez Sophie, qui règle depuis sa banque, avec un code à scanner ou les informations à copier. Le cabinet suit le paiement."];
+function montrerMoment(n){
+  document.querySelectorAll('[data-moment]').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));
+  document.querySelectorAll('[data-empile]').forEach(e=>[...e.children].forEach((img,i)=>{img.loading='eager';img.classList.toggle('visible',i===n)}));
+  document.getElementById('moment-texte').textContent=MOMENTS[n];
+}
+// La roulette fait avancer les moments ; cliquer sur un moment fait défiler jusqu'à lui.
+const pin=document.getElementById('aria-pin');let momentCourant=0;
+document.querySelectorAll('[data-moment]').forEach(b=>b.addEventListener('click',()=>{
+  const t=pin.getBoundingClientRect().top+scrollY-68,course=pin.offsetHeight-(innerHeight-68);
+  scrollTo({top:t+course*(Number(b.dataset.moment)+.5)/MOMENTS.length,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
+}));
+
+// Contact : ouvre la messagerie du visiteur avec le message déjà rédigé.
+function lienContact(f){
+  const corps=['Nom : '+f.nom,'E-mail : '+f.email,'Métier : '+f.metier,'Cabinet : '+(f.cabinet||'non précisé'),'',f.message].join('\r\n');
+  return 'mailto:info@minerva.be?subject='+encodeURIComponent('Minerva · '+f.metier+' · '+f.nom)+'&body='+encodeURIComponent(corps);
+}
+const formContact=document.getElementById('form-contact');
+formContact.addEventListener('submit',ev=>{ev.preventDefault();location.href=lienContact(Object.fromEntries(new FormData(formContact)))});
+// Le métier choisi en haut de page préremplit le formulaire.
+const metierContact={logo:'Logopède',kine:'Kinésithérapeute'};
+const preremplirMetier=()=>{const v=metierContact[racine.dataset.metier];if(v)formContact.elements.metier.value=v};
+preremplirMetier();
+document.querySelectorAll('.porte,[data-choix]').forEach(el=>el.addEventListener('click',preremplirMetier));
+
+// Mouvement de la V3 : un seul fil, le trajet. Rien de tout cela si le visiteur réduit les animations.
+const calme=matchMedia('(prefers-reduced-motion:reduce)').matches,borne=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const mots=(()=>{const p=document.getElementById('manifeste'),fort=/^(soin|métier|nôtre)/;p.innerHTML=p.textContent.split(' ').map(w=>'<span class="m'+(fort.test(w)?' hl':'')+'">'+w+'</span>').join(' ');return [...p.children]})();
+// La ligne passe par le centre de chaque numéro d'étape, en ondulant : elle se recalcule si la hauteur change.
+const NS='http://www.w3.org/2000/svg';
+const fils=[...document.querySelectorAll('.etapes')].map(el=>{
+  const svg=document.createElementNS(NS,'svg'),fond=document.createElementNS(NS,'path'),trace=document.createElementNS(NS,'path');
+  svg.setAttribute('class','fil');svg.setAttribute('aria-hidden','true');fond.setAttribute('class','fond');trace.setAttribute('class','trace');trace.setAttribute('pathLength','1');
+  svg.append(fond,trace);el.prepend(svg);return {el,svg,fond,trace};
+});
+function tracerFil(f){
+  const b=f.el.getBoundingClientRect();if(!b.height)return;
+  const c=[...f.el.querySelectorAll('.num')].map(n=>{const r=n.getBoundingClientRect();return [r.left-b.left+r.width/2,r.top-b.top+r.height/2]});
+  f.svg.setAttribute('viewBox','0 0 '+b.width+' '+b.height);f.svg.setAttribute('width',b.width);f.svg.setAttribute('height',b.height);
+  const onde=Math.min(26,b.width*.05);
+  const d=c.map(([x,y],i)=>{if(!i)return 'M'+x+' '+y;const [a,z]=c[i-1],t=(y-z)*.5,s=i%2?onde:-onde;return 'C'+(a+s)+' '+(z+t)+' '+(x+s)+' '+(y-t)+' '+x+' '+y}).join('');
+  f.fond.setAttribute('d',d);f.trace.setAttribute('d',d);
+  f.haut=c[0][1];f.bas=c[c.length-1][1];animerPage();
+}
+function animerPage(){
+  const h=innerHeight;
+  const r=document.getElementById('manifeste').getBoundingClientRect(),pm=calme?1:borne((h*.85-r.top)/(r.height+h*.45));
+  mots.forEach((w,i)=>{w.style.opacity=i/mots.length<pm?1:.18});
+  fils.forEach(f=>{if(!f.bas)return;const t=f.el.getBoundingClientRect().top,p=calme?1:borne((h*.55-t-f.haut)/(f.bas-f.haut));f.trace.style.strokeDashoffset=1-p});
+  if(pin.offsetHeight){const q=pin.getBoundingClientRect(),n=Math.min(MOMENTS.length-1,Math.floor(borne((68-q.top)/(q.height-(h-68)))*MOMENTS.length));if(n!==momentCourant){momentCourant=n;montrerMoment(n)}}
+  const e=document.getElementById('ecran-compta'),ec=e.getBoundingClientRect(),pe=calme?1:borne((h-ec.top)/(h*.72));
+  e.style.transform='rotateX('+((1-pe)*14)+'deg) scale('+(.93+pe*.07)+')';
+}
+const suivi=new ResizeObserver(es=>es.forEach(x=>tracerFil(fils.find(f=>f.el===x.target))));
+fils.forEach(f=>suivi.observe(f.el));
+let enAttente=false;addEventListener('scroll',()=>{if(!enAttente){enAttente=true;requestAnimationFrame(()=>{enAttente=false;animerPage()})}},{passive:true});
+addEventListener('resize',animerPage);animerPage();
+
+// Auto-contrôles.
+console.assert(lienContact({nom:'A & B',email:'a@b.be',metier:'Logopède',cabinet:'',message:'Bonjour ?'}).includes('A%20%26%20B'),'lien de contact mal encodé');
+['logo','kine'].forEach(m=>console.assert(ETATS[m].etats.length===document.querySelectorAll('.etapes.seul-'+m+' .etape').length,'étape sans état : '+m));
+</script>
+</body>
+</html>

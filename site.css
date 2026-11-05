@@ -1,0 +1,381 @@
+/* Site de présentation Minerva · Aria — composition « Un dossier, pas à pas » (choisie le 05/11/2026).
+   Identité « Pierre bleue vivante » (DESIGN.md, 04/11/2026) : chaux, panneaux blancs, pierre bleue, action pétrole,
+   Source Sans 3 servie localement, coins 12 px, ombre douce. Une seule animation d'entrée ; le téléphone d'Aria
+   change d'état au défilement des étapes. */
+@font-face{font-family:'Source Sans 3';font-weight:400;font-display:swap;src:url(fonts/SourceSans3-Regular.woff2) format('woff2')}
+@font-face{font-family:'Source Sans 3';font-weight:500;font-display:swap;src:url(fonts/SourceSans3-Medium.woff2) format('woff2')}
+@font-face{font-family:'Source Sans 3';font-weight:600;font-display:swap;src:url(fonts/SourceSans3-Semibold.woff2) format('woff2')}
+@font-face{font-family:'Source Sans 3';font-weight:700;font-display:swap;src:url(fonts/SourceSans3-Bold.woff2) format('woff2')}
+
+:root{
+  --chaux:#F3F2EE;--blanc:#FFFFFF;--pierre:#3E4A54;--pierre-fonce:#2F3941;--pierre-texte:#E4E7EA;--pierre-doux:#C3CAD0;
+  --encre:#1F2428;--doux:#5A6268;--mortier:#E2DFD6;--joint:#EEECE5;
+  --action:#0B6E7F;--action-fonce:#085866;--action-pale:#DDEFF1;
+  --lierre:#3F6B4B;--lierre-fond:#E3EDE5;--ocre:#8A5A12;--ocre-fond:#F5EBD6;
+  --ombre:0 1px 2px rgba(31,36,40,.05),0 4px 14px rgba(31,36,40,.04);
+  --ombre-haute:0 2px 4px rgba(31,36,40,.06),0 14px 32px rgba(31,36,40,.10);
+  --sortie:cubic-bezier(.16,1,.3,1);
+  --font:'Source Sans 3','Segoe UI',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--chaux);color:var(--encre);font:17px/1.5 var(--font)}
+::selection{background:var(--action-pale);color:var(--encre)}
+:focus-visible{outline:2px solid var(--action);outline-offset:3px;border-radius:4px}
+h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.015em;text-wrap:balance}
+h1{font-size:clamp(42px,6.2vw,80px);font-weight:700;letter-spacing:-.025em;line-height:1.02}
+h2{font-size:clamp(30px,3.6vw,46px);font-weight:700}
+h3{font-size:22px;font-weight:700}
+p{margin:0}
+em{font-style:normal;color:var(--action)}
+a{color:var(--action);text-underline-offset:3px}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.doux{color:var(--doux)}
+svg{display:block}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;gap:10px;height:50px;padding:0 24px;border-radius:8px;font:600 17px var(--font);text-decoration:none;cursor:pointer;border:1.5px solid var(--action);color:var(--action);background:transparent;transition:background .15s,color .15s,transform .15s var(--sortie),box-shadow .15s}
+.btn:hover{background:var(--action-pale)}
+.btn:active{transform:translateY(1px)}
+.btn-plein{background:var(--action);color:#fff}
+.btn-plein:hover{background:var(--action-fonce);box-shadow:var(--ombre-haute)}
+.btn svg{width:18px;height:18px}
+
+/* Barre du haut */
+.haut{position:sticky;top:0;z-index:10;background:rgba(243,242,238,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--mortier)}
+.haut .wrap{display:flex;align-items:center;gap:36px;height:68px}
+.marque{display:flex;align-items:center;gap:10px;color:var(--encre);text-decoration:none;font-weight:700;font-size:20px}
+.haut nav{display:flex;gap:6px;margin-left:auto;align-items:center}
+.haut nav a{color:var(--doux);text-decoration:none;font-weight:600;font-size:15.5px;padding:8px 12px;border-radius:8px}
+.haut nav a:hover{color:var(--encre);background:var(--blanc)}
+.haut nav a.btn{height:40px;padding:0 16px;font-size:15px;margin-left:10px;color:#fff}
+.haut nav a.btn:hover{background:var(--action-fonce);color:#fff}
+
+/* Ouverture */
+.ouverture{padding:104px 0 56px;text-align:left}
+.ouverture .wrap{max-width:980px}
+.ouverture h1{max-width:14ch}
+.ouverture .sous{font-size:clamp(18px,1.6vw,22px);color:var(--doux);max-width:52ch;margin:26px 0 36px;line-height:1.45}
+.ouverture .actions{display:flex;gap:12px;flex-wrap:wrap}
+.ouverture .mention{margin-top:30px;font-size:14.5px;color:var(--doux);display:inline-flex;align-items:center;gap:8px}
+/* la seule animation d'entrée du site */
+@media (prefers-reduced-motion:no-preference){
+  .ouverture>.wrap>*{animation:monter .9s var(--sortie) both}
+  .ouverture>.wrap>*:nth-child(2){animation-delay:.08s}.ouverture>.wrap>*:nth-child(3){animation-delay:.16s}.ouverture>.wrap>*:nth-child(4){animation-delay:.24s}
+  @keyframes monter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+}
+
+/* Le parcours : étapes à gauche, téléphone collé à droite */
+.parcours{padding:40px 0 96px}
+.parcours .wrap{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:72px;align-items:start}
+.etapes{display:grid;gap:28px}
+.etape{display:grid;grid-template-columns:52px 1fr;gap:22px;padding:34px 36px 34px 30px;border-radius:14px;background:transparent;transition:background .35s var(--sortie),box-shadow .35s var(--sortie)}
+.etape.active{background:var(--blanc);box-shadow:var(--ombre-haute)}
+.etape .num{width:44px;height:44px;border-radius:99px;border:2px solid var(--mortier);display:grid;place-items:center;font-weight:700;font-size:17px;color:var(--doux);transition:background .3s,color .3s,border-color .3s;margin-top:4px}
+.etape.active .num{background:var(--action);border-color:var(--action);color:#fff}
+.etape.faite .num{background:var(--lierre);border-color:var(--lierre);color:#fff}
+.etape h2{font-size:clamp(26px,2.6vw,34px);margin-bottom:12px}
+.etape p{color:var(--doux);font-size:17.5px;max-width:56ch}
+.etape ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:16px}
+.etape li{display:flex;gap:10px;align-items:flex-start}
+.etape li svg{width:18px;height:18px;flex:none;margin-top:4px;color:var(--action)}
+.etape figure{margin:22px 0 0;height:190px;overflow:hidden;border-radius:10px;border:1px solid var(--mortier);background:var(--chaux)}
+.etape figure img{width:100%;height:100%;object-fit:cover;object-position:left top;transform:scale(1.02);transition:transform .6s var(--sortie)}
+.etape.active figure img{transform:scale(1)}
+.etape .cote-parent{display:none}
+
+.telephone{position:sticky;top:96px}
+.cadre{width:100%;max-width:400px;margin:0 auto;aspect-ratio:9/18.5;background:var(--blanc);border:9px solid var(--pierre-fonce);border-radius:44px;box-shadow:var(--ombre-haute),0 30px 60px rgba(31,36,40,.16);overflow:hidden;display:flex;flex-direction:column}
+.ecran-haut{background:var(--pierre);color:#fff;padding:22px 24px 16px;display:flex;align-items:center;gap:10px}
+.ecran-haut svg{width:22px;height:22px}
+.ecran-haut b{font-size:18px}.ecran-haut small{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--pierre-doux)}
+.ecran{padding:22px 20px;display:grid;gap:14px;align-content:start;flex:1;background:var(--chaux)}
+.ecran h3{font-size:24px}
+.ecran .bonjour{color:var(--doux);font-size:15px;margin-top:-8px}
+.jauge{background:var(--blanc);border:1px solid var(--mortier);border-radius:12px;padding:14px 16px}
+.jauge .n{display:flex;justify-content:space-between;font-size:14.5px;color:var(--doux)}
+.jauge .n b{color:var(--encre)}
+.jauge .barre{height:7px;border-radius:5px;background:var(--joint);margin-top:8px;overflow:hidden}
+.jauge .barre i{display:block;height:100%;background:var(--action);border-radius:5px;transition:width .6s var(--sortie)}
+.ecran .titre-liste{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--doux);display:flex;align-items:center;gap:8px}
+.ecran .titre-liste span{background:var(--action);color:#fff;border-radius:99px;min-width:20px;height:20px;display:grid;place-items:center;font-size:12px;letter-spacing:0}
+.piece{background:var(--blanc);border:1px solid var(--mortier);border-radius:12px;padding:14px 16px;display:grid;gap:4px;animation:apparaitre .45s var(--sortie) both}
+.piece b{font-size:17px;display:flex;align-items:center;gap:8px}
+.piece b svg{width:18px;height:18px;flex:none}
+.piece span{font-size:14px;color:var(--doux)}
+.piece.ok b svg{color:var(--lierre)}.piece.cours b svg{color:var(--ocre)}.piece.faire b svg{color:var(--action)}
+.piece .go{margin-top:8px;background:var(--pierre);color:#fff;border-radius:8px;padding:10px;text-align:center;font-weight:600;font-size:14.5px}
+.piece.sms{background:var(--action-pale);border-color:transparent}
+@keyframes apparaitre{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.piece{animation:none}.jauge .barre i{transition:none}}
+
+/* Minerva, le reste du cabinet */
+.minerva{background:var(--pierre);color:var(--pierre-texte);padding:96px 0}
+.minerva h2{color:#fff;max-width:18ch}
+.minerva .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.minerva .sous{color:var(--pierre-doux);font-size:18px;margin:18px 0 28px;max-width:40ch}
+.minerva dl{margin:0;display:grid;gap:18px}
+.minerva dt{font-weight:700;font-size:18px;color:#fff}
+.minerva dd{margin:2px 0 0;color:var(--pierre-doux);font-size:16px}
+.minerva .btn{margin-top:30px;border-color:#fff;color:#fff}
+.minerva .btn:hover{background:rgba(255,255,255,.12)}
+.minerva figure{margin:0;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12)}
+
+/* Aria seule */
+.aria{padding:96px 0}
+.aria .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center}
+.aria figure{margin:0;border-radius:14px;overflow:hidden;box-shadow:var(--ombre-haute);border:1px solid var(--mortier);background:var(--blanc)}
+.aria .sous{color:var(--doux);font-size:18px;margin:18px 0 10px;max-width:42ch}
+.aria ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:17px}
+.aria li{display:flex;gap:10px}.aria li svg{width:20px;height:20px;color:var(--lierre);flex:none;margin-top:3px}
+
+/* Tarifs */
+.tarifs{padding:96px 0;background:var(--blanc);border-top:1px solid var(--mortier);border-bottom:1px solid var(--mortier)}
+.tarifs .tete{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.tarifs .tete p{color:var(--doux);max-width:52ch;margin-top:12px}
+.tva{display:inline-flex;background:var(--chaux);border-radius:10px;padding:4px}
+.tva button{border:0;background:transparent;padding:9px 16px;border-radius:7px;font:600 15px var(--font);color:var(--doux);cursor:pointer;transition:background .15s,color .15s}
+.tva button[aria-pressed="true"]{background:var(--blanc);color:var(--encre);box-shadow:var(--ombre)}
+.gamme{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gamme.quatre{grid-template-columns:repeat(4,1fr)}
+.offre{border:1px solid var(--mortier);border-radius:14px;padding:26px;display:grid;gap:12px;align-content:start;background:var(--blanc);transition:box-shadow .2s,transform .2s var(--sortie)}
+.offre:hover{box-shadow:var(--ombre-haute);transform:translateY(-2px)}
+.offre.phare{background:var(--pierre);color:var(--pierre-texte);border-color:var(--pierre)}
+.offre.phare h3,.offre.phare .prix b{color:#fff}
+.offre .qui{font-size:14px;color:var(--doux)}.offre.phare .qui{color:var(--pierre-doux)}
+.offre h3{font-size:21px}
+.prix{display:flex;align-items:baseline;gap:6px;font-variant-numeric:tabular-nums}
+.prix b{font-size:40px;letter-spacing:-.02em;line-height:1}
+.prix span{color:var(--doux);font-size:15px}.offre.phare .prix span{color:var(--pierre-doux)}
+.offre p{font-size:15px;color:var(--doux)}.offre.phare p{color:var(--pierre-doux)}
+.offre .btn{height:44px;justify-self:start;margin-top:6px;font-size:15.5px}
+.offre.phare .btn{background:#fff;color:var(--pierre);border-color:#fff}
+.offre.phare .btn:hover{background:var(--chaux)}
+.gamme-titre{font-size:14px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--doux);margin:36px 0 14px}
+.sms{margin-top:22px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;color:var(--doux);font-size:15.5px}
+.sms b{color:var(--encre);font-variant-numeric:tabular-nums}
+.sms span{background:var(--chaux);border-radius:8px;padding:8px 14px}
+.note{font-size:14px;color:var(--doux);margin-top:28px}
+
+/* Questions */
+.faq{padding:96px 0}
+.faq .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.faq h2{position:sticky;top:100px}
+.faq details{border-bottom:1px solid var(--mortier)}
+.faq details:first-of-type{border-top:1px solid var(--mortier)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px 4px;font-weight:600;font-size:18.5px;color:var(--encre)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{width:22px;height:22px;flex:none;color:var(--action);transition:transform .25s var(--sortie)}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq .r{padding:0 4px 22px;color:var(--doux);max-width:62ch}
+.faq .r p+p{margin-top:8px}
+
+/* Contact */
+.contact{padding:96px 0;text-align:center}
+.contact .wrap{max-width:760px}
+.contact p{color:var(--doux);font-size:19px;margin:18px auto 32px;max-width:48ch}
+footer{border-top:1px solid var(--mortier);padding:28px 0 40px;color:var(--doux);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:1000px){
+  .parcours .wrap,.minerva .wrap,.aria .wrap,.faq .wrap{grid-template-columns:1fr}
+  .telephone{display:none}
+  .etape .cote-parent{display:flex;gap:10px;align-items:flex-start;margin-top:18px;padding:12px 14px;border-radius:10px;background:var(--action-pale);color:var(--encre);font-size:15.5px}
+  .etape .cote-parent svg{width:18px;height:18px;flex:none;margin-top:3px;color:var(--action)}
+  .gamme,.gamme.quatre{grid-template-columns:1fr 1fr}
+  .faq h2{position:static;margin-bottom:8px}
+  .aria figure{order:2}
+  .haut nav a:not(.btn){display:none}
+}
+@media (max-width:600px){
+  .ouverture{padding:64px 0 40px}
+  .parcours,.minerva,.aria,.tarifs,.faq,.contact{padding:64px 0}
+  .etape{grid-template-columns:1fr;padding:24px 20px;gap:10px}
+  .etape .num{width:36px;height:36px;font-size:15px}
+  .gamme,.gamme.quatre{grid-template-columns:1fr}
+  .btn{height:46px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+/* Deux métiers à égalité : deux portes, puis le parcours du métier choisi. Sans JavaScript, tout reste affiché. */
+[data-metier="logo"] .seul-kine,[data-metier="kine"] .seul-logo,[data-metier="aucun"] .seul-logo,[data-metier="aucun"] .seul-kine,[data-metier="aucun"] .parcours{display:none}
+.ouverture .wrap{max-width:1180px}
+.portes{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+.porte{display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:center;padding:30px 32px;border-radius:14px;background:var(--blanc);box-shadow:var(--ombre);color:var(--encre);text-decoration:none;transition:box-shadow .2s,transform .2s var(--sortie),background .2s,color .2s}
+.porte b{font-size:clamp(24px,2.5vw,32px);letter-spacing:-.015em;line-height:1.1}
+.porte span{grid-column:1;color:var(--doux);font-size:17px;transition:color .2s}
+.porte svg{grid-column:2;grid-row:1/3;width:26px;height:26px;color:var(--action);transition:transform .2s var(--sortie),color .2s}
+[data-metier="logo"] .porte[data-metier="logo"],[data-metier="kine"] .porte[data-metier="kine"]{background:var(--pierre);color:#fff}
+[data-metier="logo"] .porte[data-metier="logo"] span,[data-metier="kine"] .porte[data-metier="kine"] span{color:var(--pierre-doux)}
+[data-metier="logo"] .porte[data-metier="logo"] svg,[data-metier="kine"] .porte[data-metier="kine"] svg{color:#fff}
+@media (hover:hover){
+  .porte:hover{background:var(--pierre);color:#fff;box-shadow:var(--ombre-haute);transform:translateY(-2px)}
+  .porte:hover span{color:var(--pierre-doux)}
+  .porte:hover svg{color:#fff;transform:translateY(3px)}
+}
+.ouverture .mention{display:block}
+.mention a{color:var(--action)}
+.parcours-tete{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.tva button{min-height:44px}
+.cadre.fiche{aspect-ratio:auto;min-height:560px;border-radius:20px}
+.cadre.fiche .ecran-haut{padding-top:16px}
+.sans-rail{aspect-ratio:620/600}
+.sans-rail img{width:100%;height:100%;object-fit:cover;object-position:right top}
+@media (max-width:700px){.portes{grid-template-columns:1fr}.porte{padding:22px}}
+.pieces{display:grid;gap:10px}
+/* Fiche de tarif : le titre d'abord ; titres de gamme sans capitales */
+.offre h3{order:-1}
+.gamme-titre{font-size:20px;letter-spacing:-.01em;text-transform:none;font-weight:700;color:var(--encre)}
+.parcours:focus{outline:none}
+/* Le téléphone tient entier dans la fenêtre, proportions conservées */
+.cadre{max-width:min(400px,calc((100vh - 120px)*9/18.5))}
+.cadre.fiche{max-width:400px}
+/* Reste du cabinet, sous la section Comptabilité */
+.cabinet{padding:80px 0;background:var(--blanc);border-bottom:1px solid var(--mortier)}
+.cabinet dl{margin:32px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.cabinet dt{font-weight:700;font-size:19px}
+.cabinet dd{margin:4px 0 0;color:var(--doux)}
+.sans-rail{aspect-ratio:1208/700}
+@media (max-width:900px){.cabinet dl{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.cabinet dl{grid-template-columns:1fr}}
+/* Capture comptable : zoom sur le contenu, sans le menu de gauche qui nomme un métier */
+.sans-rail{aspect-ratio:1208/640;overflow:hidden}
+.sans-rail img{width:119.3%;max-width:none;height:auto;margin-left:-19.3%}
+/* Tarifs Minerva : deux formules ; capture comptable calée sous l'en-tête de l'écran */
+.gamme.deux{grid-template-columns:1fr 1fr}
+.sans-rail img{margin-top:-9.9%}
+@media (max-width:600px){.gamme.deux{grid-template-columns:1fr}}
+/* MyCareNet : ce qui est disponible, métier par métier */
+.mcn{padding:88px 0}
+.mcn .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.mcn .sous{color:var(--doux);font-size:18px;margin-top:18px;max-width:46ch}
+.services{list-style:none;margin:0;padding:0;background:var(--blanc);border-radius:14px;box-shadow:var(--ombre)}
+.services li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 24px;border-bottom:1px solid var(--joint)}
+.services li:last-child{border-bottom:0}
+.services b{font-size:18px}
+.dispo,.suite{font-size:14.5px;font-weight:600;padding:4px 10px;border-radius:6px;white-space:nowrap}
+.dispo{background:var(--lierre-fond);color:var(--lierre)}
+.suite{background:var(--ocre-fond);color:var(--ocre)}
+@media (max-width:1000px){.mcn .wrap{grid-template-columns:1fr;gap:28px}}
+@media (max-width:600px){.mcn{padding:64px 0}}
+.piece.sms span{background:none;padding:0;border-radius:0}
+/* Formulaire de contact */
+.formulaire{display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left;background:var(--blanc);padding:30px;border-radius:14px;box-shadow:var(--ombre)}
+.formulaire label{display:grid;gap:6px;font-weight:600;font-size:15.5px}
+.formulaire .large{grid-column:1/-1}
+.formulaire input,.formulaire select,.formulaire textarea{font:400 16px var(--font);color:var(--encre);background:#fff;border:1px solid var(--mortier);border-radius:8px;padding:11px 13px;width:100%;min-height:46px}
+.formulaire textarea{resize:vertical}
+.formulaire input:focus,.formulaire select:focus,.formulaire textarea:focus{outline:2px solid var(--action);outline-offset:1px;border-color:var(--action)}
+.formulaire .envoi{display:flex;align-items:center;gap:20px;flex-wrap:wrap;color:var(--doux);font-size:16px}
+@media (max-width:600px){.formulaire{grid-template-columns:1fr;padding:22px}}
+/* Aria : cabinet et parent côte à côte, mêmes moments du dossier */
+.aria .wrap{display:block}
+.aria-tete{max-width:62ch}
+.moments{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.moments button{border:1px solid var(--mortier);background:var(--blanc);color:var(--doux);font:600 15.5px var(--font);padding:10px 16px;border-radius:99px;min-height:44px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.moments button:hover{color:var(--encre);border-color:var(--pierre)}
+.moments button[aria-pressed="true"]{background:var(--action);border-color:var(--action);color:#fff}
+.moment-texte{margin-top:16px;font-size:18px;color:var(--encre);min-height:3em;max-width:62ch}
+.duo-aria{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:center;margin-top:12px}
+.aria .duo-aria figure{margin:0;border:0;border-radius:0;box-shadow:none;background:none;overflow:visible}
+.duo-aria figcaption{font-weight:600;font-size:15px;color:var(--doux);margin-bottom:10px}
+.cote-cabinet .empile{border-radius:14px;overflow:hidden;box-shadow:var(--ombre-haute);border:1px solid var(--mortier);background:var(--blanc)}
+.empile{display:grid}
+.empile img{grid-area:1/1;width:100%;height:auto;opacity:0;transition:opacity .45s var(--sortie)}
+.empile img.visible{opacity:1}
+.cadre.photo{aspect-ratio:375/770;max-width:300px}
+.cadre.photo .empile{height:100%}
+@media (max-width:1000px){.duo-aria{grid-template-columns:1fr;gap:28px}.cote-tel{justify-self:center;width:min(300px,100%)}}
+/* Sur téléphone, zoom sur le début des lignes pour que la vue cabinet reste lisible */
+@media (max-width:700px){.cote-cabinet .empile img{width:175%;max-width:none}}
+
+/* V3 : la V1 claire, plus le mouvement retenu de la V2 */
+.ligne-accueil{max-width:1180px;margin-top:44px}
+.ligne-accueil svg{display:block;width:100%;height:clamp(60px,9vh,90px);overflow:visible}
+.ligne-accueil path{fill:none;stroke:var(--action);stroke-width:2.5;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1}
+@media (prefers-reduced-motion:no-preference){.ligne-accueil path{animation:dessin 2.2s var(--sortie) .3s both}@keyframes dessin{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}}
+.manifeste{padding:clamp(70px,13vh,130px) 0}
+.manifeste .wrap{max-width:1180px}
+.manifeste p{font-size:clamp(32px,4.4vw,62px);line-height:1.1;letter-spacing:-.025em;font-weight:600;color:var(--encre);max-width:18em}
+.manifeste .m{opacity:.18;transition:opacity .25s linear}
+.manifeste .m.hl{color:var(--action)}
+.etapes{position:relative}
+.fil{position:absolute;left:0;top:0;pointer-events:none;overflow:visible;z-index:1}
+.fil path{fill:none;stroke-width:2.5;stroke-linecap:round}
+.fil .fond{stroke:var(--mortier)}
+.fil .trace{stroke:var(--action);stroke-dasharray:1;stroke-dashoffset:1}
+.etape .num{position:relative;z-index:2;background:var(--chaux)}
+.minerva .wrap{display:block}
+.minerva h2{max-width:none}
+.minerva .sous{max-width:46ch;margin-bottom:0}
+.ecran-compta{margin-top:44px;perspective:1400px}
+.ecran-compta .sans-rail{aspect-ratio:1208/560;transform-origin:50% 100%;will-change:transform;background:#fff}
+.minerva dl{grid-template-columns:repeat(4,1fr);gap:28px;margin-top:36px}
+@media (max-width:900px){.minerva dl{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.minerva dl{grid-template-columns:1fr}.etape .num{justify-self:start}.fil{display:none}}
+@media (prefers-reduced-motion:reduce){.fil .trace{stroke-dashoffset:0}}
+@media (max-width:600px){.ecran-compta .sans-rail{aspect-ratio:1208/860}.ecran-compta .sans-rail img{width:190%;margin-left:-30.8%;margin-top:-15.8%}}
+
+/* Tant qu'aucun métier n'est choisi, seule l'ouverture existe : la page ne descend pas (sans JavaScript, tout reste visible) */
+[data-metier="aucun"] main>section:not(.ouverture),[data-metier="aucun"] footer,[data-metier="aucun"] .haut nav,[data-metier="aucun"] .mention{display:none}
+[data-metier="aucun"] .ouverture{min-height:calc(100svh - 69px);padding-bottom:24px;box-sizing:border-box}
+@media (prefers-reduced-motion:no-preference){
+  [data-metier="aucun"] .porte svg{animation:appel 1.8s ease-in-out infinite}
+  @keyframes appel{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+}
+
+/* Aria : scène fixe, les quatre moments se suivent à la roulette */
+.aria{padding:96px 0 0;--h:calc(100svh - 328px)}
+.aria-pin{height:calc(100svh + 270svh)}
+.aria-scene{position:sticky;top:68px;height:calc(100svh - 68px);display:flex;flex-direction:column;justify-content:center;gap:0}
+.moments{margin-top:0}
+.duo-aria{grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:start;margin-top:4px}
+.cote-tel{width:auto}
+.cote-cabinet .empile{max-height:var(--h);align-content:start}
+.cadre.photo{height:var(--h);width:calc(var(--h)*.487);max-width:none;margin:0}
+@media (max-width:1000px){
+  .aria{padding-top:64px;--cab:22svh;--tel:calc(100svh - 68px - var(--cab) - 262px)}
+  .moments{gap:6px}
+  .moments button{font-size:14px;min-height:36px;padding:0 12px}
+  .moment-texte{font-size:16px;line-height:1.35;margin-top:10px;min-height:4em}
+  .duo-aria{grid-template-columns:1fr;gap:10px;margin-top:0}
+  .duo-aria figcaption{font-size:14px;margin-bottom:4px}
+  .cote-cabinet .empile{max-height:var(--cab)}
+  .cote-tel{justify-self:center;width:auto}
+  .cadre.photo{height:var(--tel);width:calc(var(--tel)*.487);border-width:6px;border-radius:24px}
+}
+/* Avant le choix, l'ouverture tient dans la fenêtre, y compris sur les portables peu hauts */
+[data-metier="aucun"] .ouverture{padding-top:clamp(20px,6.5vh,104px);padding-bottom:12px}
+[data-metier="aucun"] .ouverture h1{font-size:clamp(38px,min(6.2vw,10.5vh),80px)}
+[data-metier="aucun"] .ouverture .sous{margin:clamp(10px,2.4vh,26px) 0 clamp(14px,3.2vh,36px);font-size:clamp(16px,2.1vh,22px)}
+[data-metier="aucun"] .ligne-accueil{margin-top:clamp(12px,3vh,44px)}
+@media (max-height:760px){[data-metier="aucun"] .ligne-accueil{display:none}[data-metier="aucun"] .porte{padding:18px 24px}}
+@media (min-width:701px) and (min-height:480px){html[data-metier="aucun"],html[data-metier="aucun"] body{overflow:hidden;height:100%}}
+/* Course d'Aria en pixels, indépendante de la hauteur d'écran : environ 2 à 3 crans de roulette par moment */
+.aria-pin{--pas:240px;height:calc(100svh - 68px + 6*var(--pas))}
+@media (max-width:1000px){.aria-pin{--pas:300px}}
+/* Qui voit quoi : Minerva pour le cabinet, Aria pour le parent */
+.libelle{font-size:15.5px;font-weight:600;color:var(--action);margin:0 0 12px}
+.etapes .libelle{margin:0 0 -8px 30px}
+.telephone .libelle{text-align:center}
+.telephone .cadre{max-width:min(400px,calc((100svh - 150px)*.486))}
+@media (max-width:600px){.etapes .libelle{margin-left:0}}
+
+.parcours-tete .exemple{order:3;flex-basis:100%;margin:0;color:var(--doux);font-size:1.05rem;max-width:62ch}
+
+@media (max-width:700px){.cote-cabinet .empile img.entier{width:100%;max-height:var(--cab);object-fit:contain;object-position:center top;background:#F3F2EE}}
+/* Aria : en-tête sur toute la largeur, pour éviter un bloc étroit */
+.aria-tete{max-width:none}
+.aria .aria-tete .sous{max-width:88ch}
+/* FAQ : titre à gauche au-dessus, questions en cartes sur deux colonnes */
+.faq .wrap{display:block}
+.faq h2{position:static;margin-bottom:32px}
+.faq .wrap>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.faq details,.faq details:first-of-type{border:1px solid var(--mortier);border-radius:14px;background:var(--blanc);transition:box-shadow .2s,border-color .2s}
+.faq details:hover{box-shadow:var(--ombre)}
+.faq details[open]{border-color:var(--action);box-shadow:var(--ombre-haute)}
+.faq summary{padding:18px 20px;font-size:17px;line-height:1.3;min-height:76px}
+.faq summary svg{box-sizing:content-box;width:18px;height:18px;padding:7px;border-radius:50%;background:var(--action-pale)}
+.faq .r{padding:0 20px 20px;max-width:none}
+@media (max-width:760px){.faq .wrap>div{grid-template-columns:1fr}}
