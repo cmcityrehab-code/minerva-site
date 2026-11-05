@@ -364,7 +364,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 .parcours-tete .exemple{order:3;flex-basis:100%;margin:0;color:var(--doux);font-size:1.05rem;max-width:62ch}
 
-@media (max-width:700px){.cote-cabinet .empile img.entier{width:100%;max-height:var(--cab);object-fit:contain;object-position:center top;background:#F3F2EE}}
+
 /* Aria : en-tête sur toute la largeur, pour éviter un bloc étroit */
 .aria-tete{max-width:none}
 .aria .aria-tete .sous{max-width:88ch}
@@ -379,3 +379,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .faq summary svg{box-sizing:content-box;width:18px;height:18px;padding:7px;border-radius:50%;background:var(--action-pale)}
 .faq .r{padding:0 20px 20px;max-width:none}
 @media (max-width:760px){.faq .wrap>div{grid-template-columns:1fr}}
+/* Téléphone : moments sur une ligne défilante, téléphone entier dans le cadre, tableau des factures lisible */
+@media (max-width:700px){
+  .moments{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-20px;padding-inline:20px}
+  .moments::-webkit-scrollbar{display:none}
+  .moments button{flex:none}
+  .aria{--tel:calc(100svh - 68px - var(--cab) - 204px)}
+  .cote-cabinet .empile img.entier{width:100%;height:var(--cab);object-fit:cover;object-position:center top}
+}

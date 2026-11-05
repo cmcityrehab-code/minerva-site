@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Minerva · Logopédie et kinésithérapie, le cabinet en ordre</title>
 <meta name="description" content="Minerva tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. En logopédie, Aria suit le dossier mutuelle avec les patients et leurs proches.">
-<link rel="stylesheet" href="site.css?v=16">
+<link rel="stylesheet" href="site.css?v=17">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
 document.documentElement.dataset.metier=(m=>m==="logo"||m==="kine"?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
@@ -594,9 +594,11 @@ if(racine.dataset.metier!=='aucun'){
 }
 
 // Aria : le cabinet et le téléphone du parent avancent ensemble, moment par moment.
-const MOMENTS=["Le cabinet crée le dossier d’Emma. Sophie voit aussitôt les pièces à réunir, et chez qui les demander.", "Sophie envoie les documents en photo. Ils apparaissent reçus au cabinet, et elle sait que le bilan est en route.", "Le cabinet avance d’une étape, et la suite s’affiche chez Sophie, avec les bons conseils.", "Tout est en ordre, des deux côtés. Plus personne ne court après un document.", "Chaque rendez-vous de l’agenda de Minerva apparaît chez Sophie, avec un rappel avant la séance.", "La facture part de Minerva et arrive chez Sophie, qui règle depuis sa banque, avec un code à scanner ou les informations à copier. Le cabinet suit le paiement."];
+const MOMENTS=["Le cabinet crée le dossier d’Emma. Sophie voit aussitôt les pièces à réunir, et chez qui les demander.", "Sophie envoie les documents en photo. Ils apparaissent reçus au cabinet, et elle sait que le bilan est en route.", "Le cabinet avance d’une étape, et la suite s’affiche chez Sophie, avec les bons conseils.", "Tout est en ordre, des deux côtés. Plus personne ne court après un document.", "Chaque rendez-vous de l’agenda de Minerva apparaît chez Sophie, avec un rappel avant la séance.", "La facture arrive chez Sophie, qui la règle depuis sa banque, avec un code ou les informations à copier. Le cabinet suit le paiement."];
 function montrerMoment(n){
-  document.querySelectorAll('[data-moment]').forEach((b,i)=>b.setAttribute('aria-pressed',String(i===n)));
+  document.querySelectorAll('[data-moment]').forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===n));
+    // Sur téléphone, les moments défilent sur une ligne : le moment actif reste centré.
+    if(i===n){const l=b.parentElement;l.scrollLeft=b.offsetLeft-l.offsetLeft-(l.clientWidth-b.offsetWidth)/2}});
   document.querySelectorAll('[data-empile]').forEach(e=>[...e.children].forEach((img,i)=>{img.loading='eager';img.classList.toggle('visible',i===n)}));
   document.getElementById('moment-texte').textContent=MOMENTS[n];
 }
