@@ -429,3 +429,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .etape{grid-template-columns:32px minmax(0,1fr);gap:12px;padding:20px 14px 20px 8px}
   .etape .num{width:32px;height:32px;font-size:14px;margin-top:0}
 }
+/* Votre site web : exemple selon le métier choisi (logopédie par défaut). */
+.ex-kine{display:none}
+[data-metier="kine"] .ex-kine{display:block}
+[data-metier="kine"] .ex-logo{display:none}
+.site-inclus{background:var(--pierre-fonce)}
+.site-figure{margin-top:0!important}

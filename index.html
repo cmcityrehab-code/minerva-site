@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
   <title>Minerva · Logopédie et kinésithérapie, le cabinet en ordre</title>
 <meta name="description" content="Minerva tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. En logopédie, Aria suit le dossier mutuelle avec les patients et leurs proches.">
-<link rel="stylesheet" href="site.css?v=19">
+<link rel="stylesheet" href="site.css?v=20">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
 document.documentElement.dataset.metier=(m=>m==="logo"||m==="kine"?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
@@ -33,6 +33,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       <a href="#parcours">Le parcours</a>
       <a href="#seances">Les séances</a>
       <a href="#comptabilite">Comptabilité</a>
+      <a href="#site-web">Votre site web</a>
       <a href="#aria" class="seul-logo">Aria</a>
       <a href="#tarifs">Tarifs</a>
       <a href="#faq">Questions</a>
@@ -320,6 +321,23 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   </div>
 </section>
 
+<section class="minerva site-inclus" id="site-web">
+  <div class="wrap">
+      <h2>Votre site web et vos rendez-vous en ligne.</h2>
+      <p class="sous">Remplissez quelques champs, ajoutez votre photo : votre page se crée toute seule. Inclus dans votre abonnement.</p>
+    <figure class="site-figure">
+      <img class="ex-logo" src="images/site-exemple-logo.jpg" alt="Exemple de site web de logopède créé avec Minerva : présentation, spécialités et bouton Prendre rendez-vous" width="1640" height="1200" loading="lazy">
+      <img class="ex-kine" src="images/site-exemple-kine.jpg" alt="Exemple de site web de kinésithérapeute créé avec Minerva : présentation, spécialités et bouton Prendre rendez-vous" width="1640" height="1200" loading="lazy">
+    </figure>
+      <dl>
+        <div><dt>Votre page, à votre nom</dt><dd>Votre présentation, vos spécialités, vos consultations et vos coordonnées, sur ordinateur et sur téléphone.<span class="seul-logo"> Vos patients y retrouvent aussi le chemin d'Aria.</span></dd></div>
+        <div><dt>Rien à construire</dt><dd>Ni graphiste ni hébergement à gérer. Vous changez une information, votre page suit.</dd></div>
+        <div><dt>Des rendez-vous demandés en ligne</dt><dd>Vos patients choisissent un moment libre. Vos rendez-vous, vos pauses, vos congés et les jours fériés sont déjà retirés.</dd></div>
+        <div><dt>Vous gardez la main</dt><dd>Vous choisissez vos plages, et chaque demande attend votre confirmation.</dd></div>
+      </dl>
+  </div>
+</section>
+
 <section class="mcn seul-kine" id="mycarenet-kine">
   <div class="wrap">
     <div>
@@ -408,7 +426,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
         <span class="qui">Logopédie ou kinésithérapie</span>
         <h3>Par thérapeute</h3>
         <div class="prix"><b>39,99 € TTC</b><span>/ mois</span></div>
-        <p>Toutes les fonctions. Accès secrétariat et module comptabilité inclus.<span class="seul-kine"> Member Data, eAgreement, eAttest et eFact inclus.</span><span class="seul-logo"> Member Data inclus, le reste de MyCareNet dès son ouverture à la logopédie.</span></p>
+        <p>Toutes les fonctions. Accès secrétariat, module comptabilité, site web et rendez-vous en ligne inclus.<span class="seul-kine"> Member Data, eAgreement, eAttest et eFact inclus.</span><span class="seul-logo"> Member Data inclus, le reste de MyCareNet dès son ouverture à la logopédie.</span></p>
         <a class="btn" href="#contact">Nous contacter</a>
       </article>
       <article class="offre phare">
@@ -447,6 +465,14 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       <details class="seul-logo">
         <summary>Puis-je utiliser Aria sans Minerva ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Oui. Aria s'utilise avec Minerva ou seule : vous gardez votre logiciel actuel et vos patients suivent leur dossier dans Aria.</p><p>Seule, Aria est simplement moins intégrée : ce qui se trouve dans votre logiciel ne passe pas tout seul. Si votre logiciel sait exporter en Excel ou CSV, vous déposez vos patients, vos rendez-vous et vos factures dans Aria : elle les range et prévient les familles. Il n'y a rien à réencoder, seulement ce fichier à déposer de temps en temps.</p></div>
+      </details>
+      <details>
+        <summary>Mon site web est-il inclus ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Oui. Chaque thérapeute abonné a sa page, sans supplément. Vous remplissez vos informations dans Minerva, ajoutez votre photo, et la page se crée toute seule. Toutes les pages suivent la même présentation, et un petit lien vers Minerva figure en bas.</p></div>
+      </details>
+      <details>
+        <summary>Comment fonctionne la prise de rendez-vous en ligne ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Vous l'activez si vous le souhaitez et vous choisissez vos plages. Le patient choisit un moment libre sur votre site et confirme sa demande avec un code reçu par e-mail. Il n'indique aucun motif médical. La demande attend ensuite votre confirmation.</p></div>
       </details>
       <details>
         <summary>Minerva est-il relié à MyCareNet ?<svg><use href="#i-plus"/></svg></summary>
@@ -536,7 +562,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 <footer>
   <div class="wrap">
     <span>Minerva<span class="seul-logo"> · Aria</span> — un espace pour organiser les soins.</span>
-    <span><span class="seul-logo">Emma et Sophie sont des personnages fictifs.</span><span class="seul-kine">Thomas est un personnage fictif.</span> Police Source Sans 3, <a href="fonts/OFL-SourceSans3.md">licence OFL</a>.</span>
+    <span><span class="seul-logo">Emma, Sophie et Claire Delvaux sont des personnages fictifs.</span><span class="seul-kine">Thomas et Antoine Renard sont des personnages fictifs.</span> Police Source Sans 3, <a href="fonts/OFL-SourceSans3.md">licence OFL</a>.</span>
   </div>
 </footer>
 
