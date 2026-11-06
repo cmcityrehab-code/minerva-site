@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
   <title>Minerva · Logopédie et kinésithérapie, le cabinet en ordre</title>
 <meta name="description" content="Minerva tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. En logopédie, Aria suit le dossier mutuelle avec les patients et leurs proches.">
-<link rel="stylesheet" href="site.css?v=18">
+<link rel="stylesheet" href="site.css?v=19">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
 document.documentElement.dataset.metier=(m=>m==="logo"||m==="kine"?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
@@ -588,17 +588,29 @@ const ETATS={
 };
 const ICONE={ok:'i-coche',cours:'i-horloge',faire:'i-rond',sms:'i-bulle'};
 const racine=document.documentElement;
-function afficherEtat(n){
-  const m=racine.dataset.metier;
-  const app=document.querySelector('.appareil[data-pour="'+m+'"]');
-  if(!app)return;
-  const {total,etats}=ETATS[m],e=etats[n];
+function remplirEcran(app,e,total){
   app.querySelector('.jauge-texte').textContent=e.fait+' sur '+total;
   app.querySelector('.jauge-barre').style.width=(e.fait/total*100)+'%';
   const aFaire=e.pieces.filter(p=>p.c==='faire').length;
   app.querySelector('.titre-liste').innerHTML=e.titre+(aFaire?' <span>'+aFaire+'</span>':'');
   app.querySelector('.pieces').innerHTML=e.pieces.map(p=>
     '<div class="piece '+p.c+'"><b><svg><use href="#'+ICONE[p.c]+'"/></svg>'+p.t+'</b><span>'+p.s+'</span>'+(p.go?'<div class="go">'+p.go+'</div>':'')+'</div>').join('');
+}
+// Sur téléphone, pas de place à côté du texte : chaque étape porte son propre écran, et sa jauge avance à l'arrivée sur l'étape.
+Object.keys(ETATS).forEach(m=>{
+  const modele=document.querySelector('.appareil[data-pour="'+m+'"] .cadre'),{total,etats}=ETATS[m];
+  document.querySelectorAll('.etapes.seul-'+m+' .etape').forEach((el,i)=>{
+    const c=modele.cloneNode(true);c.classList.add('mini');remplirEcran(c,etats[i],total);
+    const barre=c.querySelector('.jauge-barre'),avant=etats[Math.max(0,i-1)].fait;
+    barre.style.width='';barre.style.setProperty('--de',avant/total*100+'%');barre.style.setProperty('--a',etats[i].fait/total*100+'%');
+    el.querySelector('div').append(c);
+  });
+});
+function afficherEtat(n){
+  const m=racine.dataset.metier;
+  const app=document.querySelector('.appareil[data-pour="'+m+'"]');
+  if(!app)return;
+  remplirEcran(app,ETATS[m].etats[n],ETATS[m].total);
   document.querySelectorAll('.etapes.seul-'+m+' .etape').forEach((el,i)=>{el.classList.toggle('active',i===n);el.classList.toggle('faite',i<n)});
 }
 let courante=-1;
@@ -675,7 +687,7 @@ function tracerFil(f){
   const b=f.el.getBoundingClientRect();if(!b.height)return;
   const c=[...f.el.querySelectorAll('.num')].map(n=>{const r=n.getBoundingClientRect();return [r.left-b.left+r.width/2,r.top-b.top+r.height/2]});
   f.svg.setAttribute('viewBox','0 0 '+b.width+' '+b.height);f.svg.setAttribute('width',b.width);f.svg.setAttribute('height',b.height);
-  const onde=Math.min(26,b.width*.05);
+  const onde=b.width<600?7:Math.min(26,b.width*.05);
   const d=c.map(([x,y],i)=>{if(!i)return 'M'+x+' '+y;const [a,z]=c[i-1],t=(y-z)*.5,s=i%2?onde:-onde;return 'C'+(a+s)+' '+(z+t)+' '+(x+s)+' '+(y-t)+' '+x+' '+y}).join('');
   f.fond.setAttribute('d',d);f.trace.setAttribute('d',d);
   f.haut=c[0][1];f.bas=c[c.length-1][1];animerPage();

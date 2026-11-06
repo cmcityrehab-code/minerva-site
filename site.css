@@ -313,7 +313,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .ecran-compta .sans-rail{aspect-ratio:1208/560;transform-origin:50% 100%;will-change:transform;background:#fff}
 .minerva dl{grid-template-columns:repeat(4,1fr);gap:28px;margin-top:36px}
 @media (max-width:900px){.minerva dl{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.minerva dl{grid-template-columns:1fr}.etape .num{justify-self:start}.fil{display:none}}
+@media (max-width:600px){.minerva dl{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.fil .trace{stroke-dashoffset:0}}
 @media (max-width:600px){.ecran-compta .sans-rail{aspect-ratio:1208/860}.ecran-compta .sans-rail img{width:190%;margin-left:-30.8%;margin-top:-15.8%}}
 
@@ -412,3 +412,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .note-materiel .pris .case{background:var(--action);border-color:var(--action);box-shadow:inset 0 0 0 3px var(--blanc)}
 @media (max-width:900px){.seances .wrap{grid-template-columns:1fr;gap:40px}}
 @media (max-width:600px){.seances{padding:64px 0}.seances dl{grid-template-columns:1fr}}
+
+/* Téléphone : l'écran du parent sous chaque étape, et la route dans une petite marge à gauche */
+.etape .cadre.mini{display:none}
+@media (max-width:1000px){
+  .etape .cadre.mini{display:flex;aspect-ratio:auto;max-width:300px;margin:14px 0 0;border-width:6px;border-radius:28px;box-shadow:var(--ombre);transition:opacity .35s var(--sortie),transform .35s var(--sortie)}
+  .etape:not(.active) .cadre.mini{opacity:.6;transform:scale(.98)}
+  .cadre.mini .ecran-haut{padding:12px 16px 10px}
+  .cadre.mini .ecran{padding:14px 12px;gap:10px}
+  .cadre.mini .ecran h3{font-size:19px}
+  .cadre.mini .bonjour{display:none}
+  .cadre.mini .jauge-barre{width:var(--de)}
+  .etape.active .cadre.mini .jauge-barre,.etape.faite .cadre.mini .jauge-barre{width:var(--a)}
+}
+@media (max-width:600px){
+  .etape{grid-template-columns:32px minmax(0,1fr);gap:12px;padding:20px 14px 20px 8px}
+  .etape .num{width:32px;height:32px;font-size:14px;margin-top:0}
+}
