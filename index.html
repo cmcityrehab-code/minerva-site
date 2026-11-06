@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
   <title>Minerva · Logopédie et kinésithérapie, le cabinet en ordre</title>
 <meta name="description" content="Minerva tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. En logopédie, Aria suit le dossier mutuelle avec les patients et leurs proches.">
-<link rel="stylesheet" href="site.css?v=28">
+<link rel="stylesheet" href="site.css?v=29">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
 document.documentElement.dataset.metier=(m=>m==="logo"||m==="kine"?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
@@ -315,8 +315,14 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       <h2>Votre site web et vos rendez-vous en ligne.</h2>
       <p class="sous">Remplissez quelques champs, ajoutez votre photo : votre page se crée toute seule. Inclus dans votre abonnement.</p>
     <figure class="site-figure">
-      <picture class="ex-logo"><source media="(max-width:600px)" srcset="images/site-rdv-logo.jpg" width="780" height="1440"><img src="images/site-exemple-logo.jpg" alt="Exemple de site de logopède créé avec Minerva, et sur téléphone la prise de rendez-vous avec les heures libres de chaque jour" width="2320" height="1480" loading="lazy"></picture>
-      <picture class="ex-kine"><source media="(max-width:600px)" srcset="images/site-rdv-kine.jpg" width="780" height="1440"><img src="images/site-exemple-kine.jpg" alt="Exemple de site de kinésithérapeute créé avec Minerva, et sur téléphone la prise de rendez-vous avec les heures libres de chaque jour" width="2320" height="1480" loading="lazy"></picture>
+      <div class="ex-logo site-duo">
+        <img class="site-fen" src="images/site-fenetre-logo.jpg" alt="Exemple de site de logopède créé avec Minerva, avec le bouton Prendre rendez-vous" width="1760" height="1280" loading="lazy">
+        <div class="cadre site-tel"><img src="images/site-creneaux-logo.jpg" alt="Sur téléphone, la prise de rendez-vous avec les heures libres de chaque jour" width="780" height="1640" loading="lazy"></div>
+      </div>
+      <div class="ex-kine site-duo">
+        <img class="site-fen" src="images/site-fenetre-kine.jpg" alt="Exemple de site de kinésithérapeute créé avec Minerva, avec le bouton Prendre rendez-vous" width="1760" height="1280" loading="lazy">
+        <div class="cadre site-tel"><img src="images/site-creneaux-kine.jpg" alt="Sur téléphone, la prise de rendez-vous avec les heures libres de chaque jour" width="780" height="1640" loading="lazy"></div>
+      </div>
     </figure>
       <dl>
         <div><dt>Votre page, à votre nom</dt><dd>Votre présentation, vos spécialités, vos consultations et vos coordonnées, sur ordinateur et sur téléphone.<span class="seul-logo"> Vos patients y retrouvent aussi le chemin d'Aria.</span></dd></div>

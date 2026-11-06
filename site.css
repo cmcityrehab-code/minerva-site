@@ -430,12 +430,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .etape .num{width:32px;height:32px;font-size:14px;margin-top:0}
 }
 /* Votre site web : exemple selon le métier choisi (logopédie par défaut). */
+.site-duo{display:grid;grid-template-columns:minmax(0,1fr) var(--tel-w);gap:28px;align-items:center}
 .ex-kine{display:none}
-[data-metier="kine"] .ex-kine{display:block}
+[data-metier="kine"] .ex-kine{display:grid}
 [data-metier="kine"] .ex-logo{display:none}
 .minerva .site-figure{margin:12px 0 8px;border:0;border-radius:0;box-shadow:none;overflow:visible;background:none}
-.site-figure img{width:100%;height:auto;display:block}
-@media(max-width:600px){.site-figure picture{max-width:340px;margin:0 auto}}
+.site-fen{width:100%;height:calc(var(--tel-h) - 40px);object-fit:cover;object-position:left top;border-radius:12px;display:block}
+.site-tel{margin:0}
+.site-tel img{width:100%;height:auto;display:block}
+@media (max-width:640px){.site-duo{grid-template-columns:1fr;justify-items:center}.site-fen{display:none}}
 /* Petits écrans : fonds plus doux, le blanc pur fatigue les yeux. Les couleurs de l'ordinateur ne changent pas. */
 @media (max-width:1000px){
   :root{--blanc:#F9F8F5}
