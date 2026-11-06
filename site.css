@@ -443,3 +443,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .formulaire input,.formulaire select,.formulaire textarea,.ecran-compta .sans-rail{background:var(--blanc)}
   .offre.phare .btn{background:var(--blanc);border-color:var(--blanc)}
 }
+/* Fenêtre moyenne : l'écran à droite du texte, pour des étapes moins hautes. Sur téléphone, il reste sous le texte. */
+@media (min-width:641px) and (max-width:1000px){
+  .etape>div{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:28px;align-content:start}
+  .etape>div>*{grid-column:1}
+  .etape>div>.cadre.mini{grid-column:2;grid-row:1/span 8;align-self:start;width:100%;margin:0}
+  .etape>div>.cadre.mini .ecran{min-height:0;height:auto;flex:none}
+  .etape>div>.cadre.mini{height:auto;min-height:0}
+}
