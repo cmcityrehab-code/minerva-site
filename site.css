@@ -131,7 +131,7 @@ svg{display:block}
 .aria li{display:flex;gap:10px}.aria li svg{width:20px;height:20px;color:var(--lierre);flex:none;margin-top:3px}
 
 /* Tarifs */
-.tarifs{padding:96px 0;background:var(--blanc);border-top:1px solid var(--mortier);border-bottom:1px solid var(--mortier)}
+.tarifs{padding:96px 0;background:var(--chaux);border-top:1px solid var(--mortier);border-bottom:1px solid var(--mortier)}
 .tarifs .tete{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
 .tarifs .tete p{color:var(--doux);max-width:52ch;margin-top:12px}
 .tva{display:inline-flex;background:var(--chaux);border-radius:10px;padding:4px}
@@ -232,7 +232,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cadre{max-width:min(400px,calc((100vh - 120px)*9/18.5))}
 .cadre.fiche{max-width:400px}
 /* Reste du cabinet, sous la section Comptabilité */
-.cabinet{padding:80px 0;background:var(--blanc);border-bottom:1px solid var(--mortier)}
+.cabinet{padding:80px 0;background:var(--chaux);border-bottom:1px solid var(--mortier)}
 .cabinet dl{margin:32px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 .cabinet dt{font-weight:700;font-size:19px}
 .cabinet dd{margin:4px 0 0;color:var(--doux)}
@@ -389,7 +389,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 }
 
 /* Les séances : notes, dictée et matériel */
-.seances{padding:96px 0;background:var(--blanc);border-bottom:1px solid var(--mortier)}
+.seances{padding:96px 0;background:var(--chaux);border-bottom:1px solid var(--mortier)}
 .seances .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
 .seances h2{max-width:18ch}
 .seances .sous{color:var(--doux);font-size:18px;margin:18px 0 28px;max-width:44ch}
@@ -433,7 +433,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .ex-kine{display:none}
 [data-metier="kine"] .ex-kine{display:block}
 [data-metier="kine"] .ex-logo{display:none}
-.site-inclus{background:var(--pierre-fonce)}
 .minerva .site-figure{margin:12px 0 8px;border:0;border-radius:0;box-shadow:none;overflow:visible;background:none}
 .site-figure img{width:100%;height:auto;display:block}
 @media(max-width:600px){.site-figure picture{max-width:340px;margin:0 auto}}
