@@ -213,31 +213,20 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       <article class="etape" data-etape="3">
         <span class="num" aria-hidden="true">4</span>
         <div>
-          <h2>L'attestation</h2>
-          <p>Au comptant, l'eAttest part depuis le dossier. En tiers payant, la séance rejoint votre prochaine facturation.</p>
+          <h2>La facturation et l'encaissement</h2>
+          <p>Au comptant, l'eAttest part depuis le dossier. En tiers payant, eFact envoie vos séances à la mutuelle. Tout se suit au même endroit, jusqu'à l'encaissement.</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Part mutuelle et part patient bien séparées</li>
             <li><svg><use href="#i-coche"/></svg>Un justificatif pour le patient</li>
-          </ul>
-          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Dans le dossier : la séance est attestée.</p>
-        </div>
-      </article>
-
-      <article class="etape" data-etape="4">
-        <span class="num" aria-hidden="true">5</span>
-        <div>
-          <h2>eFact, eAttest et l'encaissement</h2>
-          <p>Tiers payant avec eFact, paiement au comptant avec eAttest : tout se suit au même endroit, jusqu'à l'encaissement. Une séance rejetée revient d'elle-même à refacturer.</p>
-          <ul>
-            <li><svg><use href="#i-coche"/></svg>Un rapport clair chaque mois</li>
-            <li><svg><use href="#i-coche"/></svg>Les trajets sans remboursement aussi</li>
+            <li><svg><use href="#i-coche"/></svg>Une séance rejetée revient d'elle-même à refacturer</li>
+            <li><svg><use href="#i-coche"/></svg>Un rapport clair chaque mois, trajets sans remboursement compris</li>
           </ul>
           <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Dans le dossier : chaque paiement est suivi jusqu'au bout.</p>
         </div>
       </article>
 
-      <article class="etape" data-etape="5">
-        <span class="num" aria-hidden="true">6</span>
+      <article class="etape" data-etape="4">
+        <span class="num" aria-hidden="true">5</span>
         <div>
           <h2>La comptabilité</h2>
           <p>Chaque paiement reçu rejoint vos recettes. Vous savez où vous en êtes et ce qu'il faut mettre de côté, sans attendre la fin de l'année.</p>
@@ -601,10 +590,8 @@ const ETATS={
     {fait:9,titre:'En cours',pieces:[
       {c:'ok',t:'Séance du jour clôturée',s:'Code proposé puis confirmé'},
       {c:'cours',t:'Compteurs à jour',s:'9 séances faites sur 18'}]},
-    {fait:10,titre:'À faire maintenant',pieces:[
-      {c:'ok',t:'Séance clôturée',s:'Part mutuelle et part patient séparées'},
-      {c:'faire',t:'eAttest',s:'Paiement au comptant',go:'Envoyer l\u2019eAttest'}]},
     {fait:18,titre:'En cours',pieces:[
+      {c:'ok',t:'Part mutuelle et part patient',s:'Bien séparées'},
       {c:'ok',t:'eFact',s:'Tiers payant envoyé à la mutuelle'},
       {c:'ok',t:'eAttest',s:'Séances au comptant attestées'},
       {c:'cours',t:'Décompte de la mutuelle',s:'En attente de la réponse'}]},
