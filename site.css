@@ -417,7 +417,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .etape .cadre.mini{display:none}
 @media (max-width:1000px){
   .etape .cadre.mini{display:flex;aspect-ratio:auto;max-width:300px;margin:14px 0 0;border-width:6px;border-radius:28px;box-shadow:var(--ombre);transition:opacity .35s var(--sortie),transform .35s var(--sortie)}
-  .etape:not(.active) .cadre.mini{opacity:.6;transform:scale(.98)}
+  .etape:not(.active) .cadre.mini{opacity:.6}
   .cadre.mini .ecran-haut{padding:12px 16px 10px}
   .cadre.mini .ecran{padding:14px 12px;gap:10px}
   .cadre.mini .ecran h3{font-size:19px}
@@ -449,4 +449,32 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .etape>div>.cadre.mini{grid-column:2;grid-row:1/span 8;align-self:start;width:100%;margin:0}
   .etape>div>.cadre.mini .ecran{min-height:0;height:auto;flex:none}
   .etape>div>.cadre.mini{height:auto;min-height:0}
+}
+/* Un seul format de téléphone sur tout le site : parcours logopédie et kiné, Aria, petits écrans. */
+:root{--tel-h:min(620px,calc(100svh - 150px));--tel-w:calc(var(--tel-h)*.486)}
+@media (max-width:1000px){:root{--tel-h:540px}}
+.cadre,.cadre.fiche,.cadre.photo,.telephone .cadre,.etape .cadre.mini,.etape>div>.cadre.mini{width:var(--tel-w);height:var(--tel-h);max-width:none;min-height:0;aspect-ratio:auto;border-width:8px;border-radius:32px}
+.cadre .ecran{overflow:hidden}
+/* Aria sur ordinateur : le téléphone occupe toute la hauteur à droite, moments et cabinet à gauche. */
+@media (min-width:1001px){
+  .aria .aria-scene{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto 1fr;column-gap:48px;row-gap:10px;align-content:center;align-items:start}
+  .aria-scene>.moments,.aria-scene>.moment-texte{grid-column:1}
+  .aria .duo-aria{display:contents}
+  .cote-cabinet{grid-column:1}
+  .cote-tel{grid-column:2;grid-row:1/span 3}
+  .cadre.photo{margin:0}
+}
+/* Petits écrans : la scène n'est plus épinglée, le téléphone garde son format, les moments se choisissent d'un geste. */
+@media (max-width:1000px){
+  .aria-pin{height:auto}
+  .aria-scene{position:static;height:auto}
+  .cadre.photo{margin:0 auto;border-width:8px;border-radius:32px}
+  .cote-cabinet .empile{max-height:300px}
+  .cote-tel{width:100%}
+}
+@media (min-width:641px) and (max-width:1000px){
+  .etape>div{grid-template-columns:minmax(0,1fr) var(--tel-w)}
+  .aria .duo-aria{grid-template-columns:minmax(0,1fr) var(--tel-w);gap:24px;align-items:start}
+  .cote-cabinet .empile{max-height:var(--tel-h)}
+  .cote-tel{width:var(--tel-w)}
 }

@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
   <title>Minerva · Logopédie et kinésithérapie, le cabinet en ordre</title>
 <meta name="description" content="Minerva tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. En logopédie, Aria suit le dossier mutuelle avec les patients et leurs proches.">
-<link rel="stylesheet" href="site.css?v=26">
+<link rel="stylesheet" href="site.css?v=28">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
 document.documentElement.dataset.metier=(m=>m==="logo"||m==="kine"?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
@@ -668,7 +668,9 @@ function montrerMoment(n){
 }
 // La roulette fait avancer les moments ; cliquer sur un moment fait défiler jusqu'à lui.
 const pin=document.getElementById('aria-pin');let momentCourant=0;
+const epingle=()=>getComputedStyle(pin.firstElementChild).position==='sticky';
 document.querySelectorAll('[data-moment]').forEach(b=>b.addEventListener('click',()=>{
+  if(!epingle()){momentCourant=Number(b.dataset.moment);montrerMoment(momentCourant);return}
   const t=pin.getBoundingClientRect().top+scrollY-68,course=pin.offsetHeight-(innerHeight-68);
   scrollTo({top:t+course*(Number(b.dataset.moment)+.5)/MOMENTS.length,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
 }));
@@ -710,7 +712,7 @@ function animerPage(){
   const r=document.getElementById('manifeste').getBoundingClientRect(),pm=calme?1:borne((h*.85-r.top)/(r.height+h*.25));
   mots.forEach((w,i)=>{w.style.opacity=i/mots.length<pm?1:.18});
   fils.forEach(f=>{if(!f.bas)return;const t=f.el.getBoundingClientRect().top,p=calme?1:borne((h*.55-t-f.haut)/(f.bas-f.haut));f.trace.style.strokeDashoffset=1-p});
-  if(pin.offsetHeight){const q=pin.getBoundingClientRect(),n=Math.min(MOMENTS.length-1,Math.floor(borne((68-q.top)/(q.height-(h-68)))*MOMENTS.length));if(n!==momentCourant){momentCourant=n;montrerMoment(n)}}
+  if(pin.offsetHeight&&epingle()){const q=pin.getBoundingClientRect(),n=Math.min(MOMENTS.length-1,Math.floor(borne((68-q.top)/(q.height-(h-68)))*MOMENTS.length));if(n!==momentCourant){momentCourant=n;montrerMoment(n)}}
   const e=document.getElementById('ecran-compta'),ec=e.getBoundingClientRect(),pe=calme?1:borne((h-ec.top)/(h*.72));
   e.style.transform='rotateX('+((1-pe)*14)+'deg) scale('+(.93+pe*.07)+')';
 }
