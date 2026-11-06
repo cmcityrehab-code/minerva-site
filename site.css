@@ -434,4 +434,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 [data-metier="kine"] .ex-kine{display:block}
 [data-metier="kine"] .ex-logo{display:none}
 .site-inclus{background:var(--pierre-fonce)}
-.site-figure{margin-top:0!important}
+.minerva .site-figure{margin:12px 0 8px;border:0;border-radius:0;box-shadow:none;overflow:visible;background:none}
+.site-figure img{width:100%;height:auto;display:block}
+@media(max-width:600px){.site-figure picture{max-width:340px;margin:0 auto}}
