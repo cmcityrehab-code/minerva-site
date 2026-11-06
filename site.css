@@ -437,3 +437,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .minerva .site-figure{margin:12px 0 8px;border:0;border-radius:0;box-shadow:none;overflow:visible;background:none}
 .site-figure img{width:100%;height:auto;display:block}
 @media(max-width:600px){.site-figure picture{max-width:340px;margin:0 auto}}
+/* Petits écrans : fonds plus doux, le blanc pur fatigue les yeux. Les couleurs de l'ordinateur ne changent pas. */
+@media (max-width:1000px){
+  :root{--chaux:#E7E3DA;--blanc:#F2EEE6;--mortier:#D5D0C4;--joint:#DDD9CE;--doux:#50575D}
+  .formulaire input,.formulaire select,.formulaire textarea,.ecran-compta .sans-rail{background:var(--blanc)}
+  .offre.phare .btn{background:var(--blanc);border-color:var(--blanc)}
+}
