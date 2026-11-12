@@ -3,21 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-  <title>Minerva · Logopédie et kinésithérapie, le cabinet en ordre</title>
-<meta name="description" content="Minerva tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. En logopédie, Aria suit le dossier mutuelle avec les patients et leurs proches.">
-<link rel="stylesheet" href="site.css?v=29">
+<title>Kalyria · Logopédie et kinésithérapie, le cabinet en ordre</title>
+<meta name="description" content="Kalyria tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. Son espace patient suit les rendez-vous et les factures avec les patients, et en logopédie le dossier mutuelle avec leurs proches.">
+<link rel="stylesheet" href="site.css?v=32">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
 document.documentElement.dataset.metier=(m=>m==="logo"||m==="kine"?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
 history.scrollRestoration="manual";if(location.search)history.replaceState(null,"",location.pathname+location.hash);</script>
-<link rel="icon" type="image/svg+xml" href="images/minerva-tuile.svg">
+<link rel="icon" type="image/svg+xml" href="images/kalyria-tuile.svg">
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-marque" viewBox="0 0 48 48"><path d="M8 38V11L24 30L40 11V38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="38" r="5" fill="#7FD3DE"/><circle cx="40" cy="38" r="5" fill="#7FD3DE"/></symbol>
-  <symbol id="i-aria" viewBox="0 0 48 48"><path d="M9 38L24 10L39 38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="38" r="5" fill="#7FD3DE"/><circle cx="39" cy="38" r="5" fill="#7FD3DE"/><circle cx="24" cy="30.500" r="4.5" fill="#7FD3DE"/></symbol>
+  <symbol id="i-marque" viewBox="0 0 48 48"><path d="M10 11V38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M37 10C25 17 14 21 14 24.5C14 28 25 31 37 38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="10" cy="38" r="5" fill="#7FD3DE"/><circle cx="37" cy="38" r="5" fill="#7FD3DE"/></symbol>
+  <symbol id="i-aria" viewBox="0 0 48 48"><path d="M10 11V38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M37 10C25 17 14 21 14 24.5C14 28 25 31 37 38" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="10" cy="38" r="5" fill="#7FD3DE"/><circle cx="37" cy="38" r="5" fill="#7FD3DE"/></symbol>
   <symbol id="i-coche" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8.5 12.5 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-rond" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="currentColor"/></symbol>
   <symbol id="i-horloge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -28,13 +27,13 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 
 <header class="haut">
   <div class="wrap">
-    <a class="marque" href="#accueil"><img src="images/minerva-tuile.svg" alt="" width="34" height="34">Minerva</a>
+    <a class="marque" href="#accueil"><img src="images/kalyria-logo-fond-sombre.svg" alt="Kalyria" width="136" height="34"></a>
     <nav aria-label="Navigation du site">
       <a href="#parcours">Le parcours</a>
       <a href="#seances">Les séances</a>
       <a href="#comptabilite">Comptabilité</a>
       <a href="#site-web">Votre site web</a>
-      <a href="#aria" class="seul-logo">Aria</a>
+      <a href="#aria" class="seul-logo">Espace patient</a><a href="#aria-kine" class="seul-kine">Espace patient</a>
       <a href="#tarifs">Tarifs</a>
       <a href="#faq">Questions</a>
       <a class="btn btn-plein" href="#contact">Nous contacter</a>
@@ -47,10 +46,10 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 <section class="ouverture" id="accueil">
   <div class="wrap">
     <h1>Votre cabinet, <em>pas à pas</em>.</h1>
-    <p class="sous">Minerva tient l'administratif des cabinets de logopédie et de kinésithérapie, du premier rendez-vous à la comptabilité. Choisissez votre métier : voici votre quotidien.</p>
+    <p class="sous">Kalyria tient l'administratif des cabinets de logopédie et de kinésithérapie, du premier rendez-vous à la comptabilité. Choisissez votre métier : voici votre quotidien.</p>
     <div class="portes" id="choix">
-      <a class="porte" href="?metier=logo#parcours" data-metier="logo"><b>Je suis logopède</b><span>De l'anamnèse à l'accord de la mutuelle, avec Aria pour les patients et leurs proches.</span><svg aria-hidden="true"><use href="#i-bas"/></svg></a>
-      <a class="porte" href="?metier=kine#parcours" data-metier="kine"><b>Je suis kinésithérapeute</b><span>De la prescription à la facturation, séance après séance.</span><svg aria-hidden="true"><use href="#i-bas"/></svg></a>
+      <a class="porte" href="?metier=logo#parcours" data-metier="logo"><b>Je suis logopède</b><span>De l'anamnèse à l'accord de la mutuelle, avec un espace pour les patients et leurs proches.</span><svg aria-hidden="true"><use href="#i-bas"/></svg></a>
+      <a class="porte" href="?metier=kine#parcours" data-metier="kine"><b>Je suis kinésithérapeute</b><span>De la prescription à la facturation, avec un espace pour vos patients.</span><svg aria-hidden="true"><use href="#i-bas"/></svg></a>
     </div>
     <p class="mention"><a href="#tarifs">Voir les tarifs</a></p>
   </div>
@@ -66,16 +65,16 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 <section class="parcours" id="parcours" tabindex="-1" aria-label="Le parcours d'un patient">
   <div class="wrap">
     <div class="parcours-tete">
-      <h2 class="seul-logo">Un dossier de logopédie dans Minerva, de bout en bout.</h2>
-      <p class="exemple seul-logo">Exemple : Emma, 7 ans. Pour un adulte, aphasie ou dysphagie par exemple, Minerva suit les documents et les règles de sa pathologie.</p>
-      <h2 class="seul-kine">Un trajet de kinésithérapie dans Minerva, de bout en bout.</h2>
+      <h2 class="seul-logo">Un dossier de logopédie dans Kalyria, de bout en bout.</h2>
+      <p class="exemple seul-logo">Exemple : Emma, 7 ans. Pour un adulte, aphasie ou dysphagie par exemple, Kalyria suit les documents et les règles de sa pathologie.</p>
+      <h2 class="seul-kine">Un trajet de kinésithérapie dans Kalyria, de bout en bout.</h2>
       <div class="tva" role="group" aria-label="Choisir le métier">
         <button type="button" data-choix="logo">Logopédie</button>
         <button type="button" data-choix="kine">Kinésithérapie</button>
       </div>
     </div>
     <div class="etapes seul-logo">
-      <p class="libelle">Minerva, ce que fait le cabinet</p>
+      <p class="libelle">Kalyria, ce que fait le cabinet</p>
 
       <article class="etape" data-etape="0">
         <span class="num" aria-hidden="true">1</span>
@@ -84,9 +83,10 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
           <p>Anamnèse, premières démarches, explications au patient ou à ses parents : tout part de là.</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Anamnèse guidée, gardée au dossier</li>
-            <li><svg><use href="#i-coche"/></svg>La démarche reste accessible dans Aria</li>
+            <li><svg><use href="#i-coche"/></svg>La démarche reste accessible dans l'espace patient</li>
           </ul>
-          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : la démarche, dans Aria.</p>
+          <figure><img src="images/etape-logo-agenda.jpg" alt="Planning de la semaine dans Kalyria, en logopédie" width="560" height="200" loading="lazy"></figure>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : la démarche, dans son espace Kalyria.</p>
         </div>
       </article>
 
@@ -98,7 +98,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
           <ul>
             <li><svg><use href="#i-coche"/></svg>Épreuves adaptées à l'âge et au trouble</li>
           </ul>
-          <figure><img src="images/emma-dossier.jpg" alt="Dossier d'Emma Lambert dans Minerva" width="1180" height="760" loading="lazy"></figure>
+          <figure><img src="images/emma-dossier.jpg" alt="Dossier d'Emma Lambert dans Kalyria" width="1180" height="760" loading="lazy"></figure>
           <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : les démarches avancent déjà.</p>
         </div>
       </article>
@@ -133,11 +133,11 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
           <h2>L'accord et le traitement</h2>
           <p>L'accord vaut 1 à 2 ans selon la pathologie : la facturation est en ordre, la rééducation suit son cours.</p>
           <ul>
-            <li><svg><use href="#i-coche"/></svg>Vous pointez, Minerva prépare le reste</li>
+            <li><svg><use href="#i-coche"/></svg>Vous pointez, Kalyria prépare le reste</li>
             <li><svg><use href="#i-coche"/></svg>Une note à chaque séance, écrite ou dictée · <a href="#seances">En savoir plus</a></li>
           </ul>
-          <figure><img src="images/emma-trajet.jpg" alt="Trajet de soins d'Emma Lambert dans Minerva" width="1180" height="760" loading="lazy"></figure>
-          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : les rendez-vous, dans Aria.</p>
+          <figure><img src="images/emma-trajet.jpg" alt="Trajet de soins d'Emma Lambert dans Kalyria" width="1180" height="760" loading="lazy"></figure>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : les rendez-vous, dans son espace Kalyria.</p>
         </div>
       </article>
 
@@ -145,12 +145,12 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
         <span class="num" aria-hidden="true">6</span>
         <div>
           <h2>La facture et l'encaissement</h2>
-          <p>En fin de mois, les factures sont prêtes et partent dans Aria. Mutuelle et patient se suivent séparément.</p>
+          <p>En fin de mois, les factures sont prêtes et partent dans l'espace patient. Mutuelle et patient se suivent séparément.</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Vous voyez si la facture est ouverte, puis payée</li>
             <li><svg><use href="#i-coche"/></svg>Les impayés ne passent plus inaperçus</li>
           </ul>
-          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : la facture, dans Aria.</p>
+          <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : la facture, dans son espace Kalyria.</p>
         </div>
       </article>
 
@@ -168,7 +168,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 
     </div>
     <div class="etapes seul-kine">
-      <p class="libelle">Minerva, ce que fait le kiné</p>
+      <p class="libelle">Kalyria, ce que fait le kiné</p>
 
       <article class="etape" data-etape="0">
         <span class="num" aria-hidden="true">1</span>
@@ -206,6 +206,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
             <li><svg><use href="#i-coche"/></svg>Une note à chaque séance, écrite ou dictée · <a href="#seances">En savoir plus</a></li>
             <li><svg><use href="#i-coche"/></svg>Pathologies courantes comme lourdes</li>
           </ul>
+          <figure><img src="images/etape-kine-agenda.jpg" alt="Planning de la semaine dans Kalyria, en kinésithérapie" width="560" height="200" loading="lazy"></figure>
           <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Dans le dossier : le compteur de séances est à jour.</p>
         </div>
       </article>
@@ -221,6 +222,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
             <li><svg><use href="#i-coche"/></svg>Une séance rejetée revient d'elle-même à refacturer</li>
             <li><svg><use href="#i-coche"/></svg>Un rapport clair chaque mois, trajets sans remboursement compris</li>
           </ul>
+          <figure><img src="images/etape-kine-attestations.jpg" alt="Attestations de soins à imprimer dans Kalyria, tiers payant et paiement au comptant" width="640" height="228" loading="lazy"></figure>
           <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Dans le dossier : chaque paiement est suivi jusqu'au bout.</p>
         </div>
       </article>
@@ -239,10 +241,10 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 
     </div>
 
-    <aside class="telephone seul-logo appareil" data-pour="logo" aria-label="Ce que voit le parent dans Aria">
-      <p class="libelle">Aria, ce que voit le parent</p>
+    <aside class="telephone seul-logo appareil" data-pour="logo" aria-label="Ce que voit le parent dans son espace Kalyria">
+      <p class="libelle">Kalyria, ce que voit le parent</p>
       <div class="cadre">
-        <div class="ecran-haut"><svg><use href="#i-aria"/></svg><div><b>Aria</b><small>Écosystème Minerva</small></div></div>
+        <div class="ecran-haut"><svg><use href="#i-aria"/></svg><div><b>Kalyria</b><small>Espace patient</small></div></div>
         <div class="ecran">
           <h3>Bonjour Sophie</h3>
           <p class="bonjour">Voici où en sont les démarches d'Emma.</p>
@@ -253,10 +255,10 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       </div>
     </aside>
 
-    <aside class="telephone seul-kine appareil" data-pour="kine" aria-label="Dossier de démonstration dans Minerva">
-      <p class="libelle">Minerva, le dossier du patient</p>
+    <aside class="telephone seul-kine appareil" data-pour="kine" aria-label="Dossier de démonstration dans Kalyria">
+      <p class="libelle">Kalyria, le dossier du patient</p>
       <div class="cadre fiche">
-        <div class="ecran-haut"><svg><use href="#i-marque"/></svg><div><b>Minerva</b><small>Kinésithérapie</small></div></div>
+        <div class="ecran-haut"><svg><use href="#i-marque"/></svg><div><b>Kalyria</b><small>Kinésithérapie</small></div></div>
         <div class="ecran">
           <h3>Thomas Claes</h3>
           <p class="bonjour">Pathologie courante · au cabinet</p>
@@ -282,12 +284,12 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       </dl>
     </div>
     <div>
-      <figure class="note-ecran seul-logo" aria-label="Exemple de note de séance dans Minerva">
+      <figure class="note-ecran seul-logo" aria-label="Exemple de note de séance dans Kalyria">
         <figcaption><b>Note de séance</b><span>Emma Lambert · jeudi 16 h 30</span></figcaption>
         <div class="note-texte"><p>Emma produit le /ch/ en début de mot. Bonne attention pendant toute la séance. On continue avec les mots plus longs.</p><span class="dicter"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Dicter</span></div>
         <div class="note-materiel"><b>Matériel utilisé</b><label class="pris"><span class="case" aria-hidden="true"></span>Loto des sons<small>4 fois · 22/10</small></label><label class="pris"><span class="case" aria-hidden="true"></span>Imagier des verbes<small>1re fois</small></label><label class=""><span class="case" aria-hidden="true"></span>Jeu de l'oie des syllabes<small>2 fois · 08/10</small></label></div>
       </figure>
-      <figure class="note-ecran seul-kine" aria-label="Exemple de note de séance dans Minerva">
+      <figure class="note-ecran seul-kine" aria-label="Exemple de note de séance dans Kalyria">
         <figcaption><b>Note de séance</b><span>Thomas Claes · jeudi 16 h 30</span></figcaption>
         <div class="note-texte"><p>Bonne stabilité sur l'appui droit. Douleur en baisse. On augmente la charge à la prochaine séance.</p><span class="dicter"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Dicter</span></div>
         <div class="note-materiel"><b>Matériel utilisé</b><label class="pris"><span class="case" aria-hidden="true"></span>Plateau d'équilibre<small>4 fois · 22/10</small></label><label class="pris"><span class="case" aria-hidden="true"></span>Bandes élastiques<small>1re fois</small></label><label class=""><span class="case" aria-hidden="true"></span>Ballon de rééducation<small>2 fois · 08/10</small></label></div>
@@ -300,7 +302,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   <div class="wrap">
     <h2>La comptabilité, dans le même outil.</h2>
     <p class="sous">Vos recettes s'ajoutent toutes seules, vos frais se rangent au même endroit. D'un coup d'œil, vous voyez ce qui vous reste vraiment.</p>
-    <div class="ecran-compta"><figure class="sans-rail" id="ecran-compta"><img src="images/compta-bilan.jpg" alt="Comptabilité dans Minerva : tableau de l'année par trimestre, recettes, frais, cotisations et impôt" width="1440" height="1000" loading="lazy"></figure></div>
+    <div class="ecran-compta"><figure class="sans-rail" id="ecran-compta"><img src="images/compta-bilan.jpg" alt="Comptabilité dans Kalyria : tableau de l'année par trimestre, recettes, frais, cotisations et impôt" width="1440" height="1000" loading="lazy"></figure></div>
     <dl>
       <div><dt>Vos recettes</dt><dd>Chaque paiement reçu, trimestre par trimestre.</dd></div>
       <div><dt>Vos frais</dt><dd>Vos dépenses du cabinet, classées, relevés bancaires compris.</dd></div>
@@ -316,16 +318,16 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       <p class="sous">Remplissez quelques champs, ajoutez votre photo : votre page se crée toute seule. Inclus dans votre abonnement.</p>
     <figure class="site-figure">
       <div class="ex-logo site-duo">
-        <img class="site-fen" src="images/site-fenetre-logo.jpg" alt="Exemple de site de logopède créé avec Minerva, avec le bouton Prendre rendez-vous" width="1760" height="1280" loading="lazy">
+        <img class="site-fen" src="images/site-fenetre-logo.jpg" alt="Exemple de site de logopède créé avec Kalyria, avec le bouton Prendre rendez-vous" width="1760" height="1280" loading="lazy">
         <div class="cadre site-tel"><img src="images/site-creneaux-logo.jpg" alt="Sur téléphone, la prise de rendez-vous avec les heures libres de chaque jour" width="780" height="1640" loading="lazy"></div>
       </div>
       <div class="ex-kine site-duo">
-        <img class="site-fen" src="images/site-fenetre-kine.jpg" alt="Exemple de site de kinésithérapeute créé avec Minerva, avec le bouton Prendre rendez-vous" width="1760" height="1280" loading="lazy">
+        <img class="site-fen" src="images/site-fenetre-kine.jpg" alt="Exemple de site de kinésithérapeute créé avec Kalyria, avec le bouton Prendre rendez-vous" width="1760" height="1280" loading="lazy">
         <div class="cadre site-tel"><img src="images/site-creneaux-kine.jpg" alt="Sur téléphone, la prise de rendez-vous avec les heures libres de chaque jour" width="780" height="1640" loading="lazy"></div>
       </div>
     </figure>
       <dl>
-        <div><dt>Votre page, à votre nom</dt><dd>Votre présentation, vos spécialités, vos consultations et vos coordonnées, sur ordinateur et sur téléphone.<span class="seul-logo"> Vos patients y retrouvent aussi le chemin d'Aria.</span></dd></div>
+        <div><dt>Votre page, à votre nom</dt><dd>Votre présentation, vos spécialités, vos consultations et vos coordonnées, sur ordinateur et sur téléphone. Vos patients y retrouvent aussi le chemin de leur espace patient.</dd></div>
         <div><dt>Rien à construire</dt><dd>Ni graphiste ni hébergement à gérer. Vous changez une information, votre page suit.</dd></div>
         <div><dt>Des rendez-vous demandés en ligne</dt><dd>Vos patients choisissent un moment libre. Vos rendez-vous, vos pauses, vos congés et les jours fériés sont déjà retirés.</dd></div>
         <div><dt>Vous gardez la main</dt><dd>Vous choisissez vos plages, et chaque demande attend votre confirmation.</dd></div>
@@ -337,7 +339,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   <div class="wrap">
     <div>
       <h2>Tout MyCareNet, dans le dossier.</h2>
-      <p class="sous">Plus besoin de passer d'un site à l'autre : chaque échange avec la mutuelle part de Minerva.</p>
+      <p class="sous">Plus besoin de passer d'un site à l'autre : chaque échange avec la mutuelle part de Kalyria.</p>
     </div>
     <ul class="services">
       <li><b>Member Data</b><span class="dispo">Disponible</span></li>
@@ -372,14 +374,15 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       <div><dt>Le suivi</dt><dd>Ce qui est à faire aujourd'hui, en premier.</dd></div>
       <div><dt>Deux métiers, un toit</dt><dd>Logopédie et kiné dans le même dossier patient.</dd></div>
     </dl>
+    <figure class="ecran-cabinet seul-logo"><img src="images/etape-logo-seances.jpg" alt="Tableau de bord de Kalyria : les séances du jour à préparer, avec le journal et le dossier de chaque patient" width="1300" height="400" loading="lazy"></figure>
   </div>
 </section>
 
 <section class="aria seul-logo" id="aria">
   <div class="wrap">
     <div class="aria-tete">
-      <h2>Aria, le portail du patient et de sa famille.</h2>
-      <p class="sous">Dossier, rendez-vous et factures : le cabinet et la famille suivent tout, chacun sur son écran. Aria s'ajoute à Minerva ou à votre logiciel.</p>
+      <h2>Un espace pour le patient et sa famille.</h2>
+      <p class="sous">Dossier, rendez-vous et factures : le cabinet et la famille suivent tout, chacun sur son écran. L'espace patient s'ajoute à Kalyria en option, ou fonctionne avec votre logiciel actuel.</p>
     </div>
   </div>
   <div class="aria-pin" id="aria-pin"><div class="wrap aria-scene">
@@ -395,11 +398,41 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
     <div class="duo-aria">
       <figure class="cote-cabinet">
         <figcaption>Côté cabinet</figcaption>
-        <div class="empile" data-empile><img src="images/aria-cabinet-1.jpg" alt="Dossier d'Emma Lambert dans Aria, côté cabinet : le dossier s'ouvre" width="788" height="600" class="visible"><img src="images/aria-cabinet-2.jpg" alt="Dossier d'Emma Lambert dans Aria, côté cabinet : les documents arrivent" width="788" height="600" loading="lazy"><img src="images/aria-cabinet-3.jpg" alt="Dossier d'Emma Lambert dans Aria, côté cabinet : le bilan est remis" width="788" height="600" loading="lazy"><img src="images/aria-cabinet-4.jpg" alt="Dossier d'Emma Lambert dans Aria, côté cabinet : le dossier est complet" width="788" height="600" loading="lazy"><img src="images/minerva-agenda.jpg" alt="Agenda de Minerva : les rendez-vous de la semaine" width="1048" height="798" loading="lazy"><img class="entier" src="images/aria-cabinet-6.jpg" alt="Suivi des factures dans Aria, côté cabinet : à payer, payée, vue ou non" width="788" height="600" loading="lazy"></div>
+        <div class="empile" data-empile><img src="images/aria-cabinet-1.jpg" alt="Dossier d'Emma Lambert dans Kalyria, côté cabinet : le dossier s'ouvre" width="788" height="600" class="visible"><img src="images/aria-cabinet-2.jpg" alt="Dossier d'Emma Lambert dans Kalyria, côté cabinet : les documents arrivent" width="788" height="600" loading="lazy"><img src="images/aria-cabinet-3.jpg" alt="Dossier d'Emma Lambert dans Kalyria, côté cabinet : le bilan est remis" width="788" height="600" loading="lazy"><img src="images/aria-cabinet-4.jpg" alt="Dossier d'Emma Lambert dans Kalyria, côté cabinet : le dossier est complet" width="788" height="600" loading="lazy"><img src="images/minerva-agenda.jpg" alt="Agenda de Kalyria : les rendez-vous de la semaine" width="1048" height="798" loading="lazy"><img class="entier" src="images/aria-cabinet-6.jpg" alt="Suivi des factures dans Kalyria, côté cabinet : à payer, payée, vue ou non" width="788" height="600" loading="lazy"></div>
       </figure>
       <figure class="cote-tel">
         <figcaption>Côté parent</figcaption>
-        <div class="cadre photo"><div class="empile" data-empile><img src="images/aria-parent-1.jpg" alt="Espace parent d'Aria sur téléphone : le dossier s'ouvre" width="375" height="770" class="visible"><img src="images/aria-parent-2.jpg" alt="Espace parent d'Aria sur téléphone : les documents arrivent" width="375" height="770" loading="lazy"><img src="images/aria-parent-3.jpg" alt="Espace parent d'Aria sur téléphone : le bilan est remis" width="375" height="770" loading="lazy"><img src="images/aria-parent-4.jpg" alt="Espace parent d'Aria sur téléphone : le dossier est complet" width="375" height="770" loading="lazy"><img src="images/aria-parent-5.jpg" alt="Espace parent d'Aria : les prochains rendez-vous d'Emma" width="375" height="770" loading="lazy"><img src="images/aria-parent-6.jpg" alt="Espace parent d&#39;Aria sur téléphone : paiement de la facture" width="375" height="770" loading="lazy"></div></div>
+        <div class="cadre photo"><div class="empile" data-empile><img src="images/aria-parent-1.jpg" alt="Espace patient de Kalyria sur téléphone : le dossier s'ouvre" width="375" height="770" class="visible"><img src="images/aria-parent-2.jpg" alt="Espace patient de Kalyria sur téléphone : les documents arrivent" width="375" height="770" loading="lazy"><img src="images/aria-parent-3.jpg" alt="Espace patient de Kalyria sur téléphone : le bilan est remis" width="375" height="770" loading="lazy"><img src="images/aria-parent-4.jpg" alt="Espace patient de Kalyria sur téléphone : le dossier est complet" width="375" height="770" loading="lazy"><img src="images/aria-parent-5.jpg" alt="Espace patient de Kalyria : les prochains rendez-vous d'Emma" width="375" height="770" loading="lazy"><img src="images/aria-parent-6.jpg" alt="Espace patient de Kalyria sur téléphone : paiement de la facture" width="375" height="770" loading="lazy"></div></div>
+      </figure>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="aria seul-kine" id="aria-kine">
+  <div class="wrap">
+    <div class="aria-tete">
+      <h2>Un espace pour vos patients.</h2>
+      <p class="sous">Bilan, rapport au médecin, rendez-vous et factures : le cabinet et le patient suivent tout, chacun sur son écran. L'espace patient s'ajoute à Kalyria en option, ou fonctionne avec votre logiciel actuel.</p>
+    </div>
+  </div>
+  <div class="aria-pin" id="aria-pin-kine"><div class="wrap aria-scene">
+    <div class="moments" role="group" aria-label="Les moments du trajet">
+        <button type="button" data-moment="0" aria-pressed="true">Le trajet s'ouvre</button>
+        <button type="button" data-moment="1" aria-pressed="false">Le bilan est remis</button>
+        <button type="button" data-moment="2" aria-pressed="false">Le rapport au médecin</button>
+        <button type="button" data-moment="3" aria-pressed="false">Les rendez-vous suivent</button>
+        <button type="button" data-moment="4" aria-pressed="false">Les factures arrivent</button>
+    </div>
+    <p class="moment-texte" id="moment-texte-kine" aria-live="polite">Le trajet de Thomas s’ouvre : prescription, assurabilité et accord de la mutualité. Il voit ses premières séances et ce qui est déjà en ordre.</p>
+    <div class="duo-aria">
+      <figure class="cote-cabinet">
+        <figcaption>Côté cabinet</figcaption>
+        <div class="empile" data-empile><img src="images/aria-kine-cabinet-1.jpg" alt="Trajet de Thomas Claes dans Kalyria, côté cabinet : prescription, assurabilité et trajet enregistrés" width="788" height="600" class="visible"><img src="images/aria-kine-cabinet-2.jpg" alt="Trajet de Thomas Claes dans Kalyria, côté cabinet : le bilan kinésithérapeutique est remis" width="788" height="600" loading="lazy"><img src="images/aria-kine-cabinet-3.jpg" alt="Trajet de Thomas Claes dans Kalyria, côté cabinet : le rapport pour le médecin est envoyé" width="788" height="600" loading="lazy"><img src="images/minerva-agenda.jpg" alt="Agenda de Kalyria : les rendez-vous de la semaine" width="1048" height="798" loading="lazy"><img src="images/aria-kine-cabinet-5.jpg" alt="Suivi des factures de Thomas Claes dans Kalyria, côté cabinet : à payer, payée, vue ou non" class="entier" width="788" height="600" loading="lazy"></div>
+      </figure>
+      <figure class="cote-tel">
+        <figcaption>Côté patient</figcaption>
+        <div class="cadre photo"><div class="empile" data-empile><img src="images/aria-kine-patient-1.jpg" alt="Espace patient de Kalyria sur téléphone : le trajet de Thomas est enregistré" width="375" height="770" class="visible"><img src="images/aria-kine-patient-2.jpg" alt="Espace patient de Kalyria sur téléphone : le bilan kinésithérapeutique est disponible" width="375" height="770" loading="lazy"><img src="images/aria-kine-patient-3.jpg" alt="Espace patient de Kalyria sur téléphone : le rapport pour le médecin est disponible" width="375" height="770" loading="lazy"><img src="images/aria-kine-patient-4.jpg" alt="Espace patient de Kalyria : les prochaines séances de Thomas et leurs comptes rendus" width="375" height="770" loading="lazy"><img src="images/aria-kine-patient-5.jpg" alt="Espace patient de Kalyria sur téléphone : les factures de Thomas, à payer ou payées" width="375" height="770" loading="lazy"></div></div>
       </figure>
     </div>
   </div>
@@ -415,36 +448,38 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       </div>
     </div>
 
-    <h3 class="gamme-titre">Minerva</h3>
+    <h3 class="gamme-titre">Kalyria</h3>
     <div class="gamme deux">
       <article class="offre phare">
         <span class="qui">Logopédie ou kinésithérapie</span>
         <h3>Par thérapeute</h3>
         <div class="prix"><b>39,99 € TTC</b><span>/ mois</span></div>
-        <p>Toutes les fonctions. Accès secrétariat, module comptabilité, site web et rendez-vous en ligne inclus.<span class="seul-kine"> Member Data, eAgreement, eAttest et eFact inclus.</span><span class="seul-logo"> Member Data inclus, le reste de MyCareNet dès son ouverture à la logopédie.</span></p>
+        <p>Toutes les fonctions. Accès secrétariat, module comptabilité, site web et rendez-vous en ligne inclus.<span class="seul-kine"> Member Data, eAgreement, eAttest et eFact inclus.</span><span class="seul-logo"> Member Data inclus, le reste de MyCareNet dès son ouverture à la logopédie.</span> Espace patient en option, +5 € TTC par mois.</p>
         <a class="btn" href="#contact">Nous contacter</a>
       </article>
       <article class="offre phare">
-        <span class="qui">Offre Minerva</span>
+        <span class="qui">Offre Kalyria</span>
         <h3>Nouveau diplômé</h3>
         <div class="prix"><b>3 mois gratuits</b></div>
-        <p>Pour le thérapeute diplômé dans l'année où il prend son contrat.</p>
+        <p>Pour le thérapeute diplômé dans l'année où il prend son contrat, sur Kalyria comme sur l'espace patient seul.</p>
         <a class="btn" href="#contact">Nous contacter</a>
       </article>
     </div>
 
-    <h3 class="gamme-titre seul-logo">Aria</h3>
-    <div class="gamme deux seul-logo">
-      <article class="offre phare"><span class="qui">Découverte</span><h3>Gratuit</h3><div class="prix"><b>0 €</b></div><p>3 dossiers actifs, espace patient complet.</p></article>
-      <article class="offre phare"><span class="qui">Aria</span><h3>Par thérapeute</h3><div class="prix"><b>9,99 € TTC</b><span>/ mois</span></div><p>Dossiers illimités, rappels SMS, import de patients, de rendez-vous et de factures, et lien avec votre logiciel.</p></article>
+    <h3 class="gamme-titre">Espace patient</h3>
+    <p class="gamme-intro">Vous travaillez déjà avec un autre logiciel ? <b>Gardez-le.</b> L'espace patient s'utilise aussi seul, sans abonnement à Kalyria.</p>
+    <div class="gamme">
+      <article class="offre phare"><span class="qui">Vous utilisez Kalyria</span><h3>En option</h3><div class="prix"><b>+5 € TTC</b><span>/ mois</span></div><p>Ajouté à votre abonnement Kalyria : dossiers, rendez-vous et factures arrivent d'eux-mêmes chez le patient.</p></article>
+      <article class="offre phare"><span class="qui">Vous gardez votre logiciel</span><h3>Pour commencer</h3><div class="prix"><b>0 €</b></div><p>Jusqu'à 3 dossiers actifs, avec l'espace patient complet. Sans Kalyria, sans engagement.</p></article>
+      <article class="offre phare"><span class="qui">Vous gardez votre logiciel</span><h3>Espace patient seul</h3><div class="prix"><b>9,99 € TTC</b><span>/ mois</span></div><p>Sans Kalyria : vous restez sur votre logiciel actuel et vos patients profitent de l'espace patient. Dossiers illimités, rappels SMS, import de vos patients, rendez-vous et factures.</p></article>
     </div>
 
-    <div class="sms seul-logo">
+    <div class="sms">
       <span>Crédits SMS, sans expiration</span>
-      <span><b>18,15 € TTC</b> · 100 SMS</span>
-      <span><b>42,35 € TTC</b> · 250 SMS</span>
-      <span><b>78,65 € TTC</b> · 500 SMS</span>
-      <span><b>145,20 € TTC</b> · 1 000 SMS</span>
+      <span><b>16,99 € TTC</b> · 100 SMS</span>
+      <span><b>39,99 € TTC</b> · 250 SMS</span>
+      <span><b>74,99 € TTC</b> · 500 SMS</span>
+      <span><b>139,99 € TTC</b> · 1 000 SMS</span>
     </div>
   </div>
 </section>
@@ -453,29 +488,29 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   <div class="wrap">
     <h2>Avant de commencer.</h2>
     <div>
-      <details class="seul-logo">
-        <summary>Quelle différence entre Minerva et Aria ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Minerva est le logiciel du cabinet : agenda, séances, facturation et comptabilité.</p><p>Aria est l'espace du patient et de sa famille. Tout y est résumé : les démarches administratives à faire, les rendez-vous à venir, et les factures, avec ce qui a été payé et ce qui reste à payer.</p></div>
+      <details>
+        <summary>Qu'est-ce que l'espace patient ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Kalyria est le logiciel du cabinet : agenda, séances, facturation et comptabilité.</p><p>L'espace patient est la partie de Kalyria réservée au patient et à sa famille, en option à 5 € par mois. Tout y est résumé : les rendez-vous à venir, les démarches administratives à faire (en logopédie, le dossier mutuelle), et les factures, avec ce qui a été payé et ce qui reste à payer.</p></div>
       </details>
-      <details class="seul-logo">
-        <summary>Puis-je utiliser Aria sans Minerva ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Oui. Aria s'utilise avec Minerva ou seule : vous gardez votre logiciel actuel et vos patients suivent leur dossier dans Aria.</p><p>Seule, Aria est simplement moins intégrée : ce qui se trouve dans votre logiciel ne passe pas tout seul. Si votre logiciel sait exporter en Excel ou CSV, vous déposez vos patients, vos rendez-vous et vos factures dans Aria : elle les range et prévient les familles. Il n'y a rien à réencoder, seulement ce fichier à déposer de temps en temps.</p></div>
+      <details>
+        <summary>Puis-je proposer l'espace patient en gardant mon logiciel actuel ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Oui. L'espace patient s'utilise avec Kalyria ou seul : vous gardez votre logiciel actuel et vos patients suivent leur dossier dans leur espace Kalyria.</p><p>Seul, l'espace patient est simplement moins intégré : ce qui se trouve dans votre logiciel ne passe pas tout seul. Si votre logiciel sait exporter en Excel ou CSV, vous déposez vos patients, vos rendez-vous et vos factures dans l'espace patient : il les range et prévient les familles. Il n'y a rien à réencoder, seulement ce fichier à déposer de temps en temps.</p></div>
       </details>
       <details>
         <summary>Mon site web est-il inclus ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Oui. Chaque thérapeute abonné a sa page, sans supplément. Vous remplissez vos informations dans Minerva, ajoutez votre photo, et la page se crée toute seule. Toutes les pages suivent la même présentation, et un petit lien vers Minerva figure en bas.</p></div>
+        <div class="r"><p>Oui. Chaque thérapeute abonné a sa page, sans supplément. Vous remplissez vos informations dans Kalyria, ajoutez votre photo, et la page se crée toute seule. Toutes les pages suivent la même présentation, et un petit lien vers Kalyria figure en bas.</p></div>
       </details>
       <details>
         <summary>Comment fonctionne la prise de rendez-vous en ligne ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Vous l'activez si vous le souhaitez et vous choisissez vos plages. Le patient choisit un moment libre sur votre site et confirme sa demande avec un code reçu par e-mail. Il n'indique aucun motif médical. La demande attend ensuite votre confirmation.</p></div>
       </details>
       <details>
-        <summary>Minerva est-il relié à MyCareNet ?<svg><use href="#i-plus"/></svg></summary>
+        <summary>Kalyria est-elle reliée à MyCareNet ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Oui. En kinésithérapie, Member Data, eAgreement, eAttest et eFact sont disponibles. En logopédie, Member Data est disponible, et le reste sera activé dès que MyCareNet l'ouvrira à la profession.</p></div>
       </details>
       <details class="seul-kine">
-        <summary>Aria existe-t-elle pour les kinés ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Non. Aria suit aujourd'hui les dossiers mutuelle de logopédie. En kinésithérapie, Minerva couvre le trajet complet sans elle.</p></div>
+        <summary>L'espace patient existe-t-il pour les kinés ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Oui, en option à 5 € par mois. Vos patients voient leurs séances, reçoivent un rappel avant chacune, retrouvent leurs factures et les règlent par virement. Vous voyez ce qui est payé.</p></div>
       </details>
       <details>
         <summary>Un centre peut-il réunir logopèdes et kinés ?<svg><use href="#i-plus"/></svg></summary>
@@ -487,21 +522,21 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       </details>
       <details>
         <summary>Comment le code INAMI est-il choisi ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Minerva le propose d'après le dossier et la séance, en suivant les règles officielles de votre métier. Quand une règle n'est pas claire ou pas implémentée, Minerva le dit et vous laisse la main plutôt que de deviner.</p></div>
+        <div class="r"><p>Kalyria le propose d'après le dossier et la séance, en suivant les règles officielles de votre métier. Quand une règle n'est pas claire ou pas implémentée, Kalyria le dit et vous laisse la main plutôt que de deviner.</p></div>
       </details>
       <details>
         <summary>Comment fonctionne le tiers payant ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>La part de la mutuelle et celle du patient sont préparées séparément, et chacune se suit jusqu'au paiement.</p></div>
       </details>
-      <details class="seul-logo">
+      <details>
         <summary>Les patients voient-ils leurs rendez-vous ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Oui, quand Aria est reliée à l'agenda de Minerva. Ils voient leurs prochains rendez-vous, sont prévenus d'un changement et reçoivent un rappel avant la séance.</p></div>
+        <div class="r"><p>Oui, quand l'espace patient est relié à l'agenda de Kalyria. Ils voient leurs prochains rendez-vous, sont prévenus d'un changement et reçoivent un rappel avant la séance.</p></div>
       </details>
-      <details class="seul-logo">
-        <summary>Les factures arrivent-elles dans Aria ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Oui. Vous l'envoyez depuis Minerva et son destinataire la retrouve dans son espace : lui seul la voit, même si deux parents suivent le dossier. Il règle depuis son application bancaire, en scannant un code ou en copiant le compte, le montant et la communication. Le même code figure sur la facture, imprimée ou reçue par e-mail. Vous voyez si elle a été ouverte, puis payée.</p></div>
+      <details>
+        <summary>Les factures arrivent-elles dans l'espace patient ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Oui. Vous l'envoyez depuis Kalyria et son destinataire la retrouve dans son espace : lui seul la voit, même si deux parents suivent le dossier. Il règle depuis son application bancaire, en scannant un code ou en copiant le compte, le montant et la communication. Le même code figure sur la facture, imprimée ou reçue par e-mail. Vous voyez si elle a été ouverte, puis payée.</p></div>
       </details>
-      <details class="seul-logo">
+      <details>
         <summary>Les patients doivent-ils installer une application ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Non. Ils reçoivent une invitation par e-mail et tout se passe dans le navigateur de leur téléphone.</p></div>
       </details>
@@ -514,8 +549,8 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
         <div class="r"><p>Oui, votre liste de patients s'importe, et les prises en charge en cours se reprennent avec ce qui a déjà été consommé.</p></div>
       </details>
       <details>
-        <summary>Minerva remplace-t-il mon comptable ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Non, il lui facilite la vie. La comptabilité de Minerva vous donne une estimation et un tableau de l'année ; les montants réels restent établis avec votre comptable, votre caisse et le SPF Finances.</p></div>
+        <summary>Kalyria remplace-t-elle mon comptable ?<svg><use href="#i-plus"/></svg></summary>
+        <div class="r"><p>Non, elle lui facilite la vie. La comptabilité de Kalyria vous donne une estimation et un tableau de l'année ; les montants réels restent établis avec votre comptable, votre caisse et le SPF Finances.</p></div>
       </details>
       <details>
         <summary>Y a-t-il un engagement ou des frais d'installation ?<svg><use href="#i-plus"/></svg></summary>
@@ -528,7 +563,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 <section class="contact" id="contact">
   <div class="wrap">
     <h2>Parlons de votre cabinet.</h2>
-    <p>Dites-nous ce qui vous prend le plus de temps aujourd'hui. Nous vous montrons ce que Minerva peut changer.</p>
+    <p>Dites-nous ce qui vous prend le plus de temps aujourd'hui. Nous vous montrons ce que Kalyria peut changer.</p>
     <!-- shortcut: le formulaire prépare un e-mail dans la messagerie du visiteur ; à relier à un service d'envoi si le site a un serveur -->
     <form class="formulaire" id="form-contact">
       <label>Votre nom<input name="nom" required maxlength="100" autocomplete="name"></label>
@@ -546,7 +581,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       <label class="large">Votre message<textarea name="message" rows="5" required maxlength="2000"></textarea></label>
       <div class="large envoi">
         <button class="btn btn-plein" type="submit">Envoyer le message</button>
-        <span>Ou écrivez-nous à <a href="mailto:info@minerva.be">info@minerva.be</a></span>
+        <span>Ou écrivez-nous à <a href="mailto:info@kalyria.be">info@kalyria.be</a></span>
       </div>
     </form>
   </div>
@@ -556,7 +591,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 
 <footer>
   <div class="wrap">
-    <span>Minerva<span class="seul-logo"> · Aria</span> — un espace pour organiser les soins.</span>
+    <span>Kalyria — un espace pour organiser les soins.</span>
     <span><span class="seul-logo">Emma, Sophie et Claire Delvaux sont des personnages fictifs.</span><span class="seul-kine">Thomas et Antoine Renard sont des personnages fictifs.</span> Police Source Sans 3, <a href="fonts/OFL-SourceSans3.md">licence OFL</a>.</span>
   </div>
 </footer>
@@ -663,28 +698,35 @@ if(racine.dataset.metier!=='aucun'){
   if(location.hash==='#parcours')document.getElementById('parcours').scrollIntoView();
 }
 
-// Aria : le cabinet et le téléphone du parent avancent ensemble, moment par moment.
-const MOMENTS=["Le cabinet crée le dossier d’Emma. Sophie voit aussitôt les documents à réunir, et chez qui les demander.", "Sophie envoie les documents en photo. Ils apparaissent reçus au cabinet, et elle sait que le bilan est en route.", "Le cabinet avance d’une étape, et la suite s’affiche chez Sophie, avec les bons conseils.", "Tout est en ordre, des deux côtés. Plus personne ne court après un document.", "Chaque rendez-vous de l’agenda de Minerva apparaît chez Sophie, avec un rappel avant la séance.", "La facture arrive chez Sophie, qui la règle depuis sa banque, avec un code ou les informations à copier. Le cabinet suit le paiement."];
+// Espace patient : le cabinet et le téléphone du parent avancent ensemble, moment par moment.
+const MOMENTS_KINE=["Le trajet de Thomas s’ouvre : prescription, assurabilité et accord de la mutualité. Il voit ses premières séances et ce qui est déjà en ordre.", "Le bilan kiné complet est remis. Thomas le retrouve dans son espace et peut le télécharger.", "Le rapport pour le médecin part chez le Dr Martin. Thomas en garde une copie dans son espace.", "Chaque séance de l’agenda de Kalyria apparaît chez Thomas, avec un rappel avant la séance et le compte rendu après.", "La facture arrive chez Thomas, qui la règle depuis sa banque. Le cabinet voit ce qui est vu, payé ou encore à payer."];
+const MOMENTS_LOGO=["Le cabinet crée le dossier d’Emma. Sophie voit aussitôt les documents à réunir, et chez qui les demander.", "Sophie envoie les documents en photo. Ils apparaissent reçus au cabinet, et elle sait que le bilan est en route.", "Le cabinet avance d’une étape, et la suite s’affiche chez Sophie, avec les bons conseils.", "Tout est en ordre, des deux côtés. Plus personne ne court après un document.", "Chaque rendez-vous de l’agenda de Kalyria apparaît chez Sophie, avec un rappel avant la séance.", "La facture arrive chez Sophie, qui la règle depuis sa banque, avec un code ou les informations à copier. Le cabinet suit le paiement."];
+// Scène affichée : celle du métier choisi (kiné ou logopédie).
+const sceneKine=()=>document.documentElement.dataset.metier==='kine';
+let MOMENTS=MOMENTS_LOGO;
+const sceneActive=()=>{const k=sceneKine();MOMENTS=k?MOMENTS_KINE:MOMENTS_LOGO;return document.getElementById(k?'aria-kine':'aria')};
 function montrerMoment(n){
-  document.querySelectorAll('[data-moment]').forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===n));
+  const sc=sceneActive();
+  sc.querySelectorAll('[data-moment]').forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===n));
     // Sur téléphone, les moments défilent sur une ligne : le moment actif reste centré.
     if(i===n){const l=b.parentElement;l.scrollLeft=b.offsetLeft-l.offsetLeft-(l.clientWidth-b.offsetWidth)/2}});
-  document.querySelectorAll('[data-empile]').forEach(e=>[...e.children].forEach((img,i)=>{img.loading='eager';img.classList.toggle('visible',i===n)}));
-  document.getElementById('moment-texte').textContent=MOMENTS[n];
+  sc.querySelectorAll('[data-empile]').forEach(e=>[...e.children].forEach((img,i)=>{img.loading='eager';img.classList.toggle('visible',i===n)}));
+  sc.querySelector('.moment-texte').textContent=MOMENTS[n];
 }
 // La roulette fait avancer les moments ; cliquer sur un moment fait défiler jusqu'à lui.
-const pin=document.getElementById('aria-pin');let momentCourant=0;
-const epingle=()=>getComputedStyle(pin.firstElementChild).position==='sticky';
+let momentCourant=0;
+const pinActif=()=>sceneActive().querySelector('.aria-pin');
+const epingle=()=>getComputedStyle(pinActif().firstElementChild).position==='sticky';
 document.querySelectorAll('[data-moment]').forEach(b=>b.addEventListener('click',()=>{
   if(!epingle()){momentCourant=Number(b.dataset.moment);montrerMoment(momentCourant);return}
-  const t=pin.getBoundingClientRect().top+scrollY-68,course=pin.offsetHeight-(innerHeight-68);
+  const pin=pinActif(),t=pin.getBoundingClientRect().top+scrollY-68,course=pin.offsetHeight-(innerHeight-68);
   scrollTo({top:t+course*(Number(b.dataset.moment)+.5)/MOMENTS.length,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
 }));
 
 // Contact : ouvre la messagerie du visiteur avec le message déjà rédigé.
 function lienContact(f){
   const corps=['Nom : '+f.nom,'E-mail : '+f.email,'Métier : '+f.metier,'Cabinet : '+(f.cabinet||'non précisé'),'',f.message].join('\r\n');
-  return 'mailto:info@minerva.be?subject='+encodeURIComponent('Minerva · '+f.metier+' · '+f.nom)+'&body='+encodeURIComponent(corps);
+  return 'mailto:info@kalyria.be?subject='+encodeURIComponent('Kalyria · '+f.metier+' · '+f.nom)+'&body='+encodeURIComponent(corps);
 }
 const formContact=document.getElementById('form-contact');
 formContact.addEventListener('submit',ev=>{ev.preventDefault();location.href=lienContact(Object.fromEntries(new FormData(formContact)))});
@@ -718,7 +760,7 @@ function animerPage(){
   const r=document.getElementById('manifeste').getBoundingClientRect(),pm=calme?1:borne((h*.85-r.top)/(r.height+h*.25));
   mots.forEach((w,i)=>{w.style.opacity=i/mots.length<pm?1:.18});
   fils.forEach(f=>{if(!f.bas)return;const t=f.el.getBoundingClientRect().top,p=calme?1:borne((h*.55-t-f.haut)/(f.bas-f.haut));f.trace.style.strokeDashoffset=1-p});
-  if(pin.offsetHeight&&epingle()){const q=pin.getBoundingClientRect(),n=Math.min(MOMENTS.length-1,Math.floor(borne((68-q.top)/(q.height-(h-68)))*MOMENTS.length));if(n!==momentCourant){momentCourant=n;montrerMoment(n)}}
+  const pin=pinActif();if(pin.offsetHeight&&epingle()){const q=pin.getBoundingClientRect(),n=Math.min(MOMENTS.length-1,Math.floor(borne((68-q.top)/(q.height-(h-68)))*MOMENTS.length));if(n!==momentCourant){momentCourant=n;montrerMoment(n)}}
   const e=document.getElementById('ecran-compta'),ec=e.getBoundingClientRect(),pe=calme?1:borne((h-ec.top)/(h*.72));
   e.style.transform='rotateX('+((1-pe)*14)+'deg) scale('+(.93+pe*.07)+')';
 }

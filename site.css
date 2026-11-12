@@ -1,4 +1,4 @@
-/* Site de présentation Minerva · Aria — composition « Un dossier, pas à pas » (choisie le 05/11/2026).
+/* Site de présentation Kalyria · Kalyria Patient — composition « Un dossier, pas à pas » (choisie le 05/11/2026).
    Identité « Pierre bleue vivante » (DESIGN.md, 04/11/2026) : chaux, panneaux blancs, pierre bleue, action pétrole,
    Source Sans 3 servie localement, coins 12 px, ombre douce. Une seule animation d'entrée ; le téléphone d'Aria
    change d'état au défilement des étapes. */
@@ -227,6 +227,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* Fiche de tarif : le titre d'abord ; titres de gamme sans capitales */
 .offre h3{order:-1}
 .gamme-titre{font-size:20px;letter-spacing:-.01em;text-transform:none;font-weight:700;color:var(--encre)}
+.gamme-intro{margin:-6px 0 16px;color:var(--doux);font-size:17px;max-width:62ch}.gamme-intro b{color:var(--encre)}
 .parcours:focus{outline:none}
 /* Le téléphone tient entier dans la fenêtre, proportions conservées */
 .cadre{max-width:min(400px,calc((100vh - 120px)*9/18.5))}
@@ -236,6 +237,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .cabinet dl{margin:32px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 .cabinet dt{font-weight:700;font-size:19px}
 .cabinet dd{margin:4px 0 0;color:var(--doux)}
+.cabinet .ecran-cabinet{margin:36px 0 0;border-radius:12px;overflow:hidden;border:1px solid var(--mortier);background:var(--blanc);box-shadow:var(--ombre-haute)}
+.cabinet .ecran-cabinet img{display:block;width:100%;height:auto}
 .sans-rail{aspect-ratio:1208/700}
 @media (max-width:900px){.cabinet dl{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.cabinet dl{grid-template-columns:1fr}}
@@ -481,3 +484,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .cote-cabinet .empile{max-height:var(--tel-h)}
   .cote-tel{width:var(--tel-w)}
 }
+
+/* Kalyria : l'en-tête porte le logo officiel, blanc sur pierre bleue. */
+.haut{background:var(--pierre);border-bottom:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.haut nav a{color:var(--pierre-texte)}
+.haut nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.haut nav a.btn{background:#fff;border-color:#fff;color:var(--encre)}
+.haut nav a.btn:hover{background:var(--action-pale);border-color:var(--action-pale);color:var(--encre)}
+.haut :focus-visible{outline-color:#7FD3DE}
