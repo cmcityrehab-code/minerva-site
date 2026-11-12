@@ -7,7 +7,7 @@
 <meta name="description" content="Kalyria tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. Son espace patient suit les rendez-vous et les factures avec les patients, et en logopédie le dossier mutuelle avec leurs proches.">
 <link rel="stylesheet" href="site.css?v=32">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
-document.documentElement.dataset.metier=(m=>m==="logo"||m==="kine"?m:"aucun")(new URLSearchParams(location.search).get("metier"));
+document.documentElement.dataset.metier=(m=>["logo","kine","medg","infi"].includes(m)?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
 history.scrollRestoration="manual";if(location.search)history.replaceState(null,"",location.pathname+location.hash);</script>
 <link rel="icon" type="image/svg+xml" href="images/kalyria-tuile.svg">
@@ -30,12 +30,12 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
     <a class="marque" href="#accueil"><img src="images/kalyria-logo-fond-sombre.svg" alt="Kalyria" width="136" height="34"></a>
     <nav aria-label="Navigation du site">
       <a href="#parcours">Le parcours</a>
-      <a href="#seances">Les séances</a>
+      <a href="#seances" class="pro-ll">Les séances</a>
       <a href="#comptabilite">Comptabilité</a>
-      <a href="#site-web">Votre site web</a>
+      <a href="#site-web" class="pro-ll">Votre site web</a>
       <a href="#aria" class="seul-logo">Espace patient</a><a href="#aria-kine" class="seul-kine">Espace patient</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#faq">Questions</a>
+      <a href="#tarifs" class="pro-ll">Tarifs</a>
+      <a href="#faq" class="pro-ll">Questions</a>
       <a class="btn btn-plein" href="#contact">Nous contacter</a>
     </nav>
   </div>
@@ -46,12 +46,14 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 <section class="ouverture" id="accueil">
   <div class="wrap">
     <h1>Votre cabinet, <em>pas à pas</em>.</h1>
-    <p class="sous">Kalyria tient l'administratif des cabinets de logopédie et de kinésithérapie, du premier rendez-vous à la comptabilité. Choisissez votre métier : voici votre quotidien.</p>
+    <p class="sous">Kalyria tient l'administratif des cabinets de logopédie, de kinésithérapie, de médecine générale et de soins infirmiers, du premier rendez-vous à la comptabilité. Choisissez votre métier : voici votre quotidien.</p>
     <div class="portes" id="choix">
       <a class="porte" href="?metier=logo#parcours" data-metier="logo"><b>Je suis logopède</b><span>De l'anamnèse à l'accord de la mutuelle, avec un espace pour les patients et leurs proches.</span><svg aria-hidden="true"><use href="#i-bas"/></svg></a>
       <a class="porte" href="?metier=kine#parcours" data-metier="kine"><b>Je suis kinésithérapeute</b><span>De la prescription à la facturation, avec un espace pour vos patients.</span><svg aria-hidden="true"><use href="#i-bas"/></svg></a>
+      <a class="porte" href="?metier=medg#parcours" data-metier="medg"><b>Je suis médecin généraliste</b><span>L'agenda, le dossier médical, la santé et les traitements de chaque patient.</span><svg aria-hidden="true"><use href="#i-bas"/></svg></a>
+      <a class="porte" href="?metier=infi#parcours" data-metier="infi"><b>Je suis infirmier ou infirmière</b><span>La tournée sur téléphone, le dossier infirmier et ce qui reste à faire.</span><svg aria-hidden="true"><use href="#i-bas"/></svg></a>
     </div>
-    <p class="mention"><a href="#tarifs">Voir les tarifs</a></p>
+    <p class="mention pro-ll"><a href="#tarifs">Voir les tarifs</a></p>
   </div>
   <div class="wrap ligne-accueil" aria-hidden="true">
     <svg viewBox="0 0 1132 90" preserveAspectRatio="none"><path pathLength="1" d="M6 74C120 74 150 16 280 20S430 86 560 64 720 8 860 28 1010 80 1126 22"/></svg>
@@ -68,9 +70,15 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       <h2 class="seul-logo">Un dossier de logopédie dans Kalyria, de bout en bout.</h2>
       <p class="exemple seul-logo">Exemple : Emma, 7 ans. Pour un adulte, aphasie ou dysphagie par exemple, Kalyria suit les documents et les règles de sa pathologie.</p>
       <h2 class="seul-kine">Un trajet de kinésithérapie dans Kalyria, de bout en bout.</h2>
+      <h2 class="seul-medg">La médecine générale dans Kalyria.</h2>
+      <p class="exemple seul-medg">Exemple : Paul, 75 ans, suivi pour son hypertension et son diabète par le Dr Dumont.</p>
+      <h2 class="seul-infi">Les soins infirmiers dans Kalyria.</h2>
+      <p class="exemple seul-infi">Exemple : la tournée de Julie, infirmière à domicile, et le dossier de ses patients.</p>
       <div class="tva" role="group" aria-label="Choisir le métier">
         <button type="button" data-choix="logo">Logopédie</button>
         <button type="button" data-choix="kine">Kinésithérapie</button>
+        <button type="button" data-choix="medg">Médecine générale</button>
+        <button type="button" data-choix="infi">Soins infirmiers</button>
       </div>
     </div>
     <div class="etapes seul-logo">
@@ -241,6 +249,96 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 
     </div>
 
+    <div class="etapes seul-medg">
+      <p class="libelle">Kalyria, ce que fait le cabinet</p>
+
+      <article class="etape" data-etape="0">
+        <span class="num" aria-hidden="true">1</span>
+        <div>
+          <h2>L'agenda de la semaine</h2>
+          <p>Les rendez-vous de chaque médecin, au cabinet ou à domicile, en semaine, jour ou mois.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Un agenda par médecin, ou tous ensemble</li>
+            <li><svg><use href="#i-coche"/></svg>Le rendez-vous pointé devient la consultation</li>
+          </ul>
+          <figure><img src="images/etape-medg-agenda.jpg" alt="Agenda de la semaine en médecine générale dans Kalyria" width="1208" height="700" loading="lazy"></figure>
+        </div>
+      </article>
+
+
+      <article class="etape" data-etape="1">
+        <span class="num" aria-hidden="true">2</span>
+        <div>
+          <h2>Le dossier en un coup d’œil</h2>
+          <p>À l'ouverture du dossier, l'essentiel est là : dernière consultation, prochain rendez-vous, problèmes de santé, allergies, mesures et traitements.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Résumé du patient dès l'ouverture</li>
+            <li><svg><use href="#i-coche"/></svg>Consultations datées, corrections gardées en historique</li>
+          </ul>
+          <figure><img src="images/etape-medg-dossier.jpg" alt="Résumé du dossier médical d'un patient fictif dans Kalyria" width="1208" height="700" loading="lazy"></figure>
+        </div>
+      </article>
+
+
+      <article class="etape" data-etape="2">
+        <span class="num" aria-hidden="true">3</span>
+        <div>
+          <h2>Santé, traitements et vaccins</h2>
+          <p>Problèmes de santé et allergies codés, traitements en cours, vaccinations et biométrie, dans le même dossier.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Codes ICPC-2 et ICD-10</li>
+            <li><svg><use href="#i-coche"/></svg>Antécédents, corrections et archives, sans rien perdre</li>
+          </ul>
+          <figure><img src="images/etape-medg-sante.jpg" alt="Éléments de santé d'un patient fictif dans Kalyria" width="1208" height="700" loading="lazy"></figure>
+        </div>
+      </article>
+
+    </div>
+    <div class="etapes seul-infi">
+      <p class="libelle">Kalyria, ce que fait le cabinet</p>
+
+      <article class="etape" data-etape="0">
+        <span class="num" aria-hidden="true">1</span>
+        <div>
+          <h2>La tournée sur téléphone</h2>
+          <p>Chaque infirmière voit sa tournée du jour, dans l'ordre choisi, avec l'itinéraire jusqu'au patient.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Ordre de passage à la main, itinéraire en un geste</li>
+            <li><svg><use href="#i-coche"/></svg>Visite faite ou patient absent, pointé sur place</li>
+          </ul>
+          <figure class="fig-tel"><img src="images/etape-infi-tournee.jpg" alt="Tournée du jour d'une infirmière sur téléphone dans Kalyria" width="390" height="700" loading="lazy"></figure>
+        </div>
+      </article>
+
+
+      <article class="etape" data-etape="1">
+        <span class="num" aria-hidden="true">2</span>
+        <div>
+          <h2>Ce qui reste à faire</h2>
+          <p>Kalyria rappelle ce qui attend encore : une visite pointée sans journée de soins, un rappel pour une plaie.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Visites pointées à compléter</li>
+            <li><svg><use href="#i-coche"/></svg>Rappels du suivi des plaies</li>
+          </ul>
+          <figure><img src="images/etape-infi-afaire.jpg" alt="Liste des choses à faire en soins infirmiers dans Kalyria" width="1142" height="301" loading="lazy"></figure>
+        </div>
+      </article>
+
+
+      <article class="etape" data-etape="2">
+        <span class="num" aria-hidden="true">3</span>
+        <div>
+          <h2>Le dossier infirmier</h2>
+          <p>Échelle de Katz, planification des soins, plaies et paramètres de suivi : le contenu à tenir avant de facturer.</p>
+          <ul>
+            <li><svg><use href="#i-coche"/></svg>Échelle de Katz relue et validée par l'infirmier</li>
+            <li><svg><use href="#i-coche"/></svg>Suivi des plaies, photos comprises</li>
+          </ul>
+          <figure><img src="images/etape-infi-dossier.jpg" alt="Dossier infirmier d'une patiente fictive dans Kalyria, avec l'échelle de Katz" width="1208" height="700" loading="lazy"></figure>
+        </div>
+      </article>
+
+    </div>
     <aside class="telephone seul-logo appareil" data-pour="logo" aria-label="Ce que voit le parent dans son espace Kalyria">
       <p class="libelle">Kalyria, ce que voit le parent</p>
       <div class="cadre">
@@ -271,7 +369,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   </div>
 </section>
 
-<section class="seances" id="seances">
+<section class="seances pro-ll" id="seances">
   <div class="wrap">
     <div>
       <h2>Chaque séance, notée en un instant.</h2>
@@ -312,7 +410,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   </div>
 </section>
 
-<section class="minerva site-inclus" id="site-web">
+<section class="minerva site-inclus pro-ll" id="site-web">
   <div class="wrap">
       <h2>Votre site web et vos rendez-vous en ligne.</h2>
       <p class="sous">Remplissez quelques champs, ajoutez votre photo : votre page se crée toute seule. Inclus dans votre abonnement.</p>
@@ -365,7 +463,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   </div>
 </section>
 
-<section class="cabinet" id="cabinet">
+<section class="cabinet pro-ll" id="cabinet">
   <div class="wrap">
     <h2>Et tout le reste du cabinet.</h2>
     <dl>
@@ -439,7 +537,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   </div>
 </section>
 
-<section class="tarifs" id="tarifs">
+<section class="tarifs pro-ll" id="tarifs">
   <div class="wrap">
     <div class="tete">
       <div>
@@ -484,7 +582,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   </div>
 </section>
 
-<section class="faq" id="faq">
+<section class="faq pro-ll" id="faq">
   <div class="wrap">
     <h2>Avant de commencer.</h2>
     <div>
@@ -573,6 +671,8 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
           <option value="">Choisir…</option>
           <option value="Logopède">Logopède</option>
           <option value="Kinésithérapeute">Kinésithérapeute</option>
+          <option value="Médecin généraliste">Médecin généraliste</option>
+          <option value="Infirmier ou infirmière">Infirmier ou infirmière</option>
           <option value="Centre">Centre</option>
           <option value="Autre">Autre</option>
         </select>
@@ -592,7 +692,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
 <footer>
   <div class="wrap">
     <span>Kalyria — un espace pour organiser les soins.</span>
-    <span><span class="seul-logo">Emma, Sophie et Claire Delvaux sont des personnages fictifs.</span><span class="seul-kine">Thomas et Antoine Renard sont des personnages fictifs.</span> Police Source Sans 3, <a href="fonts/OFL-SourceSans3.md">licence OFL</a>.</span>
+    <span><span class="seul-logo">Emma, Sophie et Claire Delvaux sont des personnages fictifs.</span><span class="seul-kine">Thomas et Antoine Renard sont des personnages fictifs.</span><span class="seul-medg">Paul Dubois et le Dr Marc Dumont sont des personnages fictifs.</span><span class="seul-infi">Germaine Leroy, Robert Claes et Julie Lemaire sont des personnages fictifs.</span> Police Source Sans 3, <a href="fonts/OFL-SourceSans3.md">licence OFL</a>.</span>
   </div>
 </footer>
 
@@ -662,10 +762,9 @@ Object.keys(ETATS).forEach(m=>{
 });
 function afficherEtat(n){
   const m=racine.dataset.metier;
-  const app=document.querySelector('.appareil[data-pour="'+m+'"]');
-  if(!app)return;
-  remplirEcran(app,ETATS[m].etats[n],ETATS[m].total);
   document.querySelectorAll('.etapes.seul-'+m+' .etape').forEach((el,i)=>{el.classList.toggle('active',i===n);el.classList.toggle('faite',i<n)});
+  const app=document.querySelector('.appareil[data-pour="'+m+'"]');
+  if(app)remplirEcran(app,ETATS[m].etats[n],ETATS[m].total);
 }
 let courante=-1;
 const obs=new IntersectionObserver(entrees=>{

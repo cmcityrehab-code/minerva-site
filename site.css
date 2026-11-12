@@ -441,7 +441,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .site-fen{width:100%;height:calc(var(--tel-h) - 40px);object-fit:cover;object-position:left top;border-radius:12px;display:block}
 .site-tel{margin:0}
 .site-tel img{width:100%;height:auto;display:block}
-@media (max-width:640px){.site-duo{grid-template-columns:1fr;justify-items:center}.site-fen{display:none}}
+@media (max-width:640px){.site-duo{grid-template-columns:1fr;justify-items:center}.site-fen{height:auto;aspect-ratio:1760/1280}}
 /* Petits écrans : fonds plus doux, le blanc pur fatigue les yeux. Les couleurs de l'ordinateur ne changent pas. */
 @media (max-width:1000px){
   :root{--blanc:#F9F8F5}
@@ -492,3 +492,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .haut nav a.btn{background:#fff;border-color:#fff;color:var(--encre)}
 .haut nav a.btn:hover{background:var(--action-pale);border-color:var(--action-pale);color:var(--encre)}
 .haut :focus-visible{outline-color:#7FD3DE}
+
+/* Médecine générale et soins infirmiers : leurs blocs seulement pour leur métier ; sections propres à la logopédie et à la kiné (pro-ll) masquées. */
+html:not([data-metier="medg"]) .seul-medg,html:not([data-metier="infi"]) .seul-infi{display:none}
+[data-metier="medg"] .seul-logo,[data-metier="medg"] .seul-kine,[data-metier="medg"] .pro-ll,[data-metier="infi"] .seul-logo,[data-metier="infi"] .seul-kine,[data-metier="infi"] .pro-ll{display:none}
+[data-metier="medg"] .parcours .wrap,[data-metier="infi"] .parcours .wrap{grid-template-columns:minmax(0,1fr)}
+.etapes.seul-medg,.etapes.seul-infi{max-width:900px}
+.etapes.seul-medg figure,.etapes.seul-infi figure{height:auto}
+.etapes.seul-medg figure img,.etapes.seul-infi figure img{height:auto;transform:none}
+.etapes.seul-infi figure.fig-tel{max-width:280px;border-radius:24px;border-width:6px;border-color:var(--pierre-fonce)}
