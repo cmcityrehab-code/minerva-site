@@ -542,3 +542,8 @@ h1,h2,h3{text-wrap:balance}p,dd,li{text-wrap:pretty}
 @media (max-width:900px){.parcours .wrap{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){.tva{display:grid;grid-template-columns:1fr 1fr;width:100%}.tva button{padding:9px 8px}}
 .etape li>span{min-width:0}
+/* Menu du haut : chaque lien sur une seule ligne */
+.haut nav{gap:2px}
+.haut nav a{white-space:nowrap;padding:8px 10px;font-size:15px}
+.haut nav a.btn{white-space:nowrap}
+@media (max-width:1100px){.haut .wrap{gap:20px}.haut nav a{padding:8px 7px;font-size:14.5px}.haut nav a.btn{margin-left:6px;padding:0 12px}}
