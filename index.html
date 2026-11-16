@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kalyria · Logopédie et kinésithérapie, le cabinet en ordre</title>
 <meta name="description" content="Kalyria tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. Son espace patient suit les rendez-vous et les factures avec les patients, et en logopédie le dossier mutuelle avec leurs proches.">
-<link rel="stylesheet" href="site.css?v=36">
+<link rel="stylesheet" href="site.css?v=37">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
 document.documentElement.dataset.metier=(m=>["logo","kine","medg","infi"].includes(m)?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
@@ -196,7 +196,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
         <span class="num" aria-hidden="true">2</span>
         <div>
           <h2>Assurabilité et accord</h2>
-          <p>Member Data vérifie l'assurabilité du patient, eAgreement gère l'accord, directement depuis le dossier.</p>
+          <p>Member Data vérifie l'assurabilité du patient, eAgreement gère l'accord, directement depuis le dossier (agrément MyCareNet en cours).</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Vous voyez tout de suite ce qui manque</li>
             <li><svg><use href="#i-coche"/></svg>La séance n'attend pas pour autant</li>
@@ -224,7 +224,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
         <span class="num" aria-hidden="true">4</span>
         <div>
           <h2>La facturation et l'encaissement</h2>
-          <p>Au comptant, l'eAttest part depuis le dossier. En tiers payant, eFact envoie vos séances à la mutuelle. Tout se suit au même endroit, jusqu'à l'encaissement.</p>
+          <p>Au comptant, l'eAttest part depuis le dossier. En tiers payant, eFact envoie vos séances à la mutuelle (agrément MyCareNet en cours). Tout se suit au même endroit, jusqu'à l'encaissement.</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Part mutuelle et part patient bien séparées</li>
             <li><svg><use href="#i-coche"/></svg>Un justificatif pour le patient</li>
@@ -438,13 +438,13 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   <div class="wrap">
     <div>
       <h2>Tout MyCareNet, dans le dossier.</h2>
-      <p class="sous">Plus besoin de passer d'un site à l'autre : chaque échange avec la mutuelle part de Kalyria.</p>
+      <p class="sous">Plus besoin de passer d'un site à l'autre : chaque échange avec la mutuelle partira de Kalyria. Ces services sont intégrés et en cours d’agrément par MyCareNet ; ils s’activent pour votre cabinet dès l’agrément obtenu.</p>
     </div>
     <ul class="services">
-      <li><b>Member Data</b><span class="dispo">Disponible</span></li>
-      <li><b>eAgreement</b><span class="dispo">Disponible</span></li>
-      <li><b>eAttest</b><span class="dispo">Disponible</span></li>
-      <li><b>eFact</b><span class="dispo">Disponible</span></li>
+      <li><b>Member Data</b><span class="suite">En cours d’agrément</span></li>
+      <li><b>eAgreement</b><span class="suite">En cours d’agrément</span></li>
+      <li><b>eAttest</b><span class="suite">En cours d’agrément</span></li>
+      <li><b>eFact</b><span class="suite">En cours d’agrément</span></li>
     </ul>
   </div>
 </section>
@@ -453,11 +453,11 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   <div class="wrap">
     <div>
       <h2>Prêt pour la digitalisation de la logopédie.</h2>
-      <p class="sous">Member Data est disponible dès aujourd'hui. La suite sera activée dès que MyCareNet l'ouvrira à la logopédie, et nous suivons de près l'arrivée de la facturation électronique.</p>
+      <p class="sous">Member Data et eAgreement sont intégrés et en cours d’agrément par MyCareNet. eAttest et eFact seront activés dès que MyCareNet les ouvrira à la logopédie.</p>
     </div>
     <ul class="services">
-      <li><b>Member Data</b><span class="dispo">Disponible</span></li>
-      <li><b>eAgreement</b><span class="suite">Dès son ouverture</span></li>
+      <li><b>Member Data</b><span class="suite">En cours d’agrément</span></li>
+      <li><b>eAgreement</b><span class="suite">En cours d’agrément</span></li>
       <li><b>eAttest</b><span class="suite">Dès son ouverture</span></li>
       <li><b>eFact</b><span class="suite">Dès son ouverture</span></li>
     </ul>
@@ -589,7 +589,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
         <span class="qui">Logopédie ou kinésithérapie</span>
         <h3>Par thérapeute</h3>
         <div class="prix"><b>39,99 € TTC</b><span>/ mois</span></div>
-        <p>Toutes les fonctions. Accès secrétariat, module comptabilité, site web et rendez-vous en ligne inclus.<span class="seul-kine"> Member Data, eAgreement, eAttest et eFact inclus.</span><span class="seul-logo"> Member Data inclus, le reste de MyCareNet dès son ouverture à la logopédie.</span> Espace patient en option, +5 € TTC par mois.</p>
+        <p>Toutes les fonctions. Accès secrétariat, module comptabilité, site web et rendez-vous en ligne inclus.<span class="seul-kine"> Member Data, eAgreement, eAttest et eFact inclus dès l’agrément MyCareNet, en cours.</span><span class="seul-logo"> Member Data et eAgreement inclus dès l’agrément MyCareNet, en cours ; le reste dès son ouverture à la logopédie.</span> Espace patient en option, +5 € TTC par mois.</p>
         <a class="btn" href="#contact">Nous contacter</a>
       </article>
       <article class="offre phare">
@@ -657,7 +657,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       </details>
       <details>
         <summary>Kalyria est-elle reliée à MyCareNet ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Oui. En kinésithérapie, Member Data, eAgreement, eAttest et eFact sont disponibles. En logopédie, Member Data est disponible, et le reste sera activé dès que MyCareNet l'ouvrira à la profession.</p></div>
+        <div class="r"><p>Kalyria intègre MyCareNet et est en cours d’agrément. En kinésithérapie, Member Data, eAgreement, eAttest et eFact s’activent dès l’agrément obtenu. En logopédie, Member Data et eAgreement aussi ; eAttest et eFact suivront dès que MyCareNet les ouvrira à la profession. D’ici là, vous ne payez pas l’abonnement.</p></div>
       </details>
       <details class="seul-kine">
         <summary>L'espace patient existe-t-il pour les kinés ?<svg><use href="#i-plus"/></svg></summary>
