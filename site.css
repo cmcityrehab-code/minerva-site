@@ -503,9 +503,8 @@ html:not([data-metier="medg"]) .seul-medg,html:not([data-metier="infi"]) .seul-i
 .etapes.seul-infi figure.fig-tel{max-width:280px;border-radius:24px;border-width:6px;border-color:var(--pierre-fonce)}
 /* Changer de logiciel : bloc « quelqu'un vous répond » */
 .easypay{padding:24px 0 80px;background:var(--chaux)}
-.easypay .encart{display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--blanc);border:1px solid var(--mortier);border-left:6px solid var(--action);border-radius:14px;padding:30px 32px;box-shadow:var(--ombre-haute)}
+.easypay .encart{display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--blanc);border:1px solid var(--mortier);border-radius:14px;padding:32px;box-shadow:var(--ombre-haute)}
 .easypay .encart>div{max-width:64ch}
-.easypay .qui{display:block;color:var(--action);font-weight:700;margin-bottom:6px}
 .easypay h2{font-size:clamp(24px,3vw,32px);margin:0 0 10px}
 .easypay p{color:var(--doux);margin:0 0 14px}
 .easypay ul{list-style:none;padding:0;margin:0;display:flex;gap:10px 24px;flex-wrap:wrap}
@@ -514,3 +513,32 @@ html:not([data-metier="medg"]) .seul-medg,html:not([data-metier="infi"]) .seul-i
 .changer .support p{max-width:62ch;color:var(--doux)}.changer .support b{color:var(--encre)}
 .support-liens{display:flex;gap:12px;flex-wrap:wrap}.support-liens .btn{height:44px}.support-liens [hidden]{display:none}
 .gamme.quatre .prix b{font-size:28px;white-space:nowrap}
+
+/* Finition graphique (16/11/2026) */
+h1,h2,h3{text-wrap:balance}p,dd,li{text-wrap:pretty}
+/* Fiches de tarif : même hauteur, bouton toujours en bas, pas de fiche qui se soulève au survol */
+.offre{display:flex;flex-direction:column;align-items:stretch}
+.offre .btn{align-self:flex-start;margin-top:auto}
+.offre>p:last-of-type{margin-bottom:10px}
+.offre:hover{transform:none}
+/* Rubriques du cabinet : une seule rangée quand la place le permet, jamais une rubrique orpheline */
+.cabinet dl{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+@media (max-width:520px){.cabinet dl{grid-template-columns:1fr}}
+/* Encarts posés sur le fond calcaire : une vraie carte blanche, sinon le texte paraît décalé */
+.changer .support{background:var(--blanc);border:1px solid var(--mortier)}
+.sms span{background:var(--blanc);border:1px solid var(--mortier)}
+.sms span:first-child{background:none;border:0;padding-left:0}
+/* Questions : toutes les cartes à la même hauteur fermées */
+.faq summary{min-height:80px}
+/* Encart Easy Pay : trois points sur une ligne */
+.easypay .encart{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding:36px 40px}
+.easypay .encart>div{max-width:none}
+.easypay .cote{display:grid;gap:20px;justify-items:start;padding-left:40px;border-left:1px solid var(--mortier)}
+.easypay ul{display:grid;gap:10px}
+.easypay p{margin:0}
+@media (max-width:900px){.easypay .encart{grid-template-columns:1fr;gap:24px}.easypay .cote{padding:24px 0 0;border-left:0;border-top:1px solid var(--mortier)}}
+@media (max-width:600px){.easypay .encart{padding:24px 20px}.easypay .btn{width:100%;justify-content:center}}
+/* Téléphone : le parcours ne déborde plus, les quatre métiers sur deux lignes */
+@media (max-width:900px){.parcours .wrap{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.tva{display:grid;grid-template-columns:1fr 1fr;width:100%}.tva button{padding:9px 8px}}
+.etape li>span{min-width:0}

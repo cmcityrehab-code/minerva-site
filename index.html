@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kalyria · Logopédie et kinésithérapie, le cabinet en ordre</title>
 <meta name="description" content="Kalyria tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. Son espace patient suit les rendez-vous et les factures avec les patients, et en logopédie le dossier mutuelle avec leurs proches.">
-<link rel="stylesheet" href="site.css?v=34">
+<link rel="stylesheet" href="site.css?v=35">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
 document.documentElement.dataset.metier=(m=>["logo","kine","medg","infi"].includes(m)?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
@@ -143,7 +143,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
           <p>L'accord vaut 1 à 2 ans selon la pathologie : la facturation est en ordre, la rééducation suit son cours.</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Vous pointez, Kalyria prépare le reste</li>
-            <li><svg><use href="#i-coche"/></svg>Une note à chaque séance, écrite ou dictée · <a href="#seances">En savoir plus</a></li>
+            <li><svg><use href="#i-coche"/></svg><span>Une note à chaque séance, écrite ou dictée · <a href="#seances">En savoir plus</a></span></li>
           </ul>
           <figure><img src="images/emma-trajet.jpg" alt="Trajet de soins d'Emma Lambert dans Kalyria" width="1180" height="760" loading="lazy"></figure>
           <p class="cote-parent"><svg><use href="#i-bulle"/></svg>Côté parent : les rendez-vous, dans son espace Kalyria.</p>
@@ -170,7 +170,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
           <p>Chaque paiement reçu rejoint vos recettes. Vous savez où vous en êtes et ce qu'il faut mettre de côté, sans attendre la fin de l'année.</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Vos recettes et vos frais, trimestre par trimestre</li>
-            <li><svg><use href="#i-coche"/></svg>Un tableau prêt pour votre comptable · <a href="#comptabilite">En savoir plus</a></li>
+            <li><svg><use href="#i-coche"/></svg><span>Un tableau prêt pour votre comptable · <a href="#comptabilite">En savoir plus</a></span></li>
           </ul>
         </div>
       </article>
@@ -212,7 +212,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
           <p>Le bon code vous est proposé à chaque séance, compteurs à jour. Vous savez toujours où en est votre patient.</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Vous pointez d'un geste, entre deux patients</li>
-            <li><svg><use href="#i-coche"/></svg>Une note à chaque séance, écrite ou dictée · <a href="#seances">En savoir plus</a></li>
+            <li><svg><use href="#i-coche"/></svg><span>Une note à chaque séance, écrite ou dictée · <a href="#seances">En savoir plus</a></span></li>
             <li><svg><use href="#i-coche"/></svg>Pathologies courantes comme lourdes</li>
           </ul>
           <figure><img src="images/etape-kine-agenda.jpg" alt="Planning de la semaine dans Kalyria, en kinésithérapie" width="560" height="200" loading="lazy"></figure>
@@ -243,7 +243,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
           <p>Chaque paiement reçu rejoint vos recettes. Vous savez où vous en êtes et ce qu'il faut mettre de côté, sans attendre la fin de l'année.</p>
           <ul>
             <li><svg><use href="#i-coche"/></svg>Vos recettes et vos frais, trimestre par trimestre</li>
-            <li><svg><use href="#i-coche"/></svg>Un tableau prêt pour votre comptable · <a href="#comptabilite">En savoir plus</a></li>
+            <li><svg><use href="#i-coche"/></svg><span>Un tableau prêt pour votre comptable · <a href="#comptabilite">En savoir plus</a></span></li>
           </ul>
         </div>
       </article>
@@ -498,16 +498,17 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
   <div class="wrap">
     <div class="encart">
       <div>
-        <span class="qui">Envie de ne plus penser à la facturation ?</span>
         <h2>Easy Pay Facturation s'en occupe pour vous.</h2>
         <p>Mutuelles, accords, factures aux patients, suivi des paiements et des refus : nous gérons tout l'administratif de votre cabinet. Vous lisez la carte d'identité, scannez la prescription et soignez.</p>
+      </div>
+      <div class="cote">
         <ul>
           <li><b>5 %</b> des honoraires facturés, TVA comprise</li>
           <li><b>Kalyria offert</b> pendant toute la durée du service</li>
           <li><b>Jusqu'à 0 %</b> grâce au parrainage de confrères</li>
         </ul>
+        <a class="btn btn-plein" href="gestion-administrative.html">Découvrir Easy Pay Facturation</a>
       </div>
-      <a class="btn btn-plein" href="gestion-administrative.html">Découvrir Easy Pay Facturation</a>
     </div>
   </div>
 </section>
@@ -639,71 +640,71 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
     <h2>Avant de commencer.</h2>
     <div>
       <details>
-        <summary>Qu'est-ce que l'espace patient ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Kalyria est le logiciel du cabinet : agenda, séances, facturation et comptabilité.</p><p>L'espace patient est la partie de Kalyria réservée au patient et à sa famille, en option à 5 € par mois. Tout y est résumé : les rendez-vous à venir, les démarches administratives à faire (en logopédie, le dossier mutuelle), et les factures, avec ce qui a été payé et ce qui reste à payer.</p></div>
       </details>
       <details>
-        <summary>Puis-je proposer l'espace patient en gardant mon logiciel actuel ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Oui. L'espace patient s'utilise avec Kalyria ou seul : vous gardez votre logiciel actuel et vos patients suivent leur dossier dans leur espace Kalyria.</p><p>Seul, l'espace patient est simplement moins intégré : ce qui se trouve dans votre logiciel ne passe pas tout seul. Si votre logiciel sait exporter en Excel ou CSV, vous déposez vos patients, vos rendez-vous et vos factures dans l'espace patient : il les range et prévient les familles. Il n'y a rien à réencoder, seulement ce fichier à déposer de temps en temps.</p></div>
       </details>
       <details>
-        <summary>Mon site web est-il inclus ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Oui. Chaque thérapeute abonné a sa page, sans supplément. Vous remplissez vos informations dans Kalyria, ajoutez votre photo, et la page se crée toute seule. Toutes les pages suivent la même présentation, et un petit lien vers Kalyria figure en bas.</p></div>
       </details>
       <details>
-        <summary>Comment fonctionne la prise de rendez-vous en ligne ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Vous l'activez si vous le souhaitez et vous choisissez vos plages. Le patient choisit un moment libre sur votre site et confirme sa demande avec un code reçu par e-mail. Il n'indique aucun motif médical. La demande attend ensuite votre confirmation.</p></div>
       </details>
       <details>
-        <summary>Kalyria est-elle reliée à MyCareNet ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Oui. En kinésithérapie, Member Data, eAgreement, eAttest et eFact sont disponibles. En logopédie, Member Data est disponible, et le reste sera activé dès que MyCareNet l'ouvrira à la profession.</p></div>
       </details>
       <details class="seul-kine">
-        <summary>L'espace patient existe-t-il pour les kinés ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Oui, en option à 5 € par mois. Vos patients voient leurs séances, reçoivent un rappel avant chacune, retrouvent leurs factures et les règlent par virement. Vous voyez ce qui est payé.</p></div>
       </details>
       <details>
-        <summary>Un centre peut-il réunir logopèdes et kinés ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Oui. Un patient commun a un seul dossier, et chaque métier garde ses règles et ses notes cliniques.</p></div>
       </details>
       <details>
-        <summary>Que se passe-t-il si un patient n'a pas encore d'accord ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Vous travaillez normalement. La séance attend simplement d'être complétée, et vous la régularisez quand le dossier est prêt.</p></div>
       </details>
       <details>
-        <summary>Comment le code INAMI est-il choisi ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Kalyria le propose d'après le dossier et la séance, en suivant les règles officielles de votre métier. Quand une règle n'est pas claire ou pas implémentée, Kalyria le dit et vous laisse la main plutôt que de deviner.</p></div>
       </details>
       <details>
-        <summary>Comment fonctionne le tiers payant ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>La part de la mutuelle et celle du patient sont préparées séparément, et chacune se suit jusqu'au paiement.</p></div>
       </details>
       <details>
-        <summary>Les patients voient-ils leurs rendez-vous ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Oui, quand l'espace patient est relié à l'agenda de Kalyria. Ils voient leurs prochains rendez-vous, sont prévenus d'un changement et reçoivent un rappel avant la séance.</p></div>
       </details>
       <details>
-        <summary>Les factures arrivent-elles dans l'espace patient ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Oui. Vous l'envoyez depuis Kalyria et son destinataire la retrouve dans son espace : lui seul la voit, même si deux parents suivent le dossier. Il règle depuis son application bancaire, en scannant un code ou en copiant le compte, le montant et la communication. Le même code figure sur la facture, imprimée ou reçue par e-mail. Vous voyez si elle a été ouverte, puis payée.</p></div>
       </details>
       <details>
-        <summary>Les patients doivent-ils installer une application ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Non. Ils reçoivent une invitation par e-mail et tout se passe dans le navigateur de leur téléphone.</p></div>
       </details>
       <details>
-        <summary>Où sont hébergées les données ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>En Belgique ou dans l'Union européenne, dans le respect du RGPD.</p></div>
       </details>
       <details>
-        <summary>Puis-je reprendre mes patients depuis mon logiciel actuel ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Oui, gratuitement et depuis n'importe quel logiciel. Exportez votre liste de patients en Excel ou en CSV : Kalyria reconnaît les colonnes (nom, prénom, date de naissance, NISS, téléphone…), vous montre un aperçu et repère les doublons avant d'importer.</p><p class="seul-logo">Les prises en charge en cours se reprennent ensuite avec ce qui a déjà été consommé.</p></div>
       </details>
       <details>
-        <summary>Kalyria remplace-t-elle mon comptable ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Non, elle lui facilite la vie. La comptabilité de Kalyria vous donne une estimation et un tableau de l'année ; les montants réels restent établis avec votre comptable, votre caisse et le SPF Finances.</p></div>
       </details>
       <details>
-        <summary>Y a-t-il un engagement ou des frais d'installation ?<svg><use href="#i-plus"/></svg></summary>
+         ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>Aucun. L'abonnement se résilie chaque mois. Toutes vos données et tous vos documents s'exportent en un clic, gratuitement et à tout moment.</p></div>
       </details>
     </div>
