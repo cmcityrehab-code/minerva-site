@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kalyria · Logopédie et kinésithérapie, le cabinet en ordre</title>
 <meta name="description" content="Kalyria tient l'administratif d'un cabinet de logopédie ou de kinésithérapie en Belgique. Son espace patient suit les rendez-vous et les factures avec les patients, et en logopédie le dossier mutuelle avec leurs proches.">
-<link rel="stylesheet" href="site.css?v=32">
+<link rel="stylesheet" href="site.css?v=34">
 <script>// Sans JavaScript, tout reste visible ; sinon le métier vient de ?metier= et rien n'est présélectionné.
 document.documentElement.dataset.metier=(m=>["logo","kine","medg","infi"].includes(m)?m:"aucun")(new URLSearchParams(location.search).get("metier"));
 // Le choix ne survit pas au rechargement : un lien ?metier= ouvre le parcours une fois, puis l'adresse redevient neutre.
@@ -490,6 +490,24 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
     <div class="support">
       <p><b>Quelqu'un vous répond.</b> Une question, un blocage ? Écrivez-nous : une personne de l'équipe vous répond dans la journée, du lundi au vendredi.</p>
       <div class="support-liens"><a class="btn" id="lien-whatsapp" hidden href="#" rel="noopener">WhatsApp</a><a class="btn" href="mailto:info@kalyria.be">info@kalyria.be</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="easypay pro-ll" id="easypay">
+  <div class="wrap">
+    <div class="encart">
+      <div>
+        <span class="qui">Envie de ne plus penser à la facturation ?</span>
+        <h2>Easy Pay Facturation s'en occupe pour vous.</h2>
+        <p>Mutuelles, accords, factures aux patients, suivi des paiements et des refus : nous gérons tout l'administratif de votre cabinet. Vous lisez la carte d'identité, scannez la prescription et soignez.</p>
+        <ul>
+          <li><b>5 %</b> des honoraires facturés, TVA comprise</li>
+          <li><b>Kalyria offert</b> pendant toute la durée du service</li>
+          <li><b>Jusqu'à 0 %</b> grâce au parrainage de confrères</li>
+        </ul>
+      </div>
+      <a class="btn btn-plein" href="gestion-administrative.html">Découvrir Easy Pay Facturation</a>
     </div>
   </div>
 </section>
