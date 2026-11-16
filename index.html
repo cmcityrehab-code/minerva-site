@@ -36,6 +36,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       <a href="#aria" class="seul-logo">Espace patient</a><a href="#aria-kine" class="seul-kine">Espace patient</a>
       <a href="#tarifs" class="pro-ll">Tarifs</a>
       <a href="#faq" class="pro-ll">Questions</a>
+      <a href="gestion-administrative.html" class="pro-ll">Gestion administrative</a>
       <a class="btn btn-plein" href="#contact">Nous contacter</a>
     </nav>
   </div>
@@ -471,8 +472,25 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       <div><dt>L'équipe</dt><dd>Chacun voit ce qui le concerne.</dd></div>
       <div><dt>Le suivi</dt><dd>Ce qui est à faire aujourd'hui, en premier.</dd></div>
       <div><dt>Deux métiers, un toit</dt><dd>Logopédie et kiné dans le même dossier patient.</dd></div>
+      <div><dt>L'agenda sur votre téléphone</dt><dd>iPhone, Android ou Outlook : vos rendez-vous s'y mettent à jour tout seuls.</dd></div>
     </dl>
     <figure class="ecran-cabinet seul-logo"><img src="images/etape-logo-seances.jpg" alt="Tableau de bord de Kalyria : les séances du jour à préparer, avec le journal et le dossier de chaque patient" width="1300" height="400" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="cabinet changer pro-ll" id="changer">
+  <div class="wrap">
+    <h2>Changer de logiciel, sans rien perdre.</h2>
+    <dl>
+      <div><dt>Vos patients repris, gratuitement</dt><dd>Depuis n'importe quel logiciel : exportez votre liste en Excel ou en CSV, Kalyria reconnaît les colonnes. Rien à réencoder.</dd></div>
+      <div><dt>Rien à payer au départ</dt><dd>Vous ne payez rien tant que l'envoi électronique aux mutuelles n'est pas actif pour votre cabinet.</dd></div>
+      <div><dt>Vos données sont à vous</dt><dd>Toutes vos données et vos documents s'exportent en un clic, gratuitement, à tout moment.</dd></div>
+      <div><dt>Sans engagement</dt><dd>Aucun frais d'installation. L'abonnement se résilie chaque mois.</dd></div>
+    </dl>
+    <div class="support">
+      <p><b>Quelqu'un vous répond.</b> Une question, un blocage ? Écrivez-nous : une personne de l'équipe vous répond dans la journée, du lundi au vendredi.</p>
+      <div class="support-liens"><a class="btn" id="lien-whatsapp" hidden href="#" rel="noopener">WhatsApp</a><a class="btn" href="mailto:info@kalyria.be">info@kalyria.be</a></div>
+    </div>
   </div>
 </section>
 
@@ -547,7 +565,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
     </div>
 
     <h3 class="gamme-titre">Kalyria</h3>
-    <div class="gamme deux">
+    <div class="gamme">
       <article class="offre phare">
         <span class="qui">Logopédie ou kinésithérapie</span>
         <h3>Par thérapeute</h3>
@@ -556,12 +574,28 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
         <a class="btn" href="#contact">Nous contacter</a>
       </article>
       <article class="offre phare">
-        <span class="qui">Offre Kalyria</span>
-        <h3>Nouveau diplômé</h3>
-        <div class="prix"><b>3 mois gratuits</b></div>
-        <p>Pour le thérapeute diplômé dans l'année où il prend son contrat, sur Kalyria comme sur l'espace patient seul.</p>
+        <span class="qui">Pour bien commencer</span>
+        <h3>Offre de lancement</h3>
+        <div class="prix"><b>0 €</b><span>pour démarrer</span></div>
+        <p>Vous ne payez rien tant que l'envoi électronique aux mutuelles (eAttest, eFact) n'est pas actif pour votre cabinet. La reprise de vos patients est offerte.</p>
         <a class="btn" href="#contact">Nous contacter</a>
       </article>
+      <article class="offre phare">
+        <span class="qui">Avec la gestion administrative</span>
+        <h3>Kalyria offert</h3>
+        <div class="prix"><b>0 €</b><span>/ mois</span></div>
+        <p>Vous confiez votre facturation à Easy Pay Facturation : mutuelles, accords, paiements et suivi. Kalyria vous est offert pendant toute la durée du service.</p>
+        <a class="btn" href="gestion-administrative.html">Découvrir le service</a>
+      </article>
+    </div>
+
+    <h3 class="gamme-titre">Réductions</h3>
+    <p class="gamme-intro">Par thérapeute et par mois. Elles ne se cumulent pas : <b>la plus avantageuse s'applique.</b></p>
+    <div class="gamme quatre">
+      <article class="offre"><span class="qui">3 thérapeutes et plus</span><h3>Cabinet</h3><div class="prix"><b>29,99 € TTC</b><span>/ mois</span></div><p>Pour chaque thérapeute d'un cabinet ou d'un centre qui en compte au moins trois.</p></article>
+      <article class="offre"><span class="qui">Moins de 500 séances par an</span><h3>Temps partiel</h3><div class="prix"><b>24,99 € TTC</b><span>/ mois</span></div><p>Pour le thérapeute qui exerce à temps partiel, avec toutes les fonctions.</p></article>
+      <article class="offre"><span class="qui">Diplômé dans l'année</span><h3>Jeune diplômé</h3><div class="prix"><b>19,99 € TTC</b><span>/ mois</span></div><p>Moitié prix pendant 12 mois pour bien démarrer, puis 39,99 € TTC.</p></article>
+      <article class="offre"><span class="qui">50 premiers cabinets</span><h3>Fondateurs</h3><div class="prix"><b>19,99 € TTC</b><span>/ mois</span></div><p>Moitié prix pendant 2 ans pour les premiers cabinets qui nous font confiance.</p></article>
     </div>
 
     <h3 class="gamme-titre">Espace patient</h3>
@@ -642,9 +676,9 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
         <summary>Où sont hébergées les données ?<svg><use href="#i-plus"/></svg></summary>
         <div class="r"><p>En Belgique ou dans l'Union européenne, dans le respect du RGPD.</p></div>
       </details>
-      <details class="seul-logo">
+      <details>
         <summary>Puis-je reprendre mes patients depuis mon logiciel actuel ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Oui, votre liste de patients s'importe, et les prises en charge en cours se reprennent avec ce qui a déjà été consommé.</p></div>
+        <div class="r"><p>Oui, gratuitement et depuis n'importe quel logiciel. Exportez votre liste de patients en Excel ou en CSV : Kalyria reconnaît les colonnes (nom, prénom, date de naissance, NISS, téléphone…), vous montre un aperçu et repère les doublons avant d'importer.</p><p class="seul-logo">Les prises en charge en cours se reprennent ensuite avec ce qui a déjà été consommé.</p></div>
       </details>
       <details>
         <summary>Kalyria remplace-t-elle mon comptable ?<svg><use href="#i-plus"/></svg></summary>
@@ -652,7 +686,7 @@ history.scrollRestoration="manual";if(location.search)history.replaceState(null,
       </details>
       <details>
         <summary>Y a-t-il un engagement ou des frais d'installation ?<svg><use href="#i-plus"/></svg></summary>
-        <div class="r"><p>Aucun. L'abonnement se résilie chaque mois, et vos données restent exportables à tout moment.</p></div>
+        <div class="r"><p>Aucun. L'abonnement se résilie chaque mois. Toutes vos données et tous vos documents s'exportent en un clic, gratuitement et à tout moment.</p></div>
       </details>
     </div>
   </div>
@@ -821,6 +855,10 @@ document.querySelectorAll('[data-moment]').forEach(b=>b.addEventListener('click'
   const pin=pinActif(),t=pin.getBoundingClientRect().top+scrollY-68,course=pin.offsetHeight-(innerHeight-68);
   scrollTo({top:t+course*(Number(b.dataset.moment)+.5)/MOMENTS.length,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
 }));
+
+// WhatsApp de l'équipe : à renseigner (format international sans +, ex. 32470123456) ; vide = bouton caché.
+const WHATSAPP='';
+if(WHATSAPP){const w=document.getElementById('lien-whatsapp');w.href='https://wa.me/'+WHATSAPP;w.hidden=false}
 
 // Contact : ouvre la messagerie du visiteur avec le message déjà rédigé.
 function lienContact(f){

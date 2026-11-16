@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gestion administrative · Easy Pay Facturation et Kalyria</title>
+<meta name="description" content="Easy Pay Facturation prend en charge toute la facturation de votre cabinet de kinésithérapie ou de logopédie : tiers payant, accords des mutuelles, suivi des paiements. Kalyria vous est offert pendant toute la durée du service.">
+<link rel="stylesheet" href="site.css?v=33">
+<link rel="icon" type="image/svg+xml" href="images/kalyria-tuile.svg">
+<style>
+/* Page « gestion administrative » : reprend les styles du site, quelques blocs propres. */
+.ga-ouverture{padding:88px 0 64px}
+.ga-ouverture h1{font-size:clamp(36px,5vw,64px);line-height:1.04;letter-spacing:-.02em;max-width:16ch}
+.ga-ouverture .sous{font-size:20px;color:var(--doux);max-width:58ch;margin:22px 0 30px}
+.ga-actions{display:flex;gap:12px;flex-wrap:wrap}
+.ga-bloc{padding:64px 0;border-top:1px solid var(--mortier)}
+.ga-bloc h2{margin-bottom:28px}
+.ga-liste{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;list-style:none;padding:0;margin:0}
+.ga-liste li{background:var(--blanc);border:1px solid var(--mortier);border-radius:14px;padding:22px}
+.ga-liste b{display:block;font-size:18px;margin-bottom:6px}
+.ga-liste span{color:var(--doux);font-size:15.5px}
+.ga-vous{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:n;list-style:none;padding:0;margin:0}
+.ga-vous li{counter-increment:n;padding:22px;border-radius:14px;background:var(--chaux)}
+.ga-vous li::before{content:counter(n);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--action);color:#fff;font-weight:700;margin-bottom:12px}
+.ga-vous b{display:block;font-size:18px}
+.ga-vous span{color:var(--doux);font-size:15.5px}
+.ga-prix{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
+.ga-note{color:var(--doux);font-size:15px;margin-top:16px;max-width:70ch}
+.ga-exemple{font-variant-numeric:tabular-nums}
+@media (max-width:900px){.ga-liste,.ga-vous{grid-template-columns:1fr 1fr}.ga-prix{grid-template-columns:1fr}}
+@media (max-width:600px){.ga-liste,.ga-vous{grid-template-columns:1fr}.ga-ouverture{padding:56px 0 40px}}
+</style>
+</head>
+<body>
+
+<header class="haut">
+  <div class="wrap">
+    <a class="marque" href="index.html"><img src="images/kalyria-logo-fond-sombre.svg" alt="Kalyria" width="136" height="34"></a>
+    <nav aria-label="Navigation du site">
+      <a href="index.html">Kalyria</a>
+      <a href="#service">Le service</a>
+      <a href="#prix">Le prix</a>
+      <a class="btn btn-plein" href="#contact">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="ga-ouverture">
+  <div class="wrap">
+    <h1>Votre facturation, entièrement prise en charge.</h1>
+    <p class="sous">Easy Pay Facturation s'occupe de tout l'administratif de votre cabinet de kinésithérapie ou de logopédie, de la mutuelle au dernier paiement. Vous, vous soignez. Et Kalyria vous est offert pendant toute la durée du service.</p>
+    <div class="ga-actions">
+      <a class="btn btn-plein" href="#contact">Recevoir une simulation</a>
+      <a class="btn" href="#prix">Voir le prix</a>
+    </div>
+  </div>
+</section>
+
+<section class="ga-bloc" id="service">
+  <div class="wrap">
+    <h2>Ce que nous faisons pour vous.</h2>
+    <ul class="ga-liste">
+      <li><b>La facturation aux mutuelles</b><span>Vos prestations facturées en tiers payant, électroniquement dès que votre métier le permet, chaque mois, sans oubli.</span></li>
+      <li><b>Les demandes d'accord</b><span>Notifications et demandes auprès des mutuelles, au bon moment pour chaque patient.</span></li>
+      <li><b>Le pointage de votre agenda</b><span>Nous suivons vos séances dans votre agenda en ligne : vous n'encodez rien de plus.</span></li>
+      <li><b>Les factures aux patients</b><span>Quand un patient doit recevoir une facture, nous la préparons et l'envoyons par voie électronique.</span></li>
+      <li><b>Le suivi des paiements et des refus</b><span>Nous vérifions que chaque prestation est payée et nous traitons les rejets des mutuelles.</span></li>
+      <li><b>Le suivi administratif</b><span>La comptabilité de vos recettes et tout le suivi lié à votre activité, tenus à jour.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="ga-bloc">
+  <div class="wrap">
+    <h2>Ce qui reste de votre côté.</h2>
+    <ol class="ga-vous">
+      <li><b>Lire la carte d'identité</b><span>Au premier rendez-vous, dans Kalyria, en quelques secondes.</span></li>
+      <li><b>Scanner la prescription</b><span>Une photo ou un scan, joint au dossier du patient.</span></li>
+      <li><b>Encaisser le ticket modérateur</b><span>Quand le patient en paie un, sur place ou par virement.</span></li>
+    </ol>
+    <p class="ga-note">C'est tout. En tiers payant électronique, les remboursements des mutuelles arrivent généralement en 2 à 5 jours ouvrables.</p>
+  </div>
+</section>
+
+<section class="ga-bloc tarifs" id="prix">
+  <div class="wrap">
+    <h2>Un prix simple, et Kalyria offert.</h2>
+    <div class="ga-prix">
+      <article class="offre phare">
+        <span class="qui">Gestion administrative complète</span>
+        <h3>Easy Pay Facturation</h3>
+        <div class="prix"><b>5 %</b><span>des honoraires facturés, TVA comprise</span></div>
+        <p>Rien d'autre à payer : <b>votre abonnement Kalyria est offert</b> pendant toute la durée du service, au lieu de 39,99 € TTC par mois. Les frais sont déductibles en frais professionnels.</p>
+        <p class="ga-exemple">Exemple : pour 4 000 € facturés dans le mois, le service coûte 200 €.</p>
+        <a class="btn" href="#contact">Recevoir une simulation</a>
+      </article>
+      <article class="offre">
+        <span class="qui">Parrainage</span>
+        <h3>Jusqu'à 0 %</h3>
+        <div class="prix"><b>−0,5 point</b><span>par confrère</span></div>
+        <p>Pour chaque confrère que vous recommandez et qui devient client actif, votre taux baisse de 0,5 point. Avec dix parrainages, votre gestion administrative devient gratuite.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="ga-bloc">
+  <div class="wrap">
+    <h2>Prêt pour la facturation électronique.</h2>
+    <p class="ga-note" style="font-size:18px">La facturation électronique devient la règle, dès le 1er janvier 2027 en kinésithérapie. Nous vous accompagnons dans ce passage, sans stress : vos dossiers, vos prescriptions et vos accords sont repris et suivis pour vous.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Parlons de votre cabinet.</h2>
+    <p>Envoyez-nous un message : nous vous préparons une simulation personnalisée, ou nous vous appelons pour tout vous expliquer.</p>
+    <div class="ga-actions" style="justify-content:center">
+      <a class="btn btn-plein" href="mailto:easypayfacturation@gmail.com?subject=Simulation%20Easy%20Pay%20Facturation">easypayfacturation@gmail.com</a>
+      <a class="btn" href="index.html#contact">Écrire à Kalyria</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Easy Pay Facturation et Kalyria — un espace pour organiser les soins.</span>
+    <span><a href="index.html">Retour à Kalyria</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
